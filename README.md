@@ -1,2 +1,0 @@
-# bigTech
-Week1Page
