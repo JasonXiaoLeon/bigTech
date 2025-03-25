@@ -30,7 +30,7 @@ const Header = () => {
         isFixed
           ? 'fixed top-0 left-0 right-0 z-50 bg-[#030b15] translate-y-0 transition-all duration-1000 ease-in-out'
           : 'relative bg-[#030b15] translate-y-0'
-      } flex space-between items-center h-[90px] widthSmall:h-auto`}
+      } flex space-between items-center h-[90px] widthSmall:h-auto z-50 border-b border-[hsla(0,0%,100%,0.1)]`}
     >
         <div className='mx-auto px-[15px] flex'>
             <div className='flex w-[940px] items-center'>

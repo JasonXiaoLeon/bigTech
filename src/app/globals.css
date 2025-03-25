@@ -1,9 +1,7 @@
 /* globals.css */
 
 /* 1. Place the @import rule at the top */
-@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100;300;400;600;700&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100;300;400;600;700&family=Poppins:wght@400;500;700&display=swap');
 /* 2. Tailwind directives */
 @tailwind base;
 @tailwind components;
@@ -72,6 +70,7 @@
     --chart-4: 280 65% 60%;
     --chart-5: 340 75% 55%;
   }
+  
 
   /* 5. Apply base styles and font-family */
   * {
@@ -80,6 +79,5 @@
 
   body {
     @apply bg-background text-foreground;
-    font-family: 'Outfit', sans-serif; /* Use one font-family */
   }
 }

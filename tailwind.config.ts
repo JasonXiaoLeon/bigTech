@@ -17,7 +17,8 @@ const config: Config = {
 			'widthUltra':'2560px',
 		},
 		fontFamily: {
-		outfit: ['Outfit', 'sans-serif'],
+			outfit: ['Outfit', 'sans-serif'],
+			sans: ['Poppins', 'sans-serif'],
 		},
 		letterSpacing: {
 			'1px': '1px',
