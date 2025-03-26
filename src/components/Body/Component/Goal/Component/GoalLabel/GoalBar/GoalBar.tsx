@@ -4,7 +4,7 @@ const GoalBar = () => {
   const progress = 65
 
   return (
-    <div className='mt-[8px] w-[711.664px]'>
+    <div className='mt-[8px] w-4/5 md:w-[690px] sm:w-[544px]'>
       <div className='w-full h-[6px] mb-[25px] bg-gray-200 rounded-full overflow-visible relative'>
         <div 
           className='h-full bg-blue-500 transition-all duration-500 rounded-full relative'

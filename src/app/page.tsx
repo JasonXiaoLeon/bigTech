@@ -1,14 +1,15 @@
 import Body from "@/components/Body";
+import AboutUs from "@/components/Body/Component/AboutUs";
 
 export default function Home() {
   return (
-    <div className="">
+    <div id="home">
       <div>
-        <Body/>
-     </div>
+        {/* <Body/> */}
+      </div>
 
-      <div id="about-us" className="h-screen bg-teal-200">
-        About us
+      <div id="about-us">
+        <AboutUs/>
       </div>
 
       <div id="sales" className="h-screen bg-purple-200">

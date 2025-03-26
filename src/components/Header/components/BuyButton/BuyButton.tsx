@@ -1,24 +1,21 @@
 import React from 'react'
 import CurrencyUnitDropdown from '../CurrencyUnitDropdown'
-import SmallNavBtn from '../HeaderNavi/components/SmallNaviBtn'
+import Button from '@/components/Button/Button'
+
 
 const BuyButton = () => {
   return (
-    <div className='flex items-center w-[269px] ml-[10px]'>
-      <div className='w-[55.91px]'>
+    <div className='flex items-center h-[90px] ml-[10px] mr-[50px] lg:mr-[0px] hidden md:flex'>
+      <div className='flex items-center'>
         <CurrencyUnitDropdown />
       </div>
-      <div className='w-[178.28px] pl-[35px] ml-[35px]'>
-        <div className='border-l-2 border-gray-border hidden widthMid:block widthSmall:hidden'/>
-        <div className='flex justify-center items-center w-[143px] h-[50px] border-2 rounded-3xl border-x-[#00c4f4] text-white hover:text-[#00c4f4] hover:border-y-[#00c4f4] border-transparent transition-all duration-400'>
-          <button className='w-[111px] py-[16px] text-[16px] font-outfit font-bold'>
-            BUY NOW
-          </button>
-        </div>
+      <div className='h-[20px] w-[1px] xl:ml-[35px] lg:border-l lg:border-l-[rgb(164,180,195)]' />
+      <div className='flex pl-[20px] xl:pl-[35px] items-center'>
+          <Button value='BUY NOW'/>
       </div>
-      <SmallNavBtn />
     </div>
   )
 }
 
 export default BuyButton
+

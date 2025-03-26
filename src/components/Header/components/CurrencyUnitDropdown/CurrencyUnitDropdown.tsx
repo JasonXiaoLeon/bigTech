@@ -1,3 +1,4 @@
+"use client"
 import React, { useState, useEffect, useRef } from 'react';
 import CurrDropdown from './component/CurrDropdown';
 
@@ -19,15 +20,15 @@ const CurrencyUnitDropdown = () => {
   }, []);
 
   return (
-    <div ref={dropdownRef} className='flex hidden widthMid:block widthSmall:hidden'>
+    <div ref={dropdownRef} className='flex hidden xl:block'>
       <div onMouseEnter={() => setIsMenuVisible(true)} className='w-[55.91px] h-[28px] flex items-center'>
         <span className='text-white text-base text-[16px] tracking-1px font-bold'>ENG</span>
         <button className=''>
-        <img 
-          src='/img/icon/arrow-down.png' 
-          className='w-[9.75px] w-auto object-contain ml-[10px]' 
-          alt='▼'
-        />
+          <img 
+            src='/img/icon/arrow-down.png' 
+            className='w-[9.75px] h-[24.5px] object-contain ml-[10px]' 
+            alt='▼'
+          />
         </button>
       </div>
       {isMenuVisible && <CurrDropdown />}

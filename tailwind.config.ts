@@ -10,7 +10,8 @@ const config: Config = {
   theme: {
   	extend: {
 		screens: {
-			'widthSmall': {'max': '240px'},        // 小于 430px 的设备（手机设备）
+			'widthSmaller': {'max': '240px'},        // 小于 430px 的设备（手机设备）
+			'widthSmall':'748px',
 			'widthMid': '991px',             // iPad Mini，最小为 768px
 			'widthLarge': '1024px',             // iPad Pro，最小为 1024px
 			'widthSuper':'1440px',

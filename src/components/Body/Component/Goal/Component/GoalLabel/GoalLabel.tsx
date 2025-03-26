@@ -9,12 +9,12 @@ interface Props {
 
 const GoalLabel: React.FC<Props> = ({ List }) => {
   return (
-    <div className='w-[611.664px] mx-[50px]'>
+    <div className='w-1/3 mx-[50px]'>
       <ul className="flex w-full p-0 justify-between">
         {List.map((item, index) => (
           <li
             key={index}
-            className="flex flex-col items-center justify-center h-[51.733px]" // 添加固定高度和垂直居中
+            className="flex flex-col items-center justify-center h-[51.733px]"
           >
             <span 
               className="font-bold text-[12px]"
@@ -24,7 +24,7 @@ const GoalLabel: React.FC<Props> = ({ List }) => {
             </span>
             
               <span 
-                className="h-[12px]" // 添加上边距
+                className="h-[12px]"
                 style={{ color: item.color }}
               >
                 |

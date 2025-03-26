@@ -8,7 +8,7 @@ const Goal = () => {
     {name: 'BONUS', color:'#12d176'},
   ]
   return (
-    <div className='flex justify-center w-[711.66px] mx-[50px]'>
+    <div className='flex justify-center w-screen mx-[50px]'>
       <GoalLabel List={List}/>
     </div>
   )

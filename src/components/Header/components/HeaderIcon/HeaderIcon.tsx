@@ -3,9 +3,9 @@ import React from 'react'
 
 const HeaderIcon = () => {
   return (
-    <div className='flex w-[109px] items-center h-[auto] widthSmall:w-[auto] max-h-[65px]'>
+    <div className='flex w-[109.63px] items-center'>
         <Link href={"/"}>
-            <img src='/img/header.png' alt='BigTechLogo' />
+            <img src='/img/header.png' alt='BigTechLogo' className='h-[64.99px]' />
         </Link>
     </div>
   )

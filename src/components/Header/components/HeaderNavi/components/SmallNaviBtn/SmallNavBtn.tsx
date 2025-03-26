@@ -2,8 +2,8 @@ import React from 'react'
 
 const SmallNavBtn = () => {
   return (
-    <div>
-      <div className="widthMid:hidden">
+    <div className='flex block lg:hidden items-center w-[26.25px] h-[30px] h-full'>
+      <div className="">
             <img 
             src="/img/icon/menu.png" 
             alt="Menu Image" 
