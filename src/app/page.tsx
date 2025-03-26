@@ -1,5 +1,6 @@
 import Body from "@/components/Body";
 import AboutUs from "@/components/Body/Component/AboutUs";
+import Sales from "@/components/Body/Component/Sales";
 
 export default function Home() {
   return (
@@ -12,8 +13,8 @@ export default function Home() {
         <AboutUs/>
       </div>
 
-      <div id="sales" className="h-screen bg-purple-200">
-        Sales
+      <div id="sales">
+        <Sales/>
       </div>
 
       <div id="roadmap" className="h-screen bg-orange-200">

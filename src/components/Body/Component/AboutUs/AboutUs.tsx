@@ -2,6 +2,7 @@ import React from 'react'
 import DescriptionOfAbout from './Component/DescriptionOfAbout'
 import DescripHeader from './Component/DescripHeader/DescripHeader'
 import PartnerGrid from './Component/PartnerGrid'
+import ChooseItemlist from './Component/ChooseItemlist'
 
 const AboutUs = () => {
   return (
@@ -27,19 +28,19 @@ const AboutUs = () => {
               </div>
           </div>
       </div>
-      <div className='w-[360px] h-[170px] mx-auto px-[10px] bg-[##030b15] md:w-[690px] lg:w-[960px] xl:w-[1250px]'>
+      <div className='w-[360px] h-[604.19px] mx-auto px-[15px] bg-[##030b15] md:w-[690px] md:h-[585px] lg:w-[960px] lg:h-[578.8px] xl:w-[1250px] xl:h-[639.609px]'>
         <div className='flex flex-col items-center'>
-          <div className=''>
+          <div>
               <DescripHeader content='why Choose us'/>
           </div>
           <div>
-            <div className='flex justify-center text-white text-[28px] md:text-[40px] lg:text-[34px] xl:text-[42px] w-full font-bold leading-[1.2]'>
+            <div className='flex justify-center mb-[50px] text-white text-[28px] md:text-[40px] lg:text-[34px] xl:text-[42px] w-full font-bold leading-[1.2]'>
               <span className='text-center'>
-                Why choose our Bigtech <span className='text-[#00c4f4]'> Token </span>
+                Why choose our Bigtech <span className='text-[#00c4f4] xl:whitespace-nowrap'> Token </span>
               </span>
             </div>
             <div>
-
+              <ChooseItemlist/>
             </div>
           </div>
         </div>
