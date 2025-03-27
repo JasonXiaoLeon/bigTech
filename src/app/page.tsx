@@ -1,6 +1,8 @@
 import Body from "@/components/Body";
 import AboutUs from "@/components/Body/Component/AboutUs";
 import Sales from "@/components/Body/Component/Sales";
+import ContactUs from "@/components/ContactUs/ContactUs";
+import RoadMap from "@/components/RoadMap";
 
 export default function Home() {
   return (
@@ -17,16 +19,16 @@ export default function Home() {
         <Sales/>
       </div>
 
-      <div id="roadmap" className="h-screen bg-orange-200">
-        Roadmap
+      <div id="roadmap">
+        <RoadMap/>
       </div>
 
       <div id="blog" className="h-screen bg-pink-200">
         Blog
       </div>
 
-      <div id="contact-us" className="h-screen bg-indigo-200">
-        Contact Us
+      <div id="contact-us">
+        <ContactUs/>
       </div>
     </div>
   );
