@@ -13,7 +13,7 @@ const Timecomp: React.FC<Props> = ({ value, text, color }) => {
 
   return (
     <div 
-      className='flex flex-col border border-1 items-center justify-center rounded-[5px] p-[10px] mx-[17.5px] mt-[20px] w-[162px] h-[96px] bg-[#0b1d33]'
+      className='flex flex-col border border-1 items-center justify-center rounded-[5px] p-[10px] mx-[12.5px] lg:mx-[17.5px] mt-[20px] w-[140px] lg:w-[162px] h-[85px] lg:h-[96px] bg-[#0b1d33]'
       style={{ 
         borderColor: 'hsla(0, 0%, 100%, 0.04)',
         boxShadow: '0 4px 8px rgba(0, 0, 0, 0.2)'

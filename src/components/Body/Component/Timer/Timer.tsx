@@ -4,7 +4,7 @@ import TimerCounter from './Component/TimerCounter'
 
 const Timer = () => {
   return (
-    <div className='w-screen h-[162.2px] flex flex-col items-center'>
+    <div className='flex flex-col items-center '>
       <TimerHeader/>
       <TimerCounter/>
     </div>

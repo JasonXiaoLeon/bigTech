@@ -9,22 +9,22 @@ interface Props {
 
 const GoalLabel: React.FC<Props> = ({ List }) => {
   return (
-    <div className='w-1/3 mx-[50px]'>
-      <ul className="flex w-full p-0 justify-between">
+    <div className='w-[360px] md:w-[690px] lg:w-[710px] xl:w-[711.66px] h-full'>
+      <ul className="flex justify-between md:mx-[50px]">
         {List.map((item, index) => (
           <li
             key={index}
-            className="flex flex-col items-center justify-center h-[51.733px]"
+            className="flex flex-col uppercase items-center justify-center h-[46px] pb-[25px] "
           >
             <span 
-              className="font-bold text-[12px]"
+              className="font-bold text-[12px] h-[30px]"
               style={{ color: item.color }}
             >
               {item.name}
             </span>
             
               <span 
-                className="h-[12px]"
+                className="w-[2px] h-[14px]"
                 style={{ color: item.color }}
               >
                 |

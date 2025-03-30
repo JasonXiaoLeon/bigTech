@@ -8,7 +8,7 @@ export default function Home() {
   return (
     <div id="home">
       <div>
-        {/* <Body/> */}
+        <Body/>
       </div>
 
       <div id="about-us">

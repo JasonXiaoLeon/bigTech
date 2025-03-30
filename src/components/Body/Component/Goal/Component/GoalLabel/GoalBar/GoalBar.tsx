@@ -1,10 +1,10 @@
 import React from 'react'
 
 const GoalBar = () => {
-  const progress = 65
+  const progress:number = 75
 
   return (
-    <div className='mt-[8px] w-4/5 md:w-[690px] sm:w-[544px]'>
+    <div className='mt-[8px] w-[360px] md:w-[690px]'>
       <div className='w-full h-[6px] mb-[25px] bg-gray-200 rounded-full overflow-visible relative'>
         <div 
           className='h-full bg-blue-500 transition-all duration-500 rounded-full relative'
@@ -13,8 +13,8 @@ const GoalBar = () => {
           <div className='h-full w-full bg-[#00c4f4]' />
           
           <div className='absolute right-0 top-1/2 
-                        w-4 h-4 bg-white rounded-full 
-                        border-2 border-[#00c4f4]
+                        w-[25px] h-[25px] bg-white rounded-full 
+                        border-[6px] border-[#00c4f4]
                         shadow-md
                         transform translate-x-1/2 -translate-y-1/2' />
         </div>

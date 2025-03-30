@@ -61,13 +61,13 @@ const TimerCounter = () => {
   }, [targetTime]);
 
   return (
-    <div className='flex justify-center w-screen h-[116px]'>
+    <div className='grid grid-cols-2 md:flex'>
       <Timecomp value={timeLeft.days} text='Days' color='#00c4f4'/>
       <Timecomp value={timeLeft.hours} text='Hours' color='#ff9700'/>
       <Timecomp value={timeLeft.minutes} text='Minutes' color='#ff1d45'/>
       <Timecomp value={timeLeft.seconds} text='Seconds' color='#12d176'/>
     </div>
-  )
+  )  
 }
 
 export default TimerCounter;

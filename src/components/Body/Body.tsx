@@ -8,34 +8,35 @@ const Body = () => {
   return (
     <div      
     id="home"
-    className="bg-cover bg-center"
+    className="bg-cover bg-center px-[15px] pt-[75px] md:pt-[120px]"
     style={{   
       backgroundImage: "url('/img/banner_bg.jpg')"
     }}
     >
-
+{/* 
       <div className="absolute inset-0 z-10 min-w-screen min-h-screen" 
         style={{
           backgroundImage: "linear-gradient(0.23deg, rgb(3, 11, 21) 5.68%, rgba(3, 11, 21, 0.42) 81.9%)",
           opacity: 0.9,
         }}
-      />
-      
-      <div className="relative z-20">
-        <img className='absolute' src='/img/banner1.png' alt='sphere'/>
-        <img className='absolute' src='/img/banner2.png' alt='sphere'/>
+      /> */}
+      <div className='absolute w-screen'>
+        {/* <img className='absolute' src='/img/banner1.png' alt='sphere'/> */}
+        <img className='absolute right-[8%] top-[20%] left-auto w-[66px] h-[66px]' src='/img/banner2.png' alt='sphere'/>
+      </div>
+      <div className="relative z-20 w-[360px] md:w-[690px] lg:w-[770px] xl:w-[1011.66px] mx-auto">
         <div className="flex flex-col items-center justify-center">
           <img 
             src="/img/download.png" 
-            className="w-[54px] h-[54px] mb-[25px] widthSmall:w-auto widthSmall:h-auto" 
+            className="w-[52px] h-[52px] mb-[25px]" 
           />
           <BodyText />
         </div>
-        <div className='flex flex-col items-center mx-[150px] mb-[70px]'>
+        <div className='flex flex-col items-center md:mb-[40px] lg:mx-[30px] lg:mb-[60px] xl:mx-[150px] xl:mb-[70px]'>
           <Goal/>
           <GoalBar/>
         </div>
-        <div className='flex items-center'>
+        <div className=''>
           <Timer/>
         </div>
       </div>

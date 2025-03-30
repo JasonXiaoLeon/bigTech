@@ -1,3 +1,4 @@
+import NormalBtn from '@/components/Button/NormalBtn/NormalBtn'
 import React from 'react'
 
 const ContactForm = () => {
@@ -22,11 +23,7 @@ const ContactForm = () => {
                     placeholder="Enter your message"
                     className='w-[320px] h-[184px] md:w-[570px] md:h-[184px] lg:w-[770px] xl:w-[1060px] mb-[30px] rounded-[5px] px-[18px] py-[20px] bg-[#0b1d33] text-[18px] border border-[#6c757d] border-opacity-7 '
                 />
-                <div className='flex justify-center items-center'>
-                    <button className='flex justify-center items-center rounded-[70px] text-white uppercase w-[179.48px] h-[55px] bg-[#0b1d33] shadow-lg border-2 border-[#00c4f4]'>
-                        Send Message
-                    </button>
-                </div>
+                <NormalBtn value='Send Message'/>
             </form>
         </div>
     </div>

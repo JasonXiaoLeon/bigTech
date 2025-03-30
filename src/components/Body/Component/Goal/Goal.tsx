@@ -4,11 +4,11 @@ import GoalLabel from './Component/GoalLabel'
 const Goal = () => {
   const List = [
     {name: 'PRE SELL', color: '#00c4f4'},
-    {name: 'SOFT SELL', color:'#ff9700'},
+    {name: 'SOFT CAP', color:'#ff9700'},
     {name: 'BONUS', color:'#12d176'},
   ]
   return (
-    <div className='flex justify-center w-screen mx-[50px]'>
+    <div>
       <GoalLabel List={List}/>
     </div>
   )

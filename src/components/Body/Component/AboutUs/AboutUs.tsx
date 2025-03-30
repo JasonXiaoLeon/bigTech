@@ -6,13 +6,15 @@ import ChooseItemlist from './Component/ChooseItemlist'
 
 const AboutUs = () => {
   return (
-    <div className='w-screen h-auto bg-[#030b15]'>
-      <div className='flex flex-col items-center lg:flex-row lg:justify-center py-[120px] w-screen'>
-          <div className='flex justify-center px-[15px] mb-[50px] lg:pl-[20px]'>
-              <img src='/img/banner2.png' alt='i' className='absolute w-[64px] h-[64px] hidden md:block'/>
-              <img src='/img/about_img.png' alt='img' className='w-[360px] h-[360px] md:w-[487px] md:h-[486px] lg:w-[430px] lg:h-[430px] xl:w-[475px] xl:h-[475px]'/>
-          </div> 
-          <div className='md:mx-[24px] w-[360px] md:w-[720px] lg:w-[480px]'>
+    <div className='w-screen bg-[#030b15]'>
+      <div className='flex flex-col items-center lg:flex-row lg:justify-center py-[120px] px-[15px]'>
+          <div className='px-[15px]'>
+            <div className='flex justify-center mb-[50px] lg:mb-[0px] lg:pl-[20px] w-[360px] md:w-[690px] lg:w-[450px]'>
+                <img src='/img/banner2.png' alt='i' className='absolute w-[64px] h-[64px] left-[40px] top-[40px] hidden md:block z-10'/>
+                <img src='/img/about_img.png' alt='img' className='w-[360px] h-[360px] md:w-[486px] md:h-[486px] lg:w-[430px] lg:h-[430px] xl:w-[475px] xl:h-[475px]'/>
+            </div> 
+          </div>
+          <div className='md:mx-[24px] lg:mx-0 w-[360px] md:w-[720px] lg:w-[480px]'>
             <DescriptionOfAbout/>
           </div>
       </div>
@@ -23,12 +25,12 @@ const AboutUs = () => {
                       <DescripHeader content='Our top partner'/>
                   </div>
               </div>
-              <div className='w-full px-[15px]'>
+              <div className='px-[15px] pb-[130px]'>
                   <PartnerGrid/>
               </div>
           </div>
       </div>
-      <div className='w-[360px] h-[604.19px] mx-auto px-[15px] bg-[##030b15] md:w-[690px] md:h-[585px] lg:w-[960px] lg:h-[578.8px] xl:w-[1250px] xl:h-[639.609px]'>
+      <div className='w-[360px] mx-auto px-[15px] bg-[##030b15] md:w-[690px] lg:w-[960px] xl:w-[1250px]'>
         <div className='flex flex-col items-center'>
           <div>
               <DescripHeader content='why Choose us'/>
@@ -40,7 +42,7 @@ const AboutUs = () => {
               </span>
             </div>
             <div>
-              <ChooseItemlist/>
+              {/* <ChooseItemlist/> */}
             </div>
           </div>
         </div>
