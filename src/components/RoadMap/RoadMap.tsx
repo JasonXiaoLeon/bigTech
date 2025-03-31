@@ -17,13 +17,13 @@ const RoadMap = () => {
           blueContent='&nbsp;Plan'/>
       </div>
       <div className='flex flex-col lg:flex-row-reverse lg:justify-center'>
-        <div className='lg:w-[400px] lg:h-[562px] lg:mt-[50px] mb-[50px] lg:mb-[0px]'>
+        <div className='lg:w-[400px] lg:px-[15px] xl:w-[520.83px] lg:mt-[50px] mb-[50px] lg:mb-[0px] px-[15px] md:px-[0px]'>
           <RoadMapUpperStart 
             title={'WhitePaper'}
             content1='Read BigTech '
             blueContent='Documents'/>
           <RoadMapList/>
-          <div className='flex w-[360px] md:w-[390px] xl:w-[490px] mx-auto px-[15px]'>
+          <div className='flex w-[360px] md:w-[390px] xl:w-[490px] mx-auto'>
             <NormalBtn value='Download DOc'/>
           </div>
         </div>

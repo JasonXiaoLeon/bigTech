@@ -41,7 +41,7 @@ const Header = () => {
               </div>
               <BuyButton/>
             </div>
-            <SmallNavBtn />
+            <SmallNavBtn/>
         </div>
     </div>
   );

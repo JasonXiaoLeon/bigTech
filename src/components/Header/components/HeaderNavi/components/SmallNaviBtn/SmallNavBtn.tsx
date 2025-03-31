@@ -57,13 +57,15 @@ const SmallNavBtn = () => {
             <img src='/img/header.png' className='w-[109.63px] h-[65px]' />
           </div>
           <ul className='uppercase'>
-            {menuItems.map((item, index) => (
-              <a key={index} href={item.link}>
-                <li className='flex items-center text-[14px] w-[300px] h-[44px] pl-[25px] pr-[60px]'>
-                  {item.name}
-                </li>
-              </a>
-            ))}
+          {menuItems.map((item, index) => (
+            <a key={index} href={item.link}>
+              <li
+                className={`flex items-center text-[14px] w-[300px] h-[44px] pl-[25px] pr-[60px] border-t border-[hsla(0,0%,100%,0.06)] ${index === menuItems.length - 1 ? 'border-b border-[hsla(0,0%,100%,0.06)]' : ''}`}
+              >
+                {item.name}
+              </li>
+            </a>
+          ))}
           </ul>
           <div className="flex justify-center items-center w-[300px] px-[20px] pt-[30px] pb-[20px]">
             {socialMediaIcons.map((icon, index) => (

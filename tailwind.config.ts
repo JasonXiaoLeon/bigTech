@@ -74,7 +74,8 @@ const config: Config = {
       },
       animation: {
         "spin-fast": "spin-fast .1s linear infinite",
-        "left-right": "leftRight 6s ease-in-out infinite", // 调整时长与动画曲线
+        "left-right": "leftRight 6s ease-in-out infinite",
+        "top-down": "topDown 4s ease-in-out infinite",
       },
       keyframes: {
         "spin-fast": {
@@ -85,6 +86,11 @@ const config: Config = {
           "0%": { transform: "translateX(-15px)" }, // 起点向左移动 50px
           "50%": { transform: "translateX(45px)" }, // 终点向右移动 50px
           "100%": { transform: "translateX(-15px)" }, // 回到起点
+        },
+        topDown: {
+          "0%": { transform: "translateY(200px)" },
+          "50%": { transform: "translateY(225px)" },
+          "100%": { transform: "translateY(200px)" },
         },
       },
     },

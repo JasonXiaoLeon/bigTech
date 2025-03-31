@@ -4,16 +4,16 @@ import SalesAllocation from './Component/SalesAllocation'
 
 const Sales = () => {
   return (
-    <div className='flex flex-col lg:flex-row-reverse lg:justify-center lg:h-[815px] sm:items-center h-[1258.25px] md:h-[1135.75px] w-screen bg-[#030b15] py-[130px] px-[15px]'>
-      <div className='h-[588px] bg-[#0b1d33] md:w-[570px] md:h-[530.5px] lg:h-[555px] lg:w-[960px] xl:w-[485px] xl:h-[510px] rounded-[20px] py-[40px] md:py-auto'>
-        <div className='flex flex-col px-[30px] h-[530px] px-[45px]'>
+    <div className='flex flex-col lg:flex-row-reverse lg:justify-center sm:items-center bg-[#030b15] py-[130px]'>
+      <div className='bg-[#0b1d33] md:h-[530.5px] lg:h-[555px] xl:w-[485px] xl:h-[510px] rounded-[20px]'>
+        <div className='flex flex-col px-[30px] px-[30px] md:px-[45px] lg:px-[30px] py-[40px] md:py-[60px] lg:w-[450px]'>
           <img src='/img/chart1.png' alt='' className='w-[238px] h-[238px] mx-auto mb-[75px]'/>
           <SalesChartData/>
         </div>
       </div>
-      <div className='xl:h-[510.5px]'>
-        <div className='flex h-[410.25px]'>
-            <div className='h-[360px] mt-[50px] w-full'>
+      <div className='px-[15px]'>
+        <div className='lg:w-[480px]'>
+            <div className='mt-[50px] lg:mt-[0px] w-full'>
               <SalesAllocation/>
             </div>
         </div>

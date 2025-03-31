@@ -1,6 +1,7 @@
 "use client"
 import React, { useState } from 'react';
 import SalesAllocationPage from '../SalesAllocationPage';
+import Button from '@/components/Button/Button';
 
 const SalesAllocation = () => {
   const [selectedId, setSelectedId] = useState<string>('1');
@@ -10,21 +11,21 @@ const SalesAllocation = () => {
   ];
 
   return (
-    <div className="flex flex-col items-center md:items-start w-full">
-      <div className="flex justify-center md:justify-start w-full">
+    <div className="flex flex-col items-center md:items-start">
+      <div className="flex justify-center md:justify-start">
         {allocations.map((item) => (
           <div 
             key={item.id}
-            className="relative cursor-pointer mb-[35px] md:mb-[50px]"
+            className="relative cursor-pointer mb-[35px] md:mb-[50px] ml-[-20px]"
             onClick={() => setSelectedId(item.id)}
           >
-            <div className="px-[15px] pb-[10px] h-[26.26px] inline-block">
+            <div className="pb-[10px] h-[26.26px] inline-block px-[20px]">
               <button className={`text-[15px] uppercase leading-7 font-bold text-white whitespace-nowrap`}>
                 {item.value}
               </button>
             
               <div 
-                className={`absolute bottom-0 left-1/2 -translate-x-1/2 w-[calc(100%-30px)] h-1 transition-all duration-300 ${
+                className={`absolute bottom-0 left-1/2 -translate-x-1/2 w-[calc(100%-40px)] h-1 transition-all duration-300 ${
                   selectedId === item.id ? 'bg-[#00c4f4]' : 'bg-transparent'
                 }`}
               />
@@ -42,6 +43,7 @@ const SalesAllocation = () => {
           />
         )
       ))}
+      <Button value={'BUY NOW'}/>
     </div>
   );
 }
