@@ -10,7 +10,7 @@ const BigTechContact = () => {
   ];
 
   return (
-    <div className='mb-[30px] w-[360px] lg:w-[320px] xl:w-[320px] px-[15px]'>
+    <div className='mb-[30px] w-[360px] lg:w-[320px] xl:w-[320px] md:px-[15px]'>
       <img src='/img/header.png' alt='' className='w-[140px] h-[83px] mb-[20px]' />
       <p className='text-[15px] text-[#a4b4c3] font-normal mb-[25px]'>
         A new way to make the payments easy, reliable and 100% secure. claritatem itamconse quat. Exerci tationulla

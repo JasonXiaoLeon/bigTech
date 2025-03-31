@@ -7,14 +7,14 @@ import ChooseItemlist from './Component/ChooseItemlist'
 const AboutUs = () => {
   return (
     <div className='w-screen bg-[#030b15]'>
-      <div className='flex flex-col items-center lg:flex-row lg:justify-center py-[120px] px-[15px]'>
+      <div className='flex flex-col items-center lg:flex-row lg:justify-center py-[120px] md:py-[130px] px-[15px]'>
           <div className='px-[15px]'>
-            <div className='flex justify-center mb-[50px] lg:mb-[0px] lg:pl-[20px] w-[360px] md:w-[690px] lg:w-[450px]'>
-                <img src='/img/banner2.png' alt='i' className='absolute w-[64px] h-[64px] left-[40px] top-[40px] hidden md:block z-10'/>
+            <div className='flex justify-center mb-[50px] lg:mb-[0px] lg:pl-[20px] xl:pl-[120px] w-[360px] md:w-[690px] lg:w-[450px] xl:w-[595px]'>
+                <img src='/img/banner2.png' alt='i' className='absolute w-[72px] h-[72px] md:left-[90px] lg:left-[40px] xl:left-[168px] md:top-[800px] lg:top-[820px] xl:top-[890px] rotate-90 hidden md:block z-10'/>
                 <img src='/img/about_img.png' alt='img' className='w-[360px] h-[360px] md:w-[486px] md:h-[486px] lg:w-[430px] lg:h-[430px] xl:w-[475px] xl:h-[475px]'/>
             </div> 
           </div>
-          <div className='md:mx-[24px] lg:mx-0 w-[360px] md:w-[720px] lg:w-[480px]'>
+          <div className='md:mx-[24px] lg:mx-0 w-[360px] md:w-[720px] lg:w-[480px] xl:w-[625px]'>
             <DescriptionOfAbout/>
           </div>
       </div>

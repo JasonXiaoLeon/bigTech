@@ -6,7 +6,7 @@ import RoadMap from "@/components/RoadMap";
 
 export default function Home() {
   return (
-    <div id="home">
+    <div id="home" className="bg-[linear-gradient(1turn,#0b1d33,rgba(11,29,51,0)_97.51%)]">
       <div>
         <Body/>
       </div>
@@ -21,10 +21,6 @@ export default function Home() {
 
       <div id="roadmap">
         <RoadMap/>
-      </div>
-
-      <div id="blog" className="h-screen bg-pink-200">
-        Blog
       </div>
 
       <div id="contact-us">

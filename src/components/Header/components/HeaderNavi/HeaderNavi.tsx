@@ -24,7 +24,7 @@ const HeaderNavi = () => {
   };
 
   return (
-    <div className="h-[90px] hidden xl:w-[831.38px] lg:w-[711.09px] lg:block">
+    <div className="h-[86px] lg:h-[90px] hidden xl:w-[831.38px] lg:w-[711.09px] lg:block">
       <div className="flex h-full lg:ml-[60px] xl:ml-[90px]">
         {navItems.map((item, index) => (
           <div key={index} className="h-full">

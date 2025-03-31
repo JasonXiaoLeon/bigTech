@@ -5,7 +5,7 @@ import Button from '@/components/Button/Button'
 
 const BuyButton = () => {
   return (
-    <div className='flex items-center h-[90px] ml-[10px] mr-[50px] lg:mr-[0px] hidden md:flex'>
+    <div className='flex items-center h-[86px] lg:h-[90px] ml-[10px] mr-[50px] lg:mr-[0px] hidden md:flex'>
       <div className='flex items-center'>
         <CurrencyUnitDropdown />
       </div>

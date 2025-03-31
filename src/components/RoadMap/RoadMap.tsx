@@ -4,6 +4,7 @@ import RoadMapLowerPart from './component/RoadMapLowerPart'
 import RoadMapUpperStart from './component/RoadMapUpperStart'
 import RoadMapList from './component/RoadMapList/RoadMapList'
 import NormalBtn from '../Button/NormalBtn/NormalBtn'
+import OurTeam from './component/OurTeam'
 
 const RoadMap = () => {
   return (
@@ -29,6 +30,9 @@ const RoadMap = () => {
         <div>
           <RoadMapLowerPart/>
         </div>
+      </div>
+      <div>
+          <OurTeam/>
       </div>
     </div>
   )

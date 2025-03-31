@@ -7,7 +7,7 @@ interface Props {
 
 const FooterListBlock: React.FC<Props> = ({ title, value }) => {
   return (
-    <div className='w-[360px] xl:w-[208.33px] mb-[30px] px-[15px]'>
+    <div className='w-[360px] xl:w-[208.33px] mb-[30px] md:px-[15px]'>
       <div className='mt-[25px] mb-[27px] text-[18px] text-white font-semibold'>
         {title}
       </div>
