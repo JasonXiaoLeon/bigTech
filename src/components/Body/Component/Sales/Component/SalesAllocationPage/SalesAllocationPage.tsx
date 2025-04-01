@@ -21,9 +21,9 @@ const SalesAllocationPage: React.FC<Props> = ({ title, content }) => {
       <div className="md:w-[570px] lg:w-[360px] xl:w-[363.75px] mb-[20px] xl:mb-[35px] text-[40px] tracking-[-0.01em] md:text-[45px] xl:text-[55px] text-white leading-[1.2] font-bold">
         {title}
       </div>
-      <div className="md:w-[570px] lg:w-[360px] xl:w-[363.75px] mb-[30px] lg:mb-[45px] text-[#a4b4c3] text-[16px] font-semibold">
+      <p className="md:w-[570px] lg:w-[360px] xl:w-[363.75px] mb-[30px] lg:mb-[45px] text-[#a4b4c3] text-[16px] font-normal leading-[1.75]">
         {content}
-      </div>
+      </p>
     </div>
   );
 };

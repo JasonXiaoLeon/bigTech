@@ -21,7 +21,7 @@ const PartnerGrid = () => {
   }
 
   return (
-    <div className="bg-[#030b15] flex justify-center">
+    <div className="flex justify-center">
       <div className="
           grid grid-cols-1 sm:grid-cols-1 md:grid-cols-3 lg:grid-cols-4 
           xl:grid-cols-5

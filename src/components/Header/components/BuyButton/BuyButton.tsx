@@ -11,7 +11,7 @@ const BuyButton = () => {
       </div>
       <div className='h-[20px] w-[1px] xl:ml-[35px] lg:border-l lg:border-l-[rgb(164,180,195)]' />
       <div className='flex pl-[20px] xl:pl-[35px] items-center'>
-          <Button value='BUY NOW'/>
+          <Button value='BUY NOW' width='143.28px' height='50px'/>
       </div>
     </div>
   )

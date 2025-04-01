@@ -9,8 +9,10 @@ interface props {
 
 const RoundedImg: React.FC<props> = ({ imgUrl, borderColor, imgWidth, imgHeight }) => {
   return (
-    <div className={`flex justify-center items-center rounded-full px-[7px] w-[44px] h-[44px] border hover:bg-[#00c4f4]`} style={{ borderColor }}>
-      <img src={imgUrl} alt='' className={`w-[18px] h-[18px]`} />
+    <div className='w-[58px] px-[7px]'>
+      <div className={`flex justify-center items-center rounded-full w-[44px] h-[44px] border-2 hover:bg-[#00c4f4]`} style={{ borderColor }}>
+        <img src={imgUrl} alt='' className={`w-[18px] h-[18px]`} />
+      </div>
     </div>
   )
 }

@@ -7,13 +7,21 @@ interface Props {
 
 const FooterListBlock: React.FC<Props> = ({ title, value }) => {
   return (
-    <div className='w-[360px] xl:w-[208.33px] mb-[30px] md:px-[15px]'>
-      <div className='mt-[25px] mb-[27px] text-[18px] text-white font-semibold'>
+    <div className='mb-[30px] md:px-[15px]'>
+      <div className='uppercase mt-[25px] mb-[27px] text-[18px] text-white font-bold leading-[1.2] tracking-[0.05em]'>
         {title}
       </div>
-      <div className='mb-[10px] text-[15px] text-[#a4b4c3]'>
+      <div className='text-[15px] text-[#a4b4c3] leading-[1.867]'>
         {value.map((item, index) => (
-          <div key={index} className="mb-[10px]">{item}</div>
+          <div key={index} className="group relative mb-[10px] last:mb-0 leading-[20px]">
+            <a
+              href='#'
+              className='inline-block hover:text-white relative overflow-hidden'
+            >
+              <span>{item}</span>
+              <span className="absolute bottom-0 left-0 block h-[2px] bg-white w-0 group-hover:w-full transition-all duration-300"></span>
+            </a>
+          </div>
         ))}
       </div>
     </div>

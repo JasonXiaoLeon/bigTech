@@ -18,7 +18,7 @@ const OurTeam = () => {
     <div className='pt-[130px]'>
       <RoadMapUpperPart 
         title={'Our team'} 
-        content2={'The Leadership'}
+        content1={'The Leadership'}
         blueContent={'\u00A0Team'}
         enter={true}
       />

@@ -1,6 +1,6 @@
 import React from 'react'
 import DescripHeader from '../DescripHeader/DescripHeader'
-import Button from '@/components/Button/Button'
+import NormalBtn from '@/components/Button/NormalBtn/NormalBtn'
 
 const DescriptionOfAbout = () => {
   return (
@@ -9,7 +9,7 @@ const DescriptionOfAbout = () => {
         <div className='relative left-[-15px]'>
           <DescripHeader content='Who we are'/>
         </div>
-        <div className='text-white text-[28px] md:text-[40px] lg:text-[34px] xl:text-[42px] font-bold leading-[1.2]'>
+        <div className='text-white text-[28px] md:text-[40px] lg:text-[34px] xl:text-[42px] font-bold leading-[1.2] tracking-[-.01em]'>
             <span>The World’s <span className='text-[#00c4f4]'> 1st ICO </span> Platform That Offers Rewards</span>
         </div> 
       </div>
@@ -18,7 +18,7 @@ const DescriptionOfAbout = () => {
       The World’s 1st ICO Platform That Offers Rewards and The platform helps investors to make easy to purchase and sell their tokens
       </div>
       <div className='md:ml-[30px] xl:ml-[55px] h-[55px] w-[204.7px]'>
-        <Button value='purchase tokens' color='white'/>
+        <NormalBtn value={'purchase tokens'} widthType={2}/>
       </div>
     </div>
   )

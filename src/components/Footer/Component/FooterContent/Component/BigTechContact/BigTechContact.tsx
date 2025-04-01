@@ -10,12 +10,12 @@ const BigTechContact = () => {
   ];
 
   return (
-    <div className='mb-[30px] w-[360px] lg:w-[320px] xl:w-[320px] md:px-[15px]'>
+    <div className='mb-[30px] xl:mb-[0px] w-[360px] lg:w-[320px] xl:w-[312.5px] md:px-[15px] lg:px-[0px] xl:px-[15px]'>
       <img src='/img/header.png' alt='' className='w-[140px] h-[83px] mb-[20px]' />
-      <p className='text-[15px] text-[#a4b4c3] font-normal mb-[25px]'>
+      <p className='text-[15px] text-[#a4b4c3] font-normal mb-[25px] leading-[26px] lg:w-[290px] xl:w-[282.5px]'>
         A new way to make the payments easy, reliable and 100% secure. claritatem itamconse quat. Exerci tationulla
       </p>
-      <div className='flex space-x-[10px]'>
+      <div className='flex ml-[-7px]'>
         {list.map((item, index) => (
           <RoundedImg 
             key={index} 

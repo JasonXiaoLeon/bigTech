@@ -15,7 +15,7 @@ const ContactUsLower = () => {
           key={index} 
           className={`flex justify-center ${
             index === 2 ? 'md:w-full' : ''
-          } lg:h-[207px] lg:w-[320px]`}
+          } w-[360px] lg:w-[320px] xl:w-[416.6px]`}
         >
           <ContactCard
             url={item.url}
@@ -25,10 +25,10 @@ const ContactUsLower = () => {
           />
         </div>
       ))}
-      <div className='hidden lg:block absolute top-1/4 lg:left-[calc(27%-16px)] xl:left-[calc(33%-16px)] transform -translate-y-1/2'>
+      <div className='hidden lg:block absolute top-1/4 lg:left-[calc(27%-16px)] xl:left-[calc(28.5%-16px)] transform -translate-y-1/2'>
         <img src='/img/icon/arrow.png' />
       </div>
-      <div className='hidden lg:block absolute top-1/4 lg:left-[calc(60%-16px)] transform -translate-y-1/2'>
+      <div className='hidden lg:block absolute top-1/4 lg:left-[calc(60.5%-16px)] xl:left-[calc(61.5%-16px)] transform -translate-y-1/2'>
         <img src='/img/icon/arrow.png' />
       </div>
     </div>

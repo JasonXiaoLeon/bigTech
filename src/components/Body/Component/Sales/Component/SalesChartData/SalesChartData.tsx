@@ -23,8 +23,8 @@ const SalesChartData = () => {
               {country.items.map((item) => (
                 <li key={item.title} className="flex items-center h-[24.5px] mb-[8px]">
                   <div className={`w-[20px] h-[20px] ${item.color} rounded-full shrink-0`}></div>
-                  <div className="flex ml-[10px] w-[280px] md:w-[220px] text-white text-[14px] font-semibold">
-                    <span className="">{item.title}</span>
+                  <div className="flex ml-[10px] w-[280px] md:w-[220px] text-white text-[14px] font-[500] leading-[1.75]">
+                    <span>{item.title}</span>
                   </div>
                 </li>
               ))}

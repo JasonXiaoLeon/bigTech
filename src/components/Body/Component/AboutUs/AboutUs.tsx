@@ -6,7 +6,7 @@ import ChooseItemlist from './Component/ChooseItemlist'
 
 const AboutUs = () => {
   return (
-    <div className='w-screen bg-[#030b15]'>
+    <div className='w-screen'>
       <div className='flex flex-col items-center lg:flex-row lg:justify-center py-[120px] md:py-[130px] px-[15px]'>
           <div className='px-[15px]'>
             <div className='flex justify-center mb-[50px] lg:mb-[0px] lg:pl-[20px] xl:pl-[120px] w-[360px] md:w-[690px] lg:w-[450px] xl:w-[595px]'>
@@ -20,7 +20,7 @@ const AboutUs = () => {
       </div>
       <div className=''>
           <div className='flex flex-col'>
-              <div className='flex items-center justify-center mb-[10px] w-full h-[52px]'>
+              <div className='flex items-center justify-center w-full h-[52px]'>
                   <div className='flex justify-center mb-[10px] w-[360px] h-full md:w-[720px] lg:w-[480px]'>
                       <DescripHeader content='Our top partner'/>
                   </div>

@@ -1,7 +1,7 @@
 "use client"
 import React, { useState } from 'react';
 import SalesAllocationPage from '../SalesAllocationPage';
-import Button from '@/components/Button/Button';
+import NormalBtn from '@/components/Button/NormalBtn/NormalBtn';
 
 const SalesAllocation = () => {
   const [selectedId, setSelectedId] = useState<string>('1');
@@ -11,12 +11,12 @@ const SalesAllocation = () => {
   ];
 
   return (
-    <div className="flex flex-col items-center md:items-start">
+    <div className="flex flex-col items-start">
       <div className="flex justify-center md:justify-start">
-        {allocations.map((item) => (
+        {allocations.map((item, index) => (
           <div 
             key={item.id}
-            className="relative cursor-pointer mb-[35px] md:mb-[50px] ml-[-20px]"
+            className={`relative cursor-pointer mb-[35px] md:mb-[50px] ${index === 0 ? 'ml-[-20px]' : 'ml-0'}`}
             onClick={() => setSelectedId(item.id)}
           >
             <div className="pb-[10px] h-[26.26px] inline-block px-[20px]">
@@ -43,7 +43,7 @@ const SalesAllocation = () => {
           />
         )
       ))}
-      <Button value={'BUY NOW'}/>
+      <NormalBtn value={'BUY NOW'}  widthType={3} color='#00c4f4' height='59px'/>
     </div>
   );
 }

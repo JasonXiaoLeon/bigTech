@@ -8,7 +8,7 @@ import OurTeam from './component/OurTeam'
 
 const RoadMap = () => {
   return (
-    <div className='bg-black flex flex-col'>
+    <div className='flex flex-col'>
       <div className='pt-[130px] pb-[50px]'>
         <RoadMapUpperPart 
           title={'Our Roadmap'} 
@@ -16,7 +16,13 @@ const RoadMap = () => {
           content2='Project' 
           blueContent='&nbsp;Plan'/>
       </div>
-      <div className='flex flex-col lg:flex-row-reverse lg:justify-center'>
+      <div className='flex flex-col lg:flex-row-reverse lg:justify-center md:bg-cover md:bg-center'
+            style={{
+              backgroundImage: 'url(/img/sales.jpg)',
+              backgroundSize: '850%',
+              backgroundPosition: 'center bottom',
+            }}
+          >
         <div className='lg:w-[400px] lg:px-[15px] xl:w-[520.83px] lg:mt-[50px] mb-[50px] lg:mb-[0px] px-[15px] md:px-[0px]'>
           <RoadMapUpperStart 
             title={'WhitePaper'}
@@ -24,7 +30,7 @@ const RoadMap = () => {
             blueContent='Documents'/>
           <RoadMapList/>
           <div className='flex w-[360px] md:w-[390px] xl:w-[490px] mx-auto'>
-            <NormalBtn value='Download DOc'/>
+            <NormalBtn value='Download DOc' widthType={1}/>
           </div>
         </div>
         <div>
