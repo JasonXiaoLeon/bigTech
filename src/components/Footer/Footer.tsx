@@ -1,7 +1,7 @@
 import React from 'react'
 import GoTopBtn from './Component/GoTopBtn'
-import CopyRight from './Component/Copyright'
 import FooterContent from './Component/FooterContent'
+import Copyright from './Component/Copyright'
 
 const Footer = () => {
     return (
@@ -9,7 +9,7 @@ const Footer = () => {
             <div className="w-[360px] md:w-[720px] lg:w-[930px] xl:w-[1220px]">
                 <GoTopBtn />
                 <FooterContent />
-                <CopyRight />
+                <Copyright />
             </div>
         </div>
     )

@@ -1,7 +1,7 @@
 import React from 'react'
 import TermBtn from './Component/termBtn'
 
-const CopyRight = () => {
+const Copyright = () => {
     const list = [
         { value: 'Terms and conditions', url: '/terms' },
         { value: 'Privacy policy', url: '/privacy-policy' },
@@ -24,4 +24,4 @@ const CopyRight = () => {
     )
 }
 
-export default CopyRight
+export default Copyright

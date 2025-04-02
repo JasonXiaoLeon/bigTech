@@ -22,16 +22,18 @@ const ComponentCarousel: React.FC<ComponentCarouselProps> = ({
         const updateDimensions = () => {
             const width = window.innerWidth
             console.log('Window width:', width)
-            
+
             if (width < 768) {
                 setVisibleCount(1)
                 setContainerWidth(350)
                 setItemWidth(340)
-            } else if (width >= 768 && width < 1024) { // 修改这里，确保 768 到 1024 之间适配
+            } else if (width >= 768 && width < 1024) {
+                // 修改这里，确保 768 到 1024 之间适配
                 setVisibleCount(2)
                 setContainerWidth(680)
                 setItemWidth(340)
-            } else if (width >= 1024 && width < 1440) { // 修改这里，确保 1024 到 1440 之间适配
+            } else if (width >= 1024 && width < 1440) {
+                // 修改这里，确保 1024 到 1440 之间适配
                 setVisibleCount(3)
                 setContainerWidth(921)
                 setItemWidth(307)
@@ -41,14 +43,14 @@ const ComponentCarousel: React.FC<ComponentCarouselProps> = ({
                 setItemWidth(303)
             }
         }
-    
+
         updateDimensions() // 初始化时调用一次
-    
+
         window.addEventListener('resize', updateDimensions)
         return () => {
             window.removeEventListener('resize', updateDimensions)
         }
-    }, [])    
+    }, [])
 
     const extendedComponents =
         components.length > visibleCount
@@ -56,7 +58,6 @@ const ComponentCarousel: React.FC<ComponentCarouselProps> = ({
             : components
 
     const originalCount = components.length
-    const totalCount = extendedComponents.length
 
     // 每次滑动的固定步长
     const slideDistance = itemWidth // 每次滑动的距离
