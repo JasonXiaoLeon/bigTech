@@ -1,1 +1,1 @@
-export {default } from './TermBtn'
+export { default } from './TermBtn'

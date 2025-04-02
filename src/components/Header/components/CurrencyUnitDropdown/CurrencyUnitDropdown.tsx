@@ -1,39 +1,42 @@
-"use client"
-import React, { useState, useEffect, useRef } from 'react';
-import CurrDropdown from './component/CurrDropdown';
+'use client'
+import React, { useState, useEffect, useRef } from 'react'
+import CurrDropdown from './component/CurrDropdown'
 
 const CurrencyUnitDropdown = () => {
-  const [isMenuVisible, setIsMenuVisible] = useState(false);
-  const dropdownRef = useRef<HTMLDivElement>(null);
+    const [isMenuVisible, setIsMenuVisible] = useState(false)
+    const dropdownRef = useRef<HTMLDivElement>(null)
 
-  useEffect(() => {
-    const handleClickOutside = (event: MouseEvent) => {
-      if (dropdownRef.current && !dropdownRef.current.contains(event.target as Node)) {
-        setIsMenuVisible(false);
-      }
-    };
+    useEffect(() => {
+        const handleClickOutside = (event: MouseEvent) => {
+            if (dropdownRef.current && !dropdownRef.current.contains(event.target as Node)) {
+                setIsMenuVisible(false)
+            }
+        }
 
-    document.addEventListener('mousedown', handleClickOutside);
-    return () => {
-      document.removeEventListener('mousedown', handleClickOutside);
-    };
-  }, []);
+        document.addEventListener('mousedown', handleClickOutside)
+        return () => {
+            document.removeEventListener('mousedown', handleClickOutside)
+        }
+    }, [])
 
-  return (
-    <div ref={dropdownRef} className='flex hidden xl:block'>
-      <div onMouseEnter={() => setIsMenuVisible(true)} className='w-[55.91px] h-[28px] flex items-center'>
-        <span className='text-white text-base text-[16px] tracking-1px font-bold'>ENG</span>
-        <button className=''>
-          <img 
-            src='/img/icon/arrow-down.png' 
-            className='w-[9.75px] h-[24.5px] object-contain ml-[10px]' 
-            alt='▼'
-          />
-        </button>
-      </div>
-      {isMenuVisible && <CurrDropdown />}
-    </div>
-  );
-};
+    return (
+        <div ref={dropdownRef} className="flex hidden xl:block">
+            <div
+                onMouseEnter={() => setIsMenuVisible(true)}
+                className="w-[55.91px] h-[28px] flex items-center"
+            >
+                <span className="text-white text-base text-[16px] tracking-1px font-bold">ENG</span>
+                <button className="">
+                    <img
+                        src="/img/icon/arrow-down.png"
+                        className="w-[9.75px] h-[24.5px] object-contain ml-[10px]"
+                        alt="▼"
+                    />
+                </button>
+            </div>
+            {isMenuVisible && <CurrDropdown />}
+        </div>
+    )
+}
 
-export default CurrencyUnitDropdown;
+export default CurrencyUnitDropdown
