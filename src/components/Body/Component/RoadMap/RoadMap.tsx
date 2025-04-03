@@ -3,7 +3,7 @@ import RoadMapUpperPart from './component/RoadMapUpperPart'
 import RoadMapLowerPart from './component/RoadMapLowerPart'
 import RoadMapUpperStart from './component/RoadMapUpperStart'
 import RoadMapList from './component/RoadMapList/RoadMapList'
-import NormalBtn from '../Button/NormalBtn/NormalBtn'
+import NormalBtn from '../../../Button/NormalBtn/NormalBtn'
 import OurTeam from './component/OurTeam'
 import LongScrollChart from './component/LongScrollChart'
 
@@ -17,7 +17,12 @@ const RoadMap = () => {
                         title={'Our Roadmap'}
                         content1="Bigtech Strategy and "
                         content2="Project"
-                        blueContent="&nbsp;Plan"
+                        blueContent={
+                            <>
+                                <span className="inline">&nbsp;Plan</span>
+                            </>
+                        }
+                        marginBottom={'60px'}
                     />
                 </div>
                 <div className="flex justify-center mt-[10px]">
@@ -35,6 +40,7 @@ const RoadMap = () => {
                         title={'WhitePaper'}
                         content1="Read BigTech "
                         blueContent="Documents"
+                        marginBottom={'35px'}
                     />
                     <RoadMapList />
                     <div className="flex w-[360px] md:w-[390px] xl:w-[490px] mx-auto">

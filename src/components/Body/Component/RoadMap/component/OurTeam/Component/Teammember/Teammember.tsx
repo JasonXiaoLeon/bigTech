@@ -15,6 +15,7 @@ const Teammember: React.FC<props> = ({ imgUrl, name, jobTitle }) => {
                     <div className="absolute top-[-6px] w-[222px] h-[222px] border-[2px] border-[#00c4f4] border-dashed rounded-full opacity-0 group-hover:opacity-100 group-hover:animate-spin-fast transition-all duration-300"></div>
                     <img
                         src={imgUrl}
+                        loading="lazy"
                         className="w-[197px] h-[197px] md:w-[180px] md:h-[180px] lg:w-[197px] lg:h-[197px] rounded-full absolute group-hover:filter-none group-hover:grayscale-0 filter grayscale transition-all duration-300"
                     />
                 </div>

@@ -4,13 +4,16 @@ interface props {
     title: string
     content1?: string
     blueContent?: string
+    marginBottom: string
 }
 
-const RoadMapUpperStart: React.FC<props> = ({ title, content1, blueContent }) => {
+const RoadMapUpperStart: React.FC<props> = ({ title, content1, blueContent, marginBottom }) => {
     return (
         <div className="flex md:justify-center">
             <div className="flex justify-center w-[390px] md:w-[750px] lg:w-[400px] xl:w-[490px]">
-                <div className="w-[360px] md:w-[390px] lg:w-[370px] xl:w-[490px] mb-[35px]">
+                <div
+                    className={`w-[360px] md:w-[390px] lg:w-[370px] xl:w-[490px] mb-[${marginBottom}]`}
+                >
                     <div className="flex ml-[-15px]">
                         <DescripHeader content={title} />
                     </div>

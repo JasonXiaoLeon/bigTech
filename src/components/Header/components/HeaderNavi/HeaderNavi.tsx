@@ -24,7 +24,7 @@ const HeaderNavi = () => {
     }
 
     return (
-        <div className="h-[86px] lg:h-[90px] hidden xl:w-[831.38px] lg:w-[711.09px] lg:block">
+        <div className="h-[86px] lg:h-[90px] hidden xl:w-[831.18px] lg:w-[711.09px] lg:block">
             <div className="flex h-full lg:ml-[60px] xl:ml-[90px]">
                 {navItems.map((item, index) => (
                     <div key={index} className="h-full">
@@ -34,7 +34,7 @@ const HeaderNavi = () => {
                                 e.preventDefault()
                                 handleClick(index, item.path)
                             }}
-                            className={`relative flex items-center h-full text-white text-[14px] font-bold inline-block group 
+                            className={`relative flex items-center h-full text-white text-[14px] font-[600] leading-[1] tracking-[1px] inline-block group 
                 ${index !== navItems.length - 1 ? 'mr-[40px]' : ''} 
                 tracking-1px`}
                         >

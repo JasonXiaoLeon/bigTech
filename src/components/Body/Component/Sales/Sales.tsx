@@ -19,6 +19,7 @@ const Sales = () => {
                             src="/img/chart1.png"
                             alt=""
                             className="w-[238px] h-[238px] mx-auto mb-[75px]"
+                            loading="lazy"
                         />
                         <SalesChartData />
                     </div>

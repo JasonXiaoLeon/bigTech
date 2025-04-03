@@ -1,5 +1,5 @@
 import CubeBtn from '@/components/Button/CubeBtn'
-import SocialMeidaIcon from '@/components/RoadMap/component/OurTeam/Component/SocialMediaIcon'
+import SocialMeidaIcon from '@/components/Body/Component/RoadMap/component/OurTeam/Component/SocialMediaIcon'
 import React, { useState, useEffect, useRef } from 'react'
 
 const SmallNavBtn = () => {

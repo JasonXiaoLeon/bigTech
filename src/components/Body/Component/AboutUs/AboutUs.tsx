@@ -3,6 +3,7 @@ import DescriptionOfAbout from './Component/DescriptionOfAbout'
 import DescripHeader from './Component/DescripHeader/DescripHeader'
 import PartnerGrid from './Component/PartnerGrid'
 import ChooseItemlist from './Component/ChooseItemlist'
+import RoadMapUpperPart from '../RoadMap/component/RoadMapUpperPart'
 
 const AboutUs = () => {
     return (
@@ -26,7 +27,7 @@ const AboutUs = () => {
                     <DescriptionOfAbout />
                 </div>
             </div>
-            <div className="">
+            <div>
                 <div className="flex flex-col">
                     <div className="flex items-center justify-center w-full h-[52px]">
                         <div className="flex justify-center mb-[10px] w-[360px] h-full md:w-[720px] lg:w-[480px]">
@@ -38,21 +39,20 @@ const AboutUs = () => {
                     </div>
                 </div>
             </div>
-            <div className="w-[360px] mx-auto px-[15px] bg-[##030b15] md:w-[690px] lg:w-[960px] xl:w-[1250px]">
+            <div className="mx-auto px-[15px] bg-[##030b15] pb-[130px]">
                 <div className="flex flex-col items-center">
+                    <RoadMapUpperPart
+                        title={'why Choose us'}
+                        content2="Why choose our Bigtech "
+                        blueContent={
+                            <>
+                                <h2 className="text-center">&nbsp;Token</h2>
+                            </>
+                        }
+                        marginBottom={'50px'}
+                    />
                     <div>
-                        <DescripHeader content="why Choose us" />
-                    </div>
-                    <div>
-                        <div className="flex justify-center mb-[50px] text-white text-[28px] md:text-[40px] lg:text-[34px] xl:text-[42px] w-full font-bold leading-[1.2]">
-                            <span className="text-center">
-                                Why choose our Bigtech{' '}
-                                <span className="text-[#00c4f4] xl:whitespace-nowrap"> Token </span>
-                            </span>
-                        </div>
-                        <div>
-                            <ChooseItemlist />
-                        </div>
+                        <ChooseItemlist />
                     </div>
                 </div>
             </div>

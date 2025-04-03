@@ -23,8 +23,8 @@ const ComponentCarousel: React.FC<ComponentCarouselProps> = ({
 
             if (width < 768) {
                 setVisibleCount(1)
-                setContainerWidth(350)
-                setItemWidth(340)
+                setContainerWidth(360)
+                setItemWidth(350)
             } else if (width >= 768 && width < 1024) {
                 setVisibleCount(2)
                 setContainerWidth(680)
@@ -81,7 +81,7 @@ const ComponentCarousel: React.FC<ComponentCarouselProps> = ({
 
     return (
         <div
-            className="relative overflow-hidden"
+            className="relative overflow-hidden ml-[15px] md:ml-[0px]"
             style={{ width: `${containerWidth}px`, height: `${containerHeight}px` }}
         >
             <div

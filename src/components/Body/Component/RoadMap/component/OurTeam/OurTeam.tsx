@@ -19,8 +19,8 @@ const OurTeam = () => {
             <RoadMapUpperPart
                 title={'Our team'}
                 content1={'The Leadership'}
-                blueContent={'\u00A0Team'}
-                enter={true}
+                blueContent={'Team'}
+                marginBottom={'70px'}
             />
             <div className="grid grid-cols-1 md:grid-cols-3 xl:grid-cols-4 w-screen md:w-[720px] lg:w-[960px] xl:w-[1250px] mx-auto">
                 {teamMembers.map((member, index) => (
