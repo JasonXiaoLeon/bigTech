@@ -7,7 +7,7 @@ interface Props {
 
 const TermBtn: React.FC<Props> = ({ value, url }) => {
     return (
-        <div className="px-[20px] text-[15px] text-[#a4b4c3] leading-[1.867]">
+        <div className="px-[20px] xl:px-[30px] text-[15px] text-[#a4b4c3] leading-[1.867]">
             <a href={url} className="">
                 <button>{value}</button>
             </a>

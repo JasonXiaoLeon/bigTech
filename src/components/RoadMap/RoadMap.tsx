@@ -10,7 +10,8 @@ import LongScrollChart from './component/LongScrollChart'
 const RoadMap = () => {
     return (
         <div className="flex flex-col">
-            <div>
+            <div className="relative">
+                <div className="absolute inset-0 bg-[url('/img/banner_bg.jpg')] bg-cover bg-no-repeat opacity-10 xl:scale-130 transform xl:translate-y-[100px] xl:translate-x-[-150px]"></div>
                 <div className="pt-[130px]">
                     <RoadMapUpperPart
                         title={'Our Roadmap'}

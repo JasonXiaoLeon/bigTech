@@ -14,7 +14,7 @@ const SalesAllocationPage: React.FC<Props> = ({ title, content }) => {
 
     return (
         <div
-            className={`flex flex-col w-full  mt-[20px] lg:w-[480px] md:mt-[0px] transition-opacity duration-700 ${
+            className={`flex flex-col w-full lg:w-[480px] md:mt-[0px] transition-opacity duration-700 ${
                 isVisible ? 'opacity-100' : 'opacity-0'
             }`}
         >

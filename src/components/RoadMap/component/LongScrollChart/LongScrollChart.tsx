@@ -69,7 +69,6 @@ const LongScrollChart = () => {
 
     return (
         <div className="relative flex h-[490px] overflow-x-auto px-[15px] w-[390px] md:w-[720px] lg:w-[960px] xl:w-[1250px]">
-            <div className="absolute inset-0 bg-[url('/img/banner_bg.jpg')] bg-cover bg-no-repeat bg-center opacity-10"></div>
             <div className="grid grid-cols-[215px_220px_215px_220px_215px_220px_215px_220px] z-10 overflow-x-auto overflow-y-hidden">
                 {dataList.map((item, index) => (
                     <LongScrollChartBlock

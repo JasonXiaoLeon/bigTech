@@ -3,17 +3,19 @@ import React from 'react'
 const CurrDropdown = () => {
     const currList = ['IND', 'BNG', 'TUR', 'CIN']
     return (
-        <div className="bg-[#0b1d33] p-[10px] absolute rounded-md shadow-[0_30px_70px_0_rgba(40,44,49,.15)] min-w-[100px] top-[80px]">
-            <ul>
-                {currList.map((currency, index) => (
-                    <li
-                        key={index}
-                        className="flex items-center text-white w-[100px] h-[25px] p-[15px] text-sm"
-                    >
-                        {currency}
-                    </li>
-                ))}
-            </ul>
+        <div className="relative">
+            <div className="bg-[#0b1d33] py-[10px] absolute rounded-[6px] shadow-[0_30px_70px_0_rgba(40,44,49,.15)] xl:w-[100px] left-[-10px] top-[25px]">
+                <ul>
+                    {currList.map((currency, index) => (
+                        <li
+                            key={index}
+                            className="flex uppercase items-center text-white w-[100px] px-[15px] py-[5px] mb-[5px] last:mb-0 text-[15px] tracking-[1px] leading-[1]"
+                        >
+                            {currency}
+                        </li>
+                    ))}
+                </ul>
+            </div>
         </div>
     )
 }

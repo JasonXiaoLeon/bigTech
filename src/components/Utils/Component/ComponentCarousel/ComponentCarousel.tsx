@@ -17,23 +17,19 @@ const ComponentCarousel: React.FC<ComponentCarouselProps> = ({
     const [visibleCount, setVisibleCount] = useState<number>(3)
     const [containerWidth, setContainerWidth] = useState<number>(380)
     const [itemWidth, setItemWidth] = useState<number>(350)
-    // 计算屏幕尺寸，调整可见项目数量
     useEffect(() => {
         const updateDimensions = () => {
             const width = window.innerWidth
-            console.log('Window width:', width)
 
             if (width < 768) {
                 setVisibleCount(1)
                 setContainerWidth(350)
                 setItemWidth(340)
             } else if (width >= 768 && width < 1024) {
-                // 修改这里，确保 768 到 1024 之间适配
                 setVisibleCount(2)
                 setContainerWidth(680)
                 setItemWidth(340)
             } else if (width >= 1024 && width < 1440) {
-                // 修改这里，确保 1024 到 1440 之间适配
                 setVisibleCount(3)
                 setContainerWidth(921)
                 setItemWidth(307)
@@ -44,7 +40,7 @@ const ComponentCarousel: React.FC<ComponentCarouselProps> = ({
             }
         }
 
-        updateDimensions() // 初始化时调用一次
+        updateDimensions()
 
         window.addEventListener('resize', updateDimensions)
         return () => {
@@ -104,7 +100,6 @@ const ComponentCarousel: React.FC<ComponentCarouselProps> = ({
                 })}
             </div>
 
-            {/* 进度条 */}
             <div className="mt-4" style={{ width: `${containerWidth}px` }}>
                 <div className="w-full h-1 bg-gray-300">
                     <div

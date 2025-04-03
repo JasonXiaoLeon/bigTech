@@ -6,6 +6,7 @@ interface Props {
     widthType?: number
     color?: string
     height?: string
+    fontWeight?: string
 }
 
 const NormalBtn: React.FC<Props> = ({
@@ -14,13 +15,14 @@ const NormalBtn: React.FC<Props> = ({
     widthType = 0,
     color = '#0b1d33',
     height,
+    fontWeight,
 }) => {
     const widthList = ['179.48px', '190.23px', '204.7px', '168.59px']
 
     return (
         <div className="flex justify-center items-center">
             <button
-                className={`flex justify-center items-center rounded-[70px] text-white uppercase h-[55px] bg-[${color}] shadow-lg border-2 border-[#00c4f4] text-[${textSize}]`}
+                className={`flex justify-center items-center rounded-[70px] text-white uppercase h-[55px] bg-[${color}] shadow-lg border-2 border-[#00c4f4] text-[${textSize}] font-[${fontWeight}]`}
                 style={{ width: widthList[widthType], height }}
             >
                 {value}

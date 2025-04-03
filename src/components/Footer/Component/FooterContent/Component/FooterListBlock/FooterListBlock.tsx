@@ -11,9 +11,9 @@ const FooterListBlock: React.FC<Props> = ({ title, value }) => {
             <div className="uppercase mt-[25px] mb-[27px] text-[18px] text-white font-bold leading-[1.2] tracking-[0.05em]">
                 {title}
             </div>
-            <div className="text-[15px] text-[#a4b4c3] leading-[1.867]">
+            <div className="text-[15px] text-[#a4b4c3] leading-[1.467]">
                 {value.map((item, index) => (
-                    <div key={index} className="group relative mb-[10px] last:mb-0 leading-[20px]">
+                    <div key={index} className="group relative mb-[10px] last:mb-0">
                         <a
                             href="#"
                             className="inline-block hover:text-white relative overflow-hidden"

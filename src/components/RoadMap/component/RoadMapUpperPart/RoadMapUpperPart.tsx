@@ -27,7 +27,7 @@ const RoadMapUpperPart: React.FC<props> = ({
                     <div className="text-[28px] md:text-[40px] tracking-[-0.01em] lg:text-[34px] xl:text-[42px] leading-[1.2] flex justify-center text-white font-bold">
                         <h2 className="md:block">
                             {content1}
-                            <span className="flex justify-center">
+                            <span className="md:flex md:justify-center">
                                 {content2}
                                 <span className="text-[#00c4f4] md:block md:text-center">
                                     {blueContent}
