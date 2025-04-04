@@ -22,25 +22,16 @@ const PartnerGrid = () => {
 
     return (
         <div className="flex justify-center">
-            <div
-                className="
-          grid grid-cols-1 sm:grid-cols-1 md:grid-cols-3 lg:grid-cols-4
-          xl:grid-cols-5
-          w-[360px] md:w-[690px] lg:w-[930px] xl:w-[1220px]
-          "
-            >
+            <ul className="flex flex-wrap justify-center w-[360px] md:w-[720px] lg:w-[960px] xl:w-[1250px] px-[15px]">
                 {partners.map((partnerName, index) => (
-                    <div
+                    <li
                         key={index}
-                        className="
-              group hover:bg-[#061220]
-              transition-colors duration-300
-              "
+                        className="group hover:bg-[#061220] transition-colors duration-300"
                     >
                         <DescripPartner index={index} partnerName={partnerName} />
-                    </div>
+                    </li>
                 ))}
-            </div>
+            </ul>
         </div>
     )
 }

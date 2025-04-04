@@ -4,11 +4,11 @@ const SalesChartData = () => {
     const countries = [
         {
             items: [
-                { title: 'Contingency:', data: '70%', color: 'bg-[#005f73]' },
-                { title: 'Business Development:', data: '10%', color: 'bg-[#f72585]' },
-                { title: 'Investor:', data: '30%', color: 'bg-[#5dd400]' },
+                { title: 'Contingency:', data: ' 70%', color: 'bg-[#005f73]' },
+                { title: 'Business Development:', data: ' 10%', color: 'bg-[#f72585]' },
+                { title: 'Investor:', data: ' 30%', color: 'bg-[#5dd400]' },
                 { title: 'Poland', data: '', color: 'bg-[#ff9700]' },
-                { title: 'Legal & Regulation:', data: '10%', color: 'bg-[#00c4f4]' },
+                { title: 'Legal & Regulation:', data: ' 10%', color: 'bg-[#00c4f4]' },
                 { title: 'Czech Republic', data: '', color: 'bg-[#007ff4]' },
             ],
         },

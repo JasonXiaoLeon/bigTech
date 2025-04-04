@@ -26,7 +26,7 @@ const RoadMapUpperPart: React.FC<props> = ({
                         <DescripHeader content={title} />
                     </div>
                     <div className="text-[28px] md:text-[40px] tracking-[-0.01em] lg:text-[34px] xl:text-[42px] leading-[1.2] flex justify-center text-white font-bold">
-                        <h2 className="text-center">
+                        <h2 className="text-center capitalize">
                             <span className="md:block xl:inline">{content1}</span>
                             <span className="md:flex xl:block md:justify-center">
                                 {content2}

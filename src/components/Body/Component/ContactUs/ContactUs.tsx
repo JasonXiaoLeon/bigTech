@@ -1,7 +1,7 @@
 import React from 'react'
 import ContactUsLower from './Component/ContactUsLower'
 import ContactForm from './Component/ContactForm'
-import RoadMapUpperPart from '../Component/RoadMap/component/RoadMapUpperPart'
+import RoadMapUpperPart from '../RoadMap/component/RoadMapUpperPart'
 
 const ContactUs = () => {
     return (
@@ -10,9 +10,11 @@ const ContactUs = () => {
                 title={'contact'}
                 blueContent={'Contact'}
                 afterBlueContent="&nbsp;ICO Crypto"
-                marginBottom={'70px'}
+                marginBottom={'60px'}
             />
-            <ContactUsLower />
+            <div className='mt-[10px]'>
+                <ContactUsLower />
+            </div>
             <ContactForm />
         </div>
     )

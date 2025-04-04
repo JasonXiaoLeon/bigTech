@@ -4,7 +4,7 @@ import React, { Suspense } from 'react'
 const Body = React.lazy(() => import('@/components/Body'))
 const AboutUs = React.lazy(() => import('@/components/Body/Component/AboutUs'))
 const Sales = React.lazy(() => import('@/components/Body/Component/Sales'))
-const ContactUs = React.lazy(() => import('@/components/Body/ContactUs/ContactUs'))
+const ContactUs = React.lazy(() => import('@/components/Body/Component/ContactUs/ContactUs'))
 const RoadMap = React.lazy(() => import('@/components/Body/Component/RoadMap'))
 
 export default function Home() {

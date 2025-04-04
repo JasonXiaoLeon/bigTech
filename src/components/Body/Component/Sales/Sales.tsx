@@ -6,7 +6,7 @@ const Sales = () => {
     return (
         <div className="flex justify-center">
             <div
-                className="flex flex-col lg:flex-row-reverse md:items-center lg:justify-center py-[130px] xl:w-[1220px] xl:px-[110px] relative"
+                className="flex flex-col lg:flex-row-reverse md:items-center lg:justify-center py-[130px] xl:w-[1250px] xl:px-[110px] relative"
                 style={{
                     backgroundImage: 'url(/img/sales.jpg)',
                     backgroundSize: 'cover',

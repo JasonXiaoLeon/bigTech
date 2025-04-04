@@ -22,7 +22,8 @@ const DescriptionOfAbout = () => {
                 make easy to purchase and sell their tokens
             </div>
             <div className="md:ml-[30px] xl:ml-[55px] h-[55px] w-[204.7px]">
-                <NormalBtn value={'purchase tokens'} widthType={2} />
+                <NormalBtn value={'purchase tokens'} widthType={2} textHoverColor="#00c4f4"
+                />
             </div>
         </div>
     )

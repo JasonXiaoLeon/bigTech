@@ -43,7 +43,7 @@ const AboutUs = () => {
                 <div className="flex flex-col items-center">
                     <RoadMapUpperPart
                         title={'why Choose us'}
-                        content2="Why choose our Bigtech "
+                        content2="Why Choose Our Bigtech "
                         blueContent={
                             <>
                                 <h2 className="text-center">&nbsp;Token</h2>

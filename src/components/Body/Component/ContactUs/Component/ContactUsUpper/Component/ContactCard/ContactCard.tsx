@@ -13,7 +13,7 @@ const ContactCard: React.FC<props> = ({ url, firstLine, secondLine, borderColor 
             <div className="flex flex-col items-center mb-[30px]">
                 <div className="flex justify-center items-center w-[107px] h-[107px] mb-[10px] mx-auto border-[1px] border-[hsla(0,0%,100%,.07)] border-[hsla(0,0%,100%,.07)] rounded-full">
                     <div
-                        className="flex justify-center rounded-full bg-[#0b1d33] items-center w-[83px] h-[83px] border-2"
+                        className="flex justify-center rounded-full bg-[#0b1d33] items-center w-[83px] h-[83px] border-[3px]"
                         style={{ borderColor: `${borderColor}` }}
                     >
                         <img

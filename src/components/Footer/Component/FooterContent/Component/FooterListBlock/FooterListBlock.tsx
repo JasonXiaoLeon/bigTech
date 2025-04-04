@@ -16,7 +16,7 @@ const FooterListBlock: React.FC<Props> = ({ title, value }) => {
                     <div key={index} className="group relative mb-[10px] last:mb-0">
                         <a
                             href="#"
-                            className="inline-block hover:text-white relative overflow-hidden"
+                            className="inline-block hover:text-white relative overflow-hidden cursor-pointer"
                         >
                             <span>{item}</span>
                             <span className="absolute bottom-0 left-0 block h-[2px] bg-white w-0 group-hover:w-full transition-all duration-300"></span>

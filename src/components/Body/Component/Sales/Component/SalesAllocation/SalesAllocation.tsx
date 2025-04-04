@@ -64,6 +64,7 @@ const SalesAllocation = () => {
                 color="#00c4f4"
                 height="59px"
                 fontWeight="700"
+                textHoverColor='white'
             />
         </div>
     )

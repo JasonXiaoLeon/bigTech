@@ -36,22 +36,26 @@ const RoadMap = () => {
                 }}
             >
                 <div className="lg:w-[400px] lg:px-[15px] xl:w-[520.83px] lg:mt-[50px] mb-[50px] lg:mb-[0px] px-[15px] md:px-[0px]">
-                    <RoadMapUpperStart
-                        title={'WhitePaper'}
-                        content1="Read BigTech "
-                        blueContent="Documents"
-                        marginBottom={'35px'}
-                    />
+                    <div>
+                        <RoadMapUpperStart
+                            title={'WhitePaper'}
+                            content1="Read BigTech "
+                            blueContent="Documents"
+                            marginBottom={'35px'}
+                        />
+                    </div>
+                    <div>
                     <RoadMapList />
-                    <div className="flex w-[360px] md:w-[390px] xl:w-[490px] mx-auto">
-                        <NormalBtn value="Download DOc" widthType={1} />
+                        <div className="flex w-[360px] md:w-[390px] xl:w-[490px] mx-auto">
+                            <NormalBtn value="Download DOc" widthType={1} />
+                        </div>
                     </div>
                 </div>
                 <div>
                     <RoadMapLowerPart />
                 </div>
             </div>
-            <div>
+            <div className='flex'>
                 <OurTeam />
             </div>
         </div>

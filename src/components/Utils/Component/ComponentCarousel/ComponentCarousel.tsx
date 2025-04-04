@@ -17,6 +17,16 @@ const ComponentCarousel: React.FC<ComponentCarouselProps> = ({
     const [visibleCount, setVisibleCount] = useState<number>(3)
     const [containerWidth, setContainerWidth] = useState<number>(380)
     const [itemWidth, setItemWidth] = useState<number>(350)
+    const [isTransitioning, setIsTransitioning] = useState(true)
+
+    const originalCount = components.length
+
+    // 克隆前 visibleCount 个组件到尾部
+    const extendedComponents =
+        originalCount > visibleCount
+            ? [...components, ...components.slice(0, visibleCount)]
+            : components
+
     useEffect(() => {
         const updateDimensions = () => {
             const width = window.innerWidth
@@ -41,32 +51,16 @@ const ComponentCarousel: React.FC<ComponentCarouselProps> = ({
         }
 
         updateDimensions()
-
         window.addEventListener('resize', updateDimensions)
-        return () => {
-            window.removeEventListener('resize', updateDimensions)
-        }
+        return () => window.removeEventListener('resize', updateDimensions)
     }, [])
 
-    const extendedComponents =
-        components.length > visibleCount
-            ? [...components, ...components.slice(0, visibleCount)]
-            : components
-
-    const originalCount = components.length
-
-    // 每次滑动的固定步长
-    const slideDistance = itemWidth // 每次滑动的距离
-
-    const trackWidth = originalCount * itemWidth // 使用原始组件数量计算总宽度
-    const translateX = (currentIndex % originalCount) * slideDistance // 确保滑动的距离按固定步长
-
-    const normalizedIndex = currentIndex % originalCount
-    const progressRatio = Math.min((normalizedIndex + visibleCount) / originalCount, 1)
-
-    // 切换到下一个项目
     const nextSlide = () => {
-        setCurrentIndex((prevIndex) => (prevIndex + 1) % originalCount) // 确保循环
+        setCurrentIndex((prevIndex) => {
+            setIsTransitioning(true)
+            // 当当前索引大于等于总数时，重置为 0
+            return prevIndex + 1 >= originalCount ? 0 : prevIndex + 1
+        })
     }
 
     useEffect(() => {
@@ -79,35 +73,64 @@ const ComponentCarousel: React.FC<ComponentCarouselProps> = ({
         }
     }, [autoPlay, interval])
 
+    const trackWidth = extendedComponents.length * itemWidth
+    const translateX = currentIndex * itemWidth
+
+    // 轮播逻辑处理，确保循环播放时进度条正确
+    const normalizedIndex = currentIndex // 当前的索引直接使用，不再需要取余数
+
+    // 计算进度条比例
+    const progressRatio = originalCount > visibleCount
+        ? Math.min(normalizedIndex / (originalCount - visibleCount), 1)
+        : 0
+
     return (
-        <div
-            className="relative overflow-hidden ml-[15px] md:ml-[0px]"
-            style={{ width: `${containerWidth}px`, height: `${containerHeight}px` }}
-        >
+        <div>
             <div
-                className="flex transition-transform duration-500 ease-in-out h-full"
-                style={{
-                    width: `${trackWidth}px`,
-                    transform: `translateX(-${translateX}px)`,
+                className="relative overflow-hidden ml-[15px] md:ml-[0px]"
+                style={{ 
+                    width: `${containerWidth}px`, 
+                    height: `${containerHeight}px` 
                 }}
             >
-                {extendedComponents.map((component, index) => {
-                    return (
-                        <div key={index} className="px-[10px]">
+                <div
+                    className="flex h-full"
+                    style={{
+                        width: `${trackWidth}px`,
+                        transform: `translateX(-${translateX}px)`,
+                        transition: isTransitioning ? 'transform 0.5s ease-in-out' : 'none',
+                    }}
+                    onTransitionEnd={() => {
+                        if (currentIndex >= originalCount) {
+                            setTimeout(() => {
+                                setIsTransitioning(false)
+                                setCurrentIndex(0) // 回到第一个组件
+                            }, 50)
+                        }
+                    }}
+                >
+                    {extendedComponents.map((component, index) => (
+                        <div 
+                            key={index} 
+                            className="px-[10px]" 
+                            style={{ width: `${itemWidth}px` }}
+                        >
                             {component}
                         </div>
-                    )
-                })}
-            </div>
-
-            <div className="mt-4" style={{ width: `${containerWidth}px` }}>
-                <div className="w-full h-1 bg-gray-300">
-                    <div
-                        className="h-full bg-green-500 transition-all duration-500 ease-in-out"
-                        style={{ width: `${progressRatio * 100}%` }}
-                    ></div>
+                    ))}
                 </div>
             </div>
+
+            {originalCount > visibleCount && (
+                <div className="mt-[50px] overflow-hidden" style={{ width: `${containerWidth}px` }}>
+                    <div className="w-full h-[2px] bg-[#030b15] rounded-full">
+                        <div
+                            className="h-full bg-[#00c4f4] transition-all duration-500 ease-in-out rounded-full"
+                            style={{ width: `${progressRatio * 100}%` }}
+                        />
+                    </div>
+                </div>
+            )}
         </div>
     )
 }

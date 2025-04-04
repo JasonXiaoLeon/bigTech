@@ -12,7 +12,7 @@ const Teammember: React.FC<props> = ({ imgUrl, name, jobTitle }) => {
         <div className="flex justify-center px-[15px] w-screen md:w-[240px] lg:w-[320px] xl:w-[312.5px]">
             <div className="w-[360px] md:w-[210px] lg:w-[227px] mb-[60px] text-white flex flex-col items-center group">
                 <div className="relative flex justify-center items-center w-[360px] md:w-[210px] lg:w-[227px] h-[360px] md:h-[210px] lg:h-[227px] mb-[30px] p-[15px]">
-                    <div className="absolute top-[-6px] w-[222px] h-[222px] border-[2px] border-[#00c4f4] border-dashed rounded-full opacity-0 group-hover:opacity-100 group-hover:animate-spin-fast transition-all duration-300"></div>
+                    <div className="absolute w-[222px] h-[222px] border-[2px] border-[#00c4f4] border-dashed rounded-full opacity-0 group-hover:opacity-100 group-hover:animate-spin-fast transition-all duration-300"></div>
                     <img
                         src={imgUrl}
                         loading="lazy"
