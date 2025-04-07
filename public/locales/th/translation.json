@@ -1,0 +1,182 @@
+{
+    "nav": {
+      "home": "หน้าหลัก",
+      "about_us": "เกี่ยวกับเรา",
+      "sales": "การขาย",
+      "roadmap": "แผนที่",
+      "blog": "บล็อก",
+      "contact_us": "ติดต่อเรา"
+    },
+    "dropdown": {
+      "page1": "หน้า 1",
+      "page2": "หน้า 2"
+    },
+    "header_button": {
+      "buy_now": "ซื้อเลย"
+    },
+    "side_bar":{
+      "home": "หน้าแรก",
+      "aboutUs": "เกี่ยวกับเรา",
+      "sales": "ขาย",
+      "roadmap": "แผนที่",
+      "blog": "บล็อก",
+      "contactUs": "ติดต่อเรา"
+    },    
+    "body_Text":{
+      "joinFutureOf": "เข้าร่วมอนาคตของ",
+      "algorithmic": "อัลกอริธึม",
+      "crypto": "คริปโต",
+      "tradingStrategies": "กลยุทธ์การเทรด"
+    },
+    "goal": {
+      "preSell": "การขายล่วงหน้า",
+      "softCap": "ซอฟต์แคป",
+      "bonus": "โบนัส"
+    },
+    "goalBar": {
+      "targetRaised": "เป้าหมายที่ได้รับการระดมทุน",
+      "ethToCic": "1 ETH = $1000 = 3177.38 CIC"
+    },
+    "timerHeader": {
+      "startMessage": "ICO จะเริ่มใน..."
+    },
+    "timerClock": {
+      "days": "วัน",
+      "hours": "ชั่วโมง",
+      "minutes": "นาที",
+      "seconds": "วินาที"
+    },
+    "aboutus_description": {
+      "whoWeAre": "เราคือใคร",
+      "platformInfo": "แพลตฟอร์ม ICO แรกของโลกที่ให้รางวัล",
+      "platformDesc": "แพลตฟอร์ม ICO แรกของโลกที่ให้รางวัล และแพลตฟอร์มช่วยให้นักลงทุนสามารถซื้อและขายโทเค็นได้ง่าย",
+      "purchaseTokens": "ซื้อโทเค็น"
+    },
+    "aboutUs": {
+      "whoWeAre": "พวกเราเป็นใคร",
+      "platformInfo": "แพลตฟอร์ม ICO ที่มีรางวัลเป็นแห่งแรกของโลก",
+      "platformDesc": "แพลตฟอร์ม ICO ที่มีรางวัลเป็นแห่งแรกของโลก ช่วยให้นักลงทุนสามารถซื้อและขายโทเค็นได้ง่าย",
+      "purchaseTokens": "ซื้อโทเค็น",
+      "ourTopPartner": "พันธมิตรชั้นนำของเรา",
+      "whyChooseUs": "ทำไมต้องเลือกเรา",
+      "whyChooseBigtech": "ทำไมต้องเลือกเทคโนโลยีขนาดใหญ่ของเรา",
+      "token": "โทเค็น"
+    },
+    "chooseItemlist": {
+      "mobilePaymentMakeEasy": "การชำระเงินผ่านมือถือที่ง่าย",
+      "mobilePaymentContent": "เพิ่มงานศิลปะใหม่ที่กำลังเป็นกระแสและหายากลงในคอลเลกชันของคุณ",
+      "lifetimeFreeTransaction": "การทำธุรกรรมฟรีตลอดชีพ",
+      "lifetimeFreeTransactionContent": "เพิ่มงานศิลปะใหม่ที่กำลังเป็นกระแสและหายากลงในคอลเลกชันของคุณ",
+      "securityAndControlOverMoney": "ความปลอดภัยและการควบคุมเงิน",
+      "securityAndControlOverMoneyContent": "เพิ่มงานศิลปะใหม่ที่กำลังเป็นกระแสและหายากลงในคอลเลกชันของคุณ"
+    },
+    "salesChartData": {
+      "contingency": "เหตุฉุกเฉิน:",
+      "businessDevelopment": "พัฒนาธุรกิจ:",
+      "investor": "นักลงทุน:",
+      "poland": "โปแลนด์",
+      "legalAndRegulation": "กฎหมายและข้อบังคับ:",
+      "czechRepublic": "สาธารณรัฐเช็ก",
+      "noData": "ไม่มีข้อมูล"
+    },
+    "salesAllocation": {
+      "fundingAllocation": "การจัดสรรเงินทุน",
+      "tokenAllocation": "การจัดสรรโทเค็น",
+      "title1": "1 CNL = 0.0863 BTC",
+      "title2": "2 CNL = 0.0967 BTC",
+      "content1": "แพลตฟอร์ม ICO แรกในโลกที่ให้รางวัลและช่วยให้นักลงทุนสามารถซื้อและขายโทเค็นได้ง่าย",
+      "content2": "แพลตฟอร์ม ICO แรกในโลกที่ให้รางวัลและช่วยให้นักลงทุนสามารถซื้อและขายโทเค็นได้ง่าย",
+      "buyNow": "ซื้อเดี๋ยวนี้"
+    },
+    "roadMap": {
+      "title": "แผนที่ถนนของเรา",
+      "content1": "กลยุทธ์ Bigtech และ",
+      "content2": "โครงการ",
+      "plan": "แผน",
+      "whitePaper": "WhitePaper",
+      "content3": "อ่าน Bigtech",
+      "documents": "เอกสาร",
+      "downloadDoc": "ดาวน์โหลดเอกสาร"
+    },
+    "longScrollChart": {
+    "concept": {
+      "title": "แนวคิด",
+      "content": [
+        "การสนับสนุน EVM สำหรับ Parthians",
+        "SubQuery Academy",
+        "การพิสูจน์การทำดัชนี"
+      ]
+    },
+    "research": {
+      "title": "การวิจัย",
+      "content": [
+        "โปรแกรม SubQuery Builders/Grants",
+        "SQT Network สัญญาภายใน MVP",
+        "SDK สำหรับ Coordinator และ Client"
+      ]
+    },
+    "appBetaTest": {
+      "title": "ทดสอบเบต้าแอป",
+      "content": [
+        "การเปิดตัว Public testnet",
+        "SubQuery Network Explorer และ dApp",
+        "การทำดัชนีแบบ Point-in-time"
+      ]
+    },
+    "tokenTest": {
+      "title": "ทดสอบโทเค็น",
+      "content": [
+        "กิจกรรมการสร้างโทเค็น SQT",
+        "การเปิดตัว Public incentivize testnet",
+        "ข้อมูลการจราจรและการรายงาน"
+      ]
+    },
+    "alphaTest": {
+      "title": "ทดสอบอัลฟ่า",
+      "content": [
+        "การเปิดตัว SubQuery Foundation",
+        "การวิจัยเกี่ยวกับ Layer-1 chains อื่น ๆ",
+        "โปรแกรมการขุดสภาพคล่อง"
+      ]
+    },
+    "benefits": {
+      "title": "ประโยชน์",
+      "content": [
+        "การเปิดตัว Mainnet",
+        "การเปิดตัว Centralized exchange",
+        "Public incentivize testnet"
+      ]
+    },
+    "operational": {
+      "title": "การดำเนินการ",
+      "content": [
+        "SubQuery เปิดตัว Parthian ของตัวเอง",
+        "SubQuery Foundation"
+      ]
+    },
+    "dates": {
+      "midOfQ4_2021": "กลางไตรมาสที่ 4 ปี 2021"
+    }
+  },
+  "roadMapList": {
+      "whitePaper": "เอกสารไวท์เปเปอร์",
+      "privacyPolicy": "นโยบายความเป็นส่วนตัว",
+      "termsOfCoinSale": "ข้อกำหนดในการขายเหรียญ",
+      "onePager": "เอกสาร One Pager"
+  },
+  "ourTeam": {
+    "title": "ทีมของเรา",
+    "content1": "ผู้นำ",
+    "blueContent": "ทีม",
+    "jobTitles": {
+      "Founder_CO": "ผู้ก่อตั้ง & CO",
+      "Head_of_Design": "หัวหน้าฝ่ายออกแบบ",
+      "Vp_People": "รองประธานฝ่ายบุคคล",
+      "Product_Manager": "ผู้จัดการผลิตภัณฑ์",
+      "Marketer": "นักการตลาด",
+      "Founder": "ผู้ก่อตั้ง",
+      "Account_Manager": "ผู้จัดการบัญชี"
+    }
+  }
+}
+  

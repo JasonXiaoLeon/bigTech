@@ -35,9 +35,11 @@ const Header = () => {
         >
             <div className="flex items-center w-[360px] md:px-[15px] lg:px-[0px] md:w-[720px] lg:w-[994px] xl:w-[1220px]">
                 <div className="flex justify-between w-[330px] md:w-[663.75px] lg:w-[994px] xl:w-[1220px]">
-                    <HeaderIcon />
-                    <div className="flex items-center ">
-                        <HeaderNavi />
+                    <div className='flex'>
+                        <HeaderIcon />
+                        <div className="flex items-center ">
+                            <HeaderNavi />
+                        </div>
                     </div>
                     <BuyButton />
                 </div>

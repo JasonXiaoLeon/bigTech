@@ -1,32 +1,49 @@
 'use client'
-import React, { useState, useEffect, useRef } from 'react'
+import React, { useState, useRef, useEffect } from 'react'
 import CurrDropdown from './component/CurrDropdown'
+import { useTranslation } from 'react-i18next'
 
 const CurrencyUnitDropdown = () => {
+    const { t, i18n } = useTranslation()
     const [isMenuVisible, setIsMenuVisible] = useState(false)
-    const dropdownRef = useRef<HTMLDivElement>(null)
+    const [isHovered, setIsHovered] = useState(false)
+    const [currentLanguage, setCurrentLanguage] = useState('ENG')
+    const timerRef = useRef<NodeJS.Timeout | null>(null)
 
     useEffect(() => {
-        const handleClickOutside = (event: MouseEvent) => {
-            if (dropdownRef.current && !dropdownRef.current.contains(event.target as Node)) {
+        if (!isHovered && isMenuVisible) {
+            timerRef.current = setTimeout(() => {
                 setIsMenuVisible(false)
+            }, 300)
+        }
+
+        return () => {
+            if (timerRef.current) {
+                clearTimeout(timerRef.current)
             }
         }
+    }, [isHovered, isMenuVisible])
 
-        document.addEventListener('mousedown', handleClickOutside)
-        return () => {
-            document.removeEventListener('mousedown', handleClickOutside)
-        }
-    }, [])
+    const handleLanguageChange = (lng: string, label: string) => {
+        i18n.changeLanguage(lng)
+        setCurrentLanguage(label)
+    }
 
+    const languageWidth = currentLanguage === 'ZH-HK' ? 'w-[74.91px]' : 'w-[55.91px]'
     return (
-        <div ref={dropdownRef} className="flex hidden xl:block">
-            <div
-                onMouseEnter={() => setIsMenuVisible(true)}
-                className="w-[55.91px] h-[28px] flex items-center"
-            >
-                <span className="text-white text-base text-[16px] tracking-1px font-bold">ENG</span>
-                <button className="">
+        <div
+            className="flex hidden xl:block relative"
+            onMouseEnter={() => {
+                setIsMenuVisible(true)
+                setIsHovered(true)
+            }}
+            onMouseLeave={() => {
+                setIsHovered(false)
+            }}
+        >
+            <div className={`flex items-center cursor-pointer ${languageWidth} h-[28px]`}>
+                <span className="text-white text-base text-[16px] tracking-1px font-bold">{currentLanguage}</span>
+                <button>
                     <img
                         src="/img/icon/arrow-down.png"
                         className="w-[9.75px] h-[24.5px] object-contain ml-[10px]"
@@ -34,7 +51,18 @@ const CurrencyUnitDropdown = () => {
                     />
                 </button>
             </div>
-            {isMenuVisible && <CurrDropdown />}
+            {isMenuVisible && (
+                <div
+                    className="absolute top-[25px] left-[-5px] transition-all duration-500 ease-in-out"
+                    onMouseEnter={() => setIsHovered(true)}
+                    onMouseLeave={() => setIsHovered(false)}
+                >
+                    <CurrDropdown
+                        currentLanguage={currentLanguage}
+                        handleLanguageChange={handleLanguageChange}
+                    />
+                </div>
+            )}
         </div>
     )
 }

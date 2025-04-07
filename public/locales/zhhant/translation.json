@@ -1,0 +1,182 @@
+{
+    "nav": {
+      "home": "首頁",
+      "about_us": "關於我們",
+      "sales": "銷售",
+      "roadmap": "路線圖",
+      "blog": "部落格",
+      "contact_us": "聯絡我們"
+    },
+    "dropdown": {
+      "page1": "頁面 1",
+      "page2": "頁面 2"
+    },
+    "header_button": {
+      "buy_now": "立即購買"
+    },
+    "side_bar":{
+      "home": "首頁",
+      "aboutUs": "關於我們",
+      "sales": "銷售",
+      "roadmap": "路線圖",
+      "blog": "部落格",
+      "contactUs": "聯繫我們"
+    },
+    "body_Text":{
+      "joinFutureOf": "加入未來的",
+      "algorithmic": "算法",
+      "crypto": "加密",
+      "tradingStrategies": "交易策略"
+    },
+    "goal": {
+      "preSell": "預售",
+      "softCap": "軟上限",
+      "bonus": "獎金"
+    },
+    "goalBar": {
+      "targetRaised": "目標已籌集",
+      "ethToCic": "1 ETH = $1000 = 3177.38 CIC"
+    },
+    "timerHeader": {
+      "startMessage": "ICO 將開始..."
+    },
+    "timerClock": {
+      "days": "天",
+      "hours": "小時",
+      "minutes": "分鐘",
+      "seconds": "秒"
+    },
+    "aboutus_description": {
+      "whoWeAre": "我們是誰",
+      "platformInfo": "全球首個提供獎勳的ICO平台",
+      "platformDesc": "全球首個提供獎勳的ICO平台，幫助投資者輕鬆購買和出售代幣",
+      "purchaseTokens": "購買代幣"
+    },
+    "aboutUs": {
+      "whoWeAre": "我們是誰",
+      "platformInfo": "全球首個提供獎勳的ICO平台",
+      "platformDesc": "全球首個提供獎勳的ICO平台，幫助投資者輕鬆購買和出售代幣",
+      "purchaseTokens": "購買代幣",
+      "ourTopPartner": "我們的頂級合作夥伴",
+      "whyChooseUs": "為什麼選擇我們",
+      "whyChooseBigtech": "為什麼選擇我們的大科技",
+      "token": "代幣"
+    },
+    "chooseItemlist": {
+      "mobilePaymentMakeEasy": "移動支付變得簡單",
+      "mobilePaymentContent": "將新興、流行和稀有的藝術作品添加到您的收藏中。",
+      "lifetimeFreeTransaction": "終身免費交易",
+      "lifetimeFreeTransactionContent": "將新興、流行和稀有的藝術作品添加到您的收藏中。",
+      "securityAndControlOverMoney": "對資金的安全性與控制",
+      "securityAndControlOverMoneyContent": "將新興、流行和稀有的藝術作品添加到您的收藏中。"
+    },
+    "salesChartData": {
+      "contingency": "應急:",
+      "businessDevelopment": "業務發展:",
+      "investor": "投資者:",
+      "poland": "波蘭",
+      "legalAndRegulation": "法律與法規:",
+      "czechRepublic": "捷克共和國",
+      "noData": "無可用資料"
+    },
+    "salesAllocation": {
+      "fundingAllocation": "資金分配",
+      "tokenAllocation": "代幣分配",
+      "title1": "1 CNL = 0.0863 BTC",
+      "title2": "2 CNL = 0.0967 BTC",
+      "content1": "全球首個提供獎勳的ICO平台，幫助投資者輕鬆購買和出售代幣",
+      "content2": "全球首個提供獎勳的ICO平台，幫助投資者輕鬆購買和出售代幣",
+      "buyNow": "立即購買"
+    },
+    "roadMap": {
+      "title": "我們的路線圖",
+      "content1": "大科技策略和",
+      "content2": "項目",
+      "plan": "計劃",
+      "whitePaper": "白皮書",
+      "content3": "閱讀 Bigtech",
+      "documents": "文件",
+      "downloadDoc": "下載文檔"
+    },
+    "longScrollChart": {
+    "concept": {
+      "title": "概念",
+      "content": [
+        "支持 Parthians 的 EVM",
+        "SubQuery Academy",
+        "索引證明"
+      ]
+    },
+    "research": {
+      "title": "研究",
+      "content": [
+        "SubQuery Builders/Grants 計畫",
+        "SQT 網絡合約內部 MVP",
+        "Coordinator 和 Client SDK"
+      ]
+    },
+    "appBetaTest": {
+      "title": "應用程式 Beta 測試",
+      "content": [
+        "公開測試網啟動",
+        "SubQuery 網絡瀏覽器和 dApp",
+        "時間點索引"
+      ]
+    },
+    "tokenTest": {
+      "title": "代幣測試",
+      "content": [
+        "SQT 代幣生成事件",
+        "公開測試獎勳網絡啟動",
+        "數據流量洞察和報告"
+      ]
+    },
+    "alphaTest": {
+      "title": "Alpha 測試",
+      "content": [
+        "SubQuery Foundation 啟動",
+        "完成對其他 Layer-1 鏈的研究",
+        "流動性挖礦計劃"
+      ]
+    },
+    "benefits": {
+      "title": "好處",
+      "content": [
+        "主網啟動",
+        "集中交易所啟動",
+        "公開測試獎勳網絡"
+      ]
+    },
+    "operational": {
+      "title": "運營",
+      "content": [
+        "SubQuery 啟動了自己的 Parthian",
+        "SubQuery Foundation"
+      ]
+    },
+    "dates": {
+      "midOfQ4_2021": "2021年第四季度中期"
+    }
+  },
+  "roadMapList": {
+    "whitePaper": "白皮書",
+    "privacyPolicy": "隱私政策",
+    "termsOfCoinSale": "代幣銷售條款",
+    "onePager": "單頁概覽"
+  },
+  "ourTeam": {
+    "title": "我們的團隊",
+    "content1": "領導層",
+    "blueContent": "團隊",
+    "jobTitles": {
+      "Founder_CO": "創始人 & CO",
+      "Head_of_Design": "設計主管",
+      "Vp_People": "人力資源副總裁",
+      "Product_Manager": "產品經理",
+      "Marketer": "市場營銷",
+      "Founder": "創始人",
+      "Account_Manager": "客戶經理"
+    }
+  }
+}
+  

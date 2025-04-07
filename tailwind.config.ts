@@ -68,21 +68,19 @@ const config: Config = {
                     '5': 'hsl(var(--chart-5))',
                 },
             },
+            boxShadow: {
+                buttonShadow: '0px 6px 22px rgba(6, 34, 51, 0.22)',
+            },
             borderRadius: {
                 lg: 'var(--radius)',
                 md: 'calc(var(--radius) - 2px)',
                 sm: 'calc(var(--radius) - 4px)',
             },
             animation: {
-                'spin-fast': 'spin-fast .1s linear infinite',
                 'left-right': 'leftRight 6s ease-in-out infinite',
                 'top-down': 'topDown 4s ease-in-out infinite',
             },
             keyframes: {
-                'spin-fast': {
-                    '0%': { transform: 'rotate(0deg)' },
-                    '100%': { transform: 'rotate(360deg)' },
-                },
                 leftRight: {
                     '0%': { transform: 'translateX(-15px)' },
                     '50%': { transform: 'translateX(45px)' },
@@ -92,6 +90,10 @@ const config: Config = {
                     '0%': { transform: 'translateY(200px)' },
                     '50%': { transform: 'translateY(225px)' },
                     '100%': { transform: 'translateY(200px)' },
+                },
+                stretchdelay: {
+                    '0%, 40%, 100%': { transform: 'scaleY(0.4)' },
+                    '20%': { transform: 'scaleY(1.0)' },
                 },
             },
         },

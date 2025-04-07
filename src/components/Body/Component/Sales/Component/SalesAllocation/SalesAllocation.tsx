@@ -1,24 +1,25 @@
 'use client'
 import React, { useState } from 'react'
+import { useTranslation } from 'react-i18next'
 import SalesAllocationPage from '../SalesAllocationPage'
 import NormalBtn from '@/components/Button/NormalBtn/NormalBtn'
 
 const SalesAllocation = () => {
+    const { t } = useTranslation()
+
     const [selectedId, setSelectedId] = useState<string>('1')
     const allocations = [
         {
             id: '1',
-            value: 'FUNDING ALLOCATION',
-            title: '1 CNL = 0.0863 BTC',
-            content:
-                'The World’s 1st ICO Platform That Offers Rewards and The platform helps investors to make easy to purchase and sell their tokens',
+            value: t('salesAllocation.fundingAllocation'),
+            title: t('salesAllocation.title1'),
+            content: t('salesAllocation.content1'),
         },
         {
             id: '2',
-            value: 'TOKEN ALLOCATION',
-            title: '2 CNL = 0.0967 BTC',
-            content:
-                'The World’s 1st ICO Platform That Offers Rewards and The platform helps investors to make easy to purchase and sell their tokens',
+            value: t('salesAllocation.tokenAllocation'),
+            title: t('salesAllocation.title2'),
+            content: t('salesAllocation.content2'),
         },
     ]
 
@@ -59,12 +60,12 @@ const SalesAllocation = () => {
                     )
             )}
             <NormalBtn
-                value={'BUY NOW'}
+                value={t('salesAllocation.buyNow')}
                 widthType={3}
                 color="#00c4f4"
                 height="59px"
                 fontWeight="700"
-                textHoverColor='white'
+                textHoverColor="white"
             />
         </div>
     )

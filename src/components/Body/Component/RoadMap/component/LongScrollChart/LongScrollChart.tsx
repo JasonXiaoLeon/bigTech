@@ -1,69 +1,79 @@
 import React from 'react'
+import { useTranslation } from 'react-i18next'
 import LongScrollChartBlock from './Component/LongScrollChartBlock'
 
 const LongScrollChart = () => {
+    const { t } = useTranslation()
+
     const dataList = [
         {
-            date: 'mid of q4 2021',
+            date: t('longScrollChart.dates.midOfQ4_2021'),
             color: '#0dcaf0',
-            title: 'Concept',
-            content: ['EVM support for Parthians', 'SubQuery Academy', 'Proof of Indexing'],
+            title: t('longScrollChart.concept.title'),
+            content: [
+                t('longScrollChart.concept.content.0'),
+                t('longScrollChart.concept.content.1'),
+                t('longScrollChart.concept.content.2'),
+            ],
         },
         {
-            date: 'Mid of Q4 2021',
+            date: t('longScrollChart.dates.midOfQ4_2021'),
             color: '#d63384',
-            title: 'Research',
+            title: t('longScrollChart.research.title'),
             content: [
-                'SubQuery Builders/Grants Program',
-                'SQT Network contract internal MVP',
-                'Coordinator and client SDK',
+                t('longScrollChart.research.content.0'),
+                t('longScrollChart.research.content.1'),
+                t('longScrollChart.research.content.2'),
             ],
         },
         {
-            date: 'Mid of Q4 2021',
+            date: t('longScrollChart.dates.midOfQ4_2021'),
             color: '#FF9700',
-            title: 'App beta test',
+            title: t('longScrollChart.appBetaTest.title'),
             content: [
-                'Public testnet launch',
-                'SubQuery Network Explorer and dApp',
-                'Point-in-time indexing',
+                t('longScrollChart.appBetaTest.content.0'),
+                t('longScrollChart.appBetaTest.content.1'),
+                t('longScrollChart.appBetaTest.content.2'),
             ],
         },
         {
-            date: 'Mid of Q4 2021',
+            date: t('longScrollChart.dates.midOfQ4_2021'),
             color: '#5DD400',
-            title: 'Token Test',
+            title: t('longScrollChart.tokenTest.title'),
             content: [
-                'SQT token generation event',
-                'Public incentivize testnet launch',
-                'Data traffic insights and reporting',
+                t('longScrollChart.tokenTest.content.0'),
+                t('longScrollChart.tokenTest.content.1'),
+                t('longScrollChart.tokenTest.content.2'),
             ],
         },
         {
-            date: 'Mid of Q4 2021',
+            date: t('longScrollChart.dates.midOfQ4_2021'),
             color: '#007FF4',
-            title: 'Alpha Test',
+            title: t('longScrollChart.alphaTest.title'),
             content: [
-                'Launch of the SubQuery Foundation',
-                'Finalise research for other Layer-1 chains',
-                'Liquidity mining program',
+                t('longScrollChart.alphaTest.content.0'),
+                t('longScrollChart.alphaTest.content.1'),
+                t('longScrollChart.alphaTest.content.2'),
             ],
         },
         {
-            date: 'Mid of Q4 2021',
+            date: t('longScrollChart.dates.midOfQ4_2021'),
             color: '#FF9700',
-            title: 'Benefits',
+            title: t('longScrollChart.benefits.title'),
             content: [
-                'Mainnet launch',
-                'Centralized exchange launch',
-                'Public incentivize testnet',
+                t('longScrollChart.benefits.content.0'),
+                t('longScrollChart.benefits.content.1'),
+                t('longScrollChart.benefits.content.2'),
             ],
         },
         {
-            date: 'Mid of Q4 2021',
+            date: t('longScrollChart.dates.midOfQ4_2021'),
             color: '#FF4581',
-            title: 'Operational',
-            content: ['SubQuery launches its own parthian', 'SubQuery Foundation'],
+            title: t('longScrollChart.operational.title'),
+            content: [
+                t('longScrollChart.operational.content.0'),
+                t('longScrollChart.operational.content.1'),
+            ],
         },
     ]
 

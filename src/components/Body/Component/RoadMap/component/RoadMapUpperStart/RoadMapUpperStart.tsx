@@ -17,7 +17,7 @@ const RoadMapUpperStart: React.FC<props> = ({ title, content1, blueContent, marg
                     <div className="flex ml-[-15px]">
                         <DescripHeader content={title} />
                     </div>
-                    <div className="text-[28px] md:text-[40px] lg:text-[34px] xl:text-[42px] leading-[1.2] md:h-[96px] lg:h-[81.6px] xl:h-[100.8px] flex justify-center text-white font-bold">
+                    <div className="text-[28px] md:text-[40px] lg:text-[34px] xl:text-[42px] leading-[1.2] md:h-[96px] lg:h-[81.6px] xl:h-[100.8px] flex justify-center text-white font-bold lg:w-[270.13px] xl:w-[333.69px]">
                         <h2>
                             {content1}
                             <span className="text-[#00c4f4]">{blueContent}</span>

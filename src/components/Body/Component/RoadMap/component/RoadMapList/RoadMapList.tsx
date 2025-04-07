@@ -1,7 +1,15 @@
 import React from 'react'
+import { useTranslation } from 'react-i18next'
 
 const RoadMapList = () => {
-    const list = ['White Paper', 'Privacy & Policy', 'Terms Of Coin Sale', 'One Pager']
+    const { t } = useTranslation()
+
+    const list = [
+        t('roadMapList.whitePaper'),
+        t('roadMapList.privacyPolicy'),
+        t('roadMapList.termsOfCoinSale'),
+        t('roadMapList.onePager')
+    ]
 
     return (
         <div className="flex md:w-[390px] md:mx-auto lg:mx-[0px] xl:w-[490px]">

@@ -12,7 +12,7 @@ const ContactUs = () => {
                 afterBlueContent="&nbsp;ICO Crypto"
                 marginBottom={'60px'}
             />
-            <div className='mt-[10px]'>
+            <div className="mt-[10px]">
                 <ContactUsLower />
             </div>
             <ContactForm />

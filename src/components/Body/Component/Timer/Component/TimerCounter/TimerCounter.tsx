@@ -1,5 +1,6 @@
 'use client'
 import { useState, useEffect } from 'react'
+import { useTranslation } from 'react-i18next'
 import Timecomp from '../Timecomp/Timecomp'
 
 interface TimeLeft {
@@ -10,28 +11,29 @@ interface TimeLeft {
 }
 
 const TimerCounter = () => {
-    const [targetTime, setTargetTime] = useState<number | null>(null) // 初始化为 null
+    const { t } = useTranslation()
+    const [targetTime, setTargetTime] = useState<number | null>(null)
 
     useEffect(() => {
         const savedTime = localStorage.getItem('countdownTarget')
 
         if (savedTime) {
-            setTargetTime(parseInt(savedTime)) // 从localStorage获取存储的目标时间
+            setTargetTime(parseInt(savedTime))
         } else {
             const newTargetTime = Date.now() + 2 * 60 * 60 * 1000
-            setTargetTime(newTargetTime) // 计算2小时后的目标时间
-            localStorage.setItem('countdownTarget', newTargetTime.toString()) // 保存目标时间
+            setTargetTime(newTargetTime)
+            localStorage.setItem('countdownTarget', newTargetTime.toString())
         }
     }, [])
 
     const calculateTimeLeft = (): TimeLeft => {
         if (targetTime === null) {
-            return { days: 0, hours: 0, minutes: 0, seconds: 0 } // 如果targetTime为null，返回0
+            return { days: 0, hours: 0, minutes: 0, seconds: 0 }
         }
         const difference = targetTime - Date.now()
 
         if (difference <= 0) {
-            return { days: 0, hours: 0, minutes: 0, seconds: 0 } // 如果倒计时结束，返回0
+            return { days: 0, hours: 0, minutes: 0, seconds: 0 }
         }
 
         return {
@@ -45,7 +47,7 @@ const TimerCounter = () => {
     const [timeLeft, setTimeLeft] = useState<TimeLeft>(calculateTimeLeft())
 
     useEffect(() => {
-        if (targetTime === null) return // 等待targetTime被初始化
+        if (targetTime === null) return
 
         const timer = setInterval(() => {
             const newTime = calculateTimeLeft()
@@ -62,10 +64,10 @@ const TimerCounter = () => {
 
     return (
         <div className="grid grid-cols-2 md:flex">
-            <Timecomp value={timeLeft.days} text="Days" color="#00c4f4" />
-            <Timecomp value={timeLeft.hours} text="Hours" color="#ff9700" />
-            <Timecomp value={timeLeft.minutes} text="Minutes" color="#ff1d45" />
-            <Timecomp value={timeLeft.seconds} text="Seconds" color="#12d176" />
+            <Timecomp value={timeLeft.days} text={t('timerClock.days')} color="#00c4f4" />
+            <Timecomp value={timeLeft.hours} text={t('timerClock.hours')} color="#ff9700" />
+            <Timecomp value={timeLeft.minutes} text={t('timerClock.minutes')} color="#ff1d45" />
+            <Timecomp value={timeLeft.seconds} text={t('timerClock.seconds')} color="#12d176" />
         </div>
     )
 }

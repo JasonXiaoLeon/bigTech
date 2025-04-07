@@ -3,6 +3,8 @@ import localFont from 'next/font/local'
 import './globals.css'
 import Footer from '@/components/Footer'
 import Header from '@/components/Header'
+import I18nProvider from '@/components/Utils/Component/I18nProvider/I18nProvider'
+// import { useTranslation } from 'next-i18next'
 
 const geistSans = localFont({
     src: './fonts/GeistVF.woff',
@@ -25,12 +27,16 @@ export default function RootLayout({
 }: Readonly<{
     children: React.ReactNode
 }>) {
+    // const { i18n } = useTranslation()
+    // lang={i18n.language}
     return (
-        <html lang="en">
+        <html>
             <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
-                <Header />
-                {children}
-                <Footer />
+                <I18nProvider>
+                    <Header />
+                    {children}
+                    <Footer />
+                </I18nProvider>
             </body>
         </html>
     )

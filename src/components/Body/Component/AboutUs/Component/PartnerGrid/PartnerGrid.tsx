@@ -22,7 +22,7 @@ const PartnerGrid = () => {
 
     return (
         <div className="flex justify-center">
-            <ul className="flex flex-wrap justify-center w-[360px] md:w-[720px] lg:w-[960px] xl:w-[1250px] px-[15px]">
+            <ul className="flex flex-wrap justify-center w-[360px] md:w-[720px] lg:w-[960px] xl:w-[1250px] px-[15px] cursor-pointer">
                 {partners.map((partnerName, index) => (
                     <li
                         key={index}

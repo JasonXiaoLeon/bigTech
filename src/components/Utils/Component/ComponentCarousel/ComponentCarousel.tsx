@@ -80,17 +80,18 @@ const ComponentCarousel: React.FC<ComponentCarouselProps> = ({
     const normalizedIndex = currentIndex // 当前的索引直接使用，不再需要取余数
 
     // 计算进度条比例
-    const progressRatio = originalCount > visibleCount
-        ? Math.min(normalizedIndex / (originalCount - visibleCount), 1)
-        : 0
+    const progressRatio =
+        originalCount > visibleCount
+            ? Math.min(normalizedIndex / (originalCount - visibleCount), 1)
+            : 0
 
     return (
         <div>
             <div
                 className="relative overflow-hidden ml-[15px] md:ml-[0px]"
-                style={{ 
-                    width: `${containerWidth}px`, 
-                    height: `${containerHeight}px` 
+                style={{
+                    width: `${containerWidth}px`,
+                    height: `${containerHeight}px`,
                 }}
             >
                 <div
@@ -110,11 +111,7 @@ const ComponentCarousel: React.FC<ComponentCarouselProps> = ({
                     }}
                 >
                     {extendedComponents.map((component, index) => (
-                        <div 
-                            key={index} 
-                            className="px-[10px]" 
-                            style={{ width: `${itemWidth}px` }}
-                        >
+                        <div key={index} className="px-[10px]" style={{ width: `${itemWidth}px` }}>
                             {component}
                         </div>
                     ))}

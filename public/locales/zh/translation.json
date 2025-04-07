@@ -1,0 +1,182 @@
+{
+    "nav": {
+      "home": "首页",
+      "about_us": "关于我们",
+      "sales": "销售",
+      "roadmap": "路线图",
+      "blog": "博客",
+      "contact_us": "联系我们"
+    },
+    "dropdown": {
+      "page1": "页面 1",
+      "page2": "页面 2"
+    },
+    "header_button": {
+      "buy_now": "立即购买"
+    },
+    "side_bar":{
+      "home": "首页",
+      "aboutUs": "关于我们",
+      "sales": "销售",
+      "roadmap": "路线图",
+      "blog": "博客",
+      "contactUs": "联系我们"
+    },
+    "body_Text":{
+      "joinFutureOf": "加入未来的",
+      "algorithmic": "算法",
+      "crypto": "加密",
+      "tradingStrategies": "交易策略"
+    },
+    "goal": {
+      "preSell": "预售",
+      "softCap": "软上限",
+      "bonus": "奖金"
+    },
+    "goalBar": {
+      "targetRaised": "目标已筹集",
+      "ethToCic": "1 ETH = $1000 = 3177.38 CIC"
+    },
+    "timerHeader": {
+      "startMessage": "ICO 将开始..."
+    },
+    "timerClock": {
+      "days": "天",
+      "hours": "小时",
+      "minutes": "分钟",
+      "seconds": "秒"
+    },
+    "aboutus_description": {
+      "whoWeAre": "我们是谁",
+      "platformInfo": "全球首个提供奖励的ICO平台",
+      "platformDesc": "全球首个提供奖励的ICO平台，帮助投资者轻松购买和出售代币",
+      "purchaseTokens": "购买代币"
+    },
+    "aboutUs": {
+      "whoWeAre": "我们是谁",
+      "platformInfo": "全球首个提供奖励的ICO平台",
+      "platformDesc": "全球首个提供奖励的ICO平台，帮助投资者轻松购买和出售代币",
+      "purchaseTokens": "购买代币",
+      "ourTopPartner": "我们的顶级合作伙伴",
+      "whyChooseUs": "为什么选择我们",
+      "whyChooseBigtech": "为什么选择我们的大科技",
+      "token":"代币"
+    },
+    "chooseItemlist": {
+      "mobilePaymentMakeEasy": "移动支付变得简单",
+      "mobilePaymentContent": "将新兴、流行和稀有的艺术作品添加到您的收藏中。",
+      "lifetimeFreeTransaction": "终身免费交易",
+      "lifetimeFreeTransactionContent": "将新兴、流行和稀有的艺术作品添加到您的收藏中。",
+      "securityAndControlOverMoney": "对资金的安全性与控制",
+      "securityAndControlOverMoneyContent": "将新兴、流行和稀有的艺术作品添加到您的收藏中。"
+    },
+    "salesChartData": {
+    "contingency": "应急:",
+    "businessDevelopment": "业务发展:",
+    "investor": "投资者:",
+    "poland": "波兰",
+    "legalAndRegulation": "法律与法规:",
+    "czechRepublic": "捷克共和国",
+    "noData": "没有可用数据"
+  },
+  "salesAllocation": {
+    "fundingAllocation": "资金分配",
+    "tokenAllocation": "代币分配",
+    "title1": "1 CNL = 0.0863 BTC",
+    "title2": "2 CNL = 0.0967 BTC",
+    "content1": "全球首个提供奖励的ICO平台，帮助投资者轻松购买和出售代币",
+    "content2": "全球首个提供奖励的ICO平台，帮助投资者轻松购买和出售代币",
+    "buyNow": "立即购买"
+  },
+  "roadMap": {
+    "title": "我们的路线图",
+    "content1": "大科技战略和",
+    "content2": "项目",
+    "plan": "计划",
+    "whitePaper": "白皮书",
+    "documents": "文档",
+    "content3": "阅读 Bigtech",
+    "downloadDoc": "下载文档"
+  },
+  "longScrollChart": {
+    "concept": {
+      "title": "概念",
+      "content": [
+        "支持 Parthians 的 EVM",
+        "SubQuery Academy",
+        "索引证明"
+      ]
+    },
+    "research": {
+      "title": "研究",
+      "content": [
+        "SubQuery Builders/Grants 程序",
+        "SQT 网络合约内部 MVP",
+        "Coordinator 和 Client SDK"
+      ]
+    },
+    "appBetaTest": {
+      "title": "应用程序 Beta 测试",
+      "content": [
+        "公测网络启动",
+        "SubQuery 网络浏览器和 dApp",
+        "时间点索引"
+      ]
+    },
+    "tokenTest": {
+      "title": "代币测试",
+      "content": [
+        "SQT 代币生成事件",
+        "公测奖励网络启动",
+        "数据流量洞察和报告"
+      ]
+    },
+    "alphaTest": {
+      "title": "Alpha 测试",
+      "content": [
+        "SubQuery Foundation 启动",
+        "完成对其他 Layer-1 链的研究",
+        "流动性挖矿程序"
+      ]
+    },
+    "benefits": {
+      "title": "好处",
+      "content": [
+        "主网启动",
+        "中心化交易所启动",
+        "公测奖励网络"
+      ]
+    },
+    "operational": {
+      "title": "运营",
+      "content": [
+        "SubQuery 启动了自己的 Parthian",
+        "SubQuery Foundation"
+      ]
+    },
+    "dates": {
+      "midOfQ4_2021": "2021年第四季度中期"
+    }
+  },
+  "roadMapList": {
+    "whitePaper": "白皮书",
+    "privacyPolicy": "隐私政策",
+    "termsOfCoinSale": "代币销售条款",
+    "onePager": "单页概览"
+  },
+  "ourTeam": {
+    "title": "我们的团队",
+    "content1": "领导层",
+    "blueContent": "团队",
+    "jobTitles": {
+      "Founder_CO": "创始人 & CO",
+      "Head_of_Design": "设计主管",
+      "Vp_People": "人力资源副总裁",
+      "Product_Manager": "产品经理",
+      "Marketer": "市场营销",
+      "Founder": "创始人",
+      "Account_Manager": "客户经理"
+    }
+  }
+}
+  

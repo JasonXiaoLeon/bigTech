@@ -1,0 +1,181 @@
+{
+  "nav": {
+    "home": "HOME",
+    "about_us": "ABOUT US",
+    "sales": "SALES",
+    "roadmap": "ROADMAP",
+    "blog": "BLOG",
+    "contact_us": "CONTACT US"
+  },
+  "dropdown": {
+    "page1": "Page 1",
+    "page2": "Page 2"
+  },
+  "header_button": {
+    "buy_now": "BUY NOW"
+  },
+  "side_bar":{
+    "home": "Home",
+    "aboutUs": "About Us",
+    "sales": "Sales",
+    "roadmap": "Roadmap",
+    "blog": "Blog",
+    "contactUs": "Contact Us"
+  },
+  "body_Text":{
+    "joinFutureOf": "Join Future Of ",
+    "algorithmic": "Algorithmic",
+    "crypto": " Crypto",
+    "tradingStrategies": "Trading Strategies"
+  },
+  "goal": {
+    "preSell": "PRE SELL",
+    "softCap": "SOFT CAP",
+    "bonus": "BONUS"
+  },
+  "goalBar": {
+    "targetRaised": "TARGET RAISED",
+    "ethToCic": "1 ETH = $1000 = 3177.38 CIC"
+  },
+  "timerHeader": {
+    "startMessage": "ICO Will Start In.."
+  },
+  "timerClock": {
+    "days": "Days",
+    "hours": "Hours",
+    "minutes": "Minutes",
+    "seconds": "Seconds"
+  },
+  "aboutus_description": {
+    "whoWeAre": "Who we are",
+    "platformInfo": "The World’s 1st ICO Platform That Offers Rewards",
+    "platformDesc": "The World’s 1st ICO Platform That Offers Rewards and The platform helps investors to make easy to purchase and sell their tokens",
+    "purchaseTokens": "purchase tokens"
+  },
+  "aboutUs": {
+    "whoWeAre": "Who we are",
+    "platformInfo": "The World’s 1st ICO Platform That Offers Rewards",
+    "platformDesc": "The World’s 1st ICO Platform That Offers Rewards and The platform helps investors to make easy to purchase and sell their tokens",
+    "purchaseTokens": "purchase tokens",
+    "ourTopPartner": "Our top partner",
+    "whyChooseUs": "Why Choose Us",
+    "whyChooseBigtech": "Why Choose Our Bigtech",
+    "token":" Token"
+  },
+  "chooseItemlist": {
+    "mobilePaymentMakeEasy": "Mobile payment made easy",
+    "mobilePaymentContent": "Add new, trending, and rare artwork to your collection.",
+    "lifetimeFreeTransaction": "Lifetime free transaction",
+    "lifetimeFreeTransactionContent": "Add new, trending, and rare artwork to your collection.",
+    "securityAndControlOverMoney": "Security & control over money",
+    "securityAndControlOverMoneyContent": "Add new, trending, and rare artwork to your collection."
+  },
+  "salesChartData": {
+    "contingency": "Contingency:",
+    "businessDevelopment": "Business Development:",
+    "investor": "Investor:",
+    "poland": "Poland",
+    "legalAndRegulation": "Legal & Regulation:",
+    "czechRepublic": "Czech Republic",
+    "noData": "No data available"
+  },
+  "salesAllocation": {
+    "fundingAllocation": "FUNDING ALLOCATION",
+    "tokenAllocation": "TOKEN ALLOCATION",
+    "title1": "1 CNL = 0.0863 BTC",
+    "title2": "2 CNL = 0.0967 BTC",
+    "content1": "The World’s 1st ICO Platform That Offers Rewards and The platform helps investors to make easy to purchase and sell their tokens",
+    "content2": "The World’s 1st ICO Platform That Offers Rewards and The platform helps investors to make easy to purchase and sell their tokens",
+    "buyNow": "BUY NOW"
+  },
+  "roadMap": {
+    "title": "Our Roadmap",
+    "content1": "Bigtech Strategy and",
+    "content2": "Project",
+    "plan": " Plan",
+    "whitePaper": "WhitePaper",
+    "documents": " Documents",
+    "content3": "Read Bigtech",
+    "downloadDoc": "Download DOC"
+  },
+  "longScrollChart": {
+    "concept": {
+      "title": "Concept",
+      "content": [
+        "EVM support for Parthians",
+        "SubQuery Academy",
+        "Proof of Indexing"
+      ]
+    },
+    "research": {
+      "title": "Research",
+      "content": [
+        "SubQuery Builders/Grants Program",
+        "SQT Network contract internal MVP",
+        "Coordinator and client SDK"
+      ]
+    },
+    "appBetaTest": {
+      "title": "App beta test",
+      "content": [
+        "Public testnet launch",
+        "SubQuery Network Explorer and dApp",
+        "Point-in-time indexing"
+      ]
+    },
+    "tokenTest": {
+      "title": "Token Test",
+      "content": [
+        "SQT token generation event",
+        "Public incentivize testnet launch",
+        "Data traffic insights and reporting"
+      ]
+    },
+    "alphaTest": {
+      "title": "Alpha Test",
+      "content": [
+        "Launch of the SubQuery Foundation",
+        "Finalise research for other Layer-1 chains",
+        "Liquidity mining program"
+      ]
+    },
+    "benefits": {
+      "title": "Benefits",
+      "content": [
+        "Mainnet launch",
+        "Centralized exchange launch",
+        "Public incentivize testnet"
+      ]
+    },
+    "operational": {
+      "title": "Operational",
+      "content": [
+        "SubQuery launches its own Parthian",
+        "SubQuery Foundation"
+      ]
+    },
+    "dates": {
+      "midOfQ4_2021": "Mid of Q4 2021"
+    } 
+  },
+  "roadMapList": {
+    "whitePaper": "White Paper",
+    "privacyPolicy": "Privacy & Policy",
+    "termsOfCoinSale": "Terms Of Coin Sale",
+    "onePager": "One Pager"
+  },
+  "ourTeam": {
+    "title": "Our Team",
+    "content1": "The Leadership",
+    "blueContent": "Team",
+    "jobTitles": {
+      "Founder_CO": "Founder & CO",
+      "Head_of_Design": "Head of Design",
+      "Vp_People": "VP of People",
+      "Product_Manager": "Product Manager",
+      "Marketer": "Marketer",
+      "Founder": "Founder",
+      "Account_Manager": "Account Manager"
+    }
+  }
+}

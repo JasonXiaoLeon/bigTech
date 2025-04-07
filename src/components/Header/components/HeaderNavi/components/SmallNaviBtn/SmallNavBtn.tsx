@@ -1,9 +1,13 @@
+'use client'
+import React, { useState, useEffect, useRef } from 'react'
+import { useTranslation } from 'react-i18next'
 import CubeBtn from '@/components/Button/CubeBtn'
 import SocialMeidaIcon from '@/components/Body/Component/RoadMap/component/OurTeam/Component/SocialMediaIcon'
-import React, { useState, useEffect, useRef } from 'react'
 
 const SmallNavBtn = () => {
+    const { t, i18n } = useTranslation()
     const [isOpen, setIsOpen] = useState(false)
+    const [currentLang, setCurrentLang] = useState('ENG')
     const menuRef = useRef<HTMLDivElement | null>(null)
 
     const toggleMenu = () => {
@@ -11,12 +15,12 @@ const SmallNavBtn = () => {
     }
 
     const menuItems = [
-        { name: 'Home', link: '#', btn: true },
-        { name: 'About us', link: '#' },
-        { name: 'Sales', link: '#' },
-        { name: 'Roadmap', link: '#' },
-        { name: 'Blog', link: '#', btn: true },
-        { name: 'Contact us', link: '#' },
+        { name: t('side_bar.home'), link: '#', btn: true },
+        { name: t('side_bar.aboutUs'), link: '#' },
+        { name: t('side_bar.sales'), link: '#' },
+        { name: t('side_bar.roadmap'), link: '#' },
+        { name: t('side_bar.blog'), link: '#', btn: true },
+        { name: t('side_bar.contactUs'), link: '#' },
     ]
 
     const socialMediaIcons: { type: 'facebook' | 'twitter' | 'ins' | 'linkedin' | 'youtube' }[] = [
@@ -26,6 +30,11 @@ const SmallNavBtn = () => {
         { type: 'linkedin' },
         { type: 'youtube' },
     ]
+
+    const handleLanguageChange = (lang: string) => {
+        i18n.changeLanguage(lang.toLowerCase())
+        setCurrentLang(lang)
+    }
 
     useEffect(() => {
         const handleClickOutside = (event: MouseEvent) => {
@@ -68,8 +77,18 @@ const SmallNavBtn = () => {
                         ref={menuRef}
                         className="fixed top-0 right-0 w-[300px] h-screen bg-[#0b1d33] text-white z-50"
                     >
-                        <div className="py-[30px] px-[25px]">
+                        <div className="flex justify-between py-[30px] px-[25px]">
                             <img src="/img/header.png" className="w-[109.63px] h-[65px]" />
+                            <select
+                                value={currentLang}
+                                onChange={(e) => handleLanguageChange(e.target.value)}
+                                className="text-white bg-transparent border-none focus:outline-none"
+                            >
+                                <option value="ENG">ENG</option>
+                                <option value="ZH">ZH</option>
+                                <option value="ZHHANT">ZHHK</option>
+                                <option value="TH">TH</option>
+                            </select>
                         </div>
                         <ul className="uppercase">
                             {menuItems.map((item, index) => (

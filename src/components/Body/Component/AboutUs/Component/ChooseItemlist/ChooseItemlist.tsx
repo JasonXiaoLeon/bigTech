@@ -1,89 +1,52 @@
 'use client'
 import React from 'react'
-import ChooseItem from './component' // 引入单个项组件
+import ChooseItem from './component'
 import ComponentCarousel from '@/components/Utils/Component/ComponentCarousel'
+import { useTranslation } from 'react-i18next'
 
 const ChooseItemlist = () => {
+    const { t } = useTranslation()
+
     const list = [
         {
             url: '/img/choose_1.svg',
-            name: 'Mobile payment make easy',
-            content: 'Add new, trending and rare artwork to your collection.',
+            name: t('chooseItemlist.mobilePaymentMakeEasy'),
+            content: t('chooseItemlist.mobilePaymentContent'),
         },
         {
             url: '/img/choose_2.svg',
-            name: 'Lifetime free transaction',
-            content: 'Add new, trending and rare artwork to your collection.',
+            name: t('chooseItemlist.lifetimeFreeTransaction'),
+            content: t('chooseItemlist.lifetimeFreeTransactionContent'),
         },
         {
             url: '/img/choose_3.svg',
-            name: 'Security & control over money',
-            content: 'Add new, trending and rare artwork to your collection.',
+            name: t('chooseItemlist.securityAndControlOverMoney'),
+            content: t('chooseItemlist.securityAndControlOverMoneyContent'),
         },
         {
             url: '/img/choose_4.svg',
-            name: 'Mobile payment make easy',
-            content: 'Add new, trending and rare artwork to your collection.',
+            name: t('chooseItemlist.mobilePaymentMakeEasy'),
+            content: t('chooseItemlist.mobilePaymentContent'),
         },
         {
             url: '/img/choose_1.svg',
-            name: 'Mobile payment make easy',
-            content: 'Add new, trending and rare artwork to your collection.',
+            name: t('chooseItemlist.mobilePaymentMakeEasy'),
+            content: t('chooseItemlist.mobilePaymentContent'),
         },
         {
             url: '/img/choose_2.svg',
-            name: 'Lifetime free transaction',
-            content: 'Add new, trending and rare artwork to your collection.',
+            name: t('chooseItemlist.lifetimeFreeTransaction'),
+            content: t('chooseItemlist.lifetimeFreeTransactionContent'),
         },
         {
             url: '/img/choose_3.svg',
-            name: 'Security & control over money',
-            content: 'Add new, trending and rare artwork to your collection.',
+            name: t('chooseItemlist.securityAndControlOverMoney'),
+            content: t('chooseItemlist.securityAndControlOverMoneyContent'),
         },
         {
             url: '/img/choose_4.svg',
-            name: 'Mobile payment make easy',
-            content: 'Add new, trending and rare artwork to your collection.',
-        },
-        {
-            url: '/img/choose_1.svg',
-            name: 'Mobile payment make easy',
-            content: 'Add new, trending and rare artwork to your collection.',
-        },
-        {
-            url: '/img/choose_2.svg',
-            name: 'Lifetime free transaction',
-            content: 'Add new, trending and rare artwork to your collection.',
-        },
-        {
-            url: '/img/choose_3.svg',
-            name: 'Security & control over money',
-            content: 'Add new, trending and rare artwork to your collection.',
-        },
-        {
-            url: '/img/choose_4.svg',
-            name: 'Mobile payment make easy',
-            content: 'Add new, trending and rare artwork to your collection.',
-        },
-        {
-            url: '/img/choose_1.svg',
-            name: 'Mobile payment make easy',
-            content: 'Add new, trending and rare artwork to your collection.',
-        },
-        {
-            url: '/img/choose_2.svg',
-            name: 'Lifetime free transaction',
-            content: 'Add new, trending and rare artwork to your collection.',
-        },
-        {
-            url: '/img/choose_3.svg',
-            name: 'Security & control over money',
-            content: 'Add new, trending and rare artwork to your collection.',
-        },
-        {
-            url: '/img/choose_4.svg',
-            name: 'Mobile payment make easy',
-            content: 'Add new, trending and rare artwork to your collection.',
+            name: t('chooseItemlist.mobilePaymentMakeEasy'),
+            content: t('chooseItemlist.mobilePaymentContent'),
         },
     ]
 
