@@ -4,7 +4,7 @@ import CurrDropdown from './component/CurrDropdown'
 import { useTranslation } from 'react-i18next'
 
 const CurrencyUnitDropdown = () => {
-    const { t, i18n } = useTranslation()
+    const { i18n } = useTranslation()
     const [isMenuVisible, setIsMenuVisible] = useState(false)
     const [isHovered, setIsHovered] = useState(false)
     const [currentLanguage, setCurrentLanguage] = useState('ENG')
@@ -42,7 +42,9 @@ const CurrencyUnitDropdown = () => {
             }}
         >
             <div className={`flex items-center cursor-pointer ${languageWidth} h-[28px]`}>
-                <span className="text-white text-base text-[16px] tracking-1px font-bold">{currentLanguage}</span>
+                <span className="text-white text-base text-[16px] tracking-1px font-bold">
+                    {currentLanguage}
+                </span>
                 <button>
                     <img
                         src="/img/icon/arrow-down.png"

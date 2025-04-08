@@ -3,7 +3,7 @@ import React from 'react'
 
 const CurrDropdown = ({
     currentLanguage,
-    handleLanguageChange
+    handleLanguageChange,
 }: {
     currentLanguage: string
     handleLanguageChange: (lng: string, label: string) => void
@@ -15,7 +15,7 @@ const CurrDropdown = ({
         { label: 'TH', value: 'th' },
     ]
 
-    const filteredList = currList.filter(currency => currency.label !== currentLanguage)
+    const filteredList = currList.filter((currency) => currency.label !== currentLanguage)
 
     return (
         <div className="relative">

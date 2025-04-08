@@ -8,7 +8,7 @@ const RoadMapList = () => {
         t('roadMapList.whitePaper'),
         t('roadMapList.privacyPolicy'),
         t('roadMapList.termsOfCoinSale'),
-        t('roadMapList.onePager')
+        t('roadMapList.onePager'),
     ]
 
     return (

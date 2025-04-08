@@ -1,7 +1,10 @@
 import NormalBtn from '@/components/Button/NormalBtn/NormalBtn'
 import React from 'react'
+import { useTranslation } from 'react-i18next'
 
 const ContactForm = () => {
+    const { t } = useTranslation()
+
     return (
         <div className="px-[15px]">
             <div
@@ -19,20 +22,20 @@ const ContactForm = () => {
                         <div className="flex flex-col justify-between md:flex-row text-[16px] font-[400]">
                             <input
                                 className="w-[320px] h-[65px] md:w-[270px] md:h-[65px] lg:w-[370px] xl:w-[515px] mb-[30px] rounded-[5px] px-[18px] py-[20px] bg-[#0b1d33] border border-[hsla(0,0%,100%,0.06)] focus:outline-none"
-                                placeholder="Enter your Name"
+                                placeholder={t('contact.placeholder.name')}
                             />
                             <input
                                 className="w-[320px] h-[65px] md:w-[270px] md:h-[65px] lg:w-[370px] xl:w-[515px] mb-[30px] rounded-[5px] px-[18px] py-[20px] bg-[#0b1d33] border border-[hsla(0,0%,100%,0.06)] focus:outline-none"
-                                placeholder="Enter your Email"
+                                placeholder={t('contact.placeholder.email')}
                             />
                         </div>
                         <textarea
-                            placeholder="Enter your message"
+                            placeholder={t('contact.placeholder.message')}
                             className="w-[320px] h-[184px] md:w-[570px] md:h-[184px] lg:w-[770px] 
                     xl:w-[1060px] mb-[30px] rounded-[5px] px-[18px] py-[20px] bg-[#0b1d33] border border-[hsla(0,0%,100%,0.06)] focus:outline-none"
                         />
                         <NormalBtn
-                            value="Send Message"
+                            value={t('contact.button.send')}
                             widthType={0}
                             textHoverColor="#00c4f4"
                             fontWeight="700"

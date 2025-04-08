@@ -177,5 +177,53 @@
       "Founder": "Founder",
       "Account_Manager": "Account Manager"
     }
+  },
+  "contact": {
+    "title": "contact",
+    "blueContent": "Contact",
+    "afterBlueContent": " ICO Crypto",
+    "locationLabel": "State/province/area:",
+    "placeholder": {
+      "name": "Enter your Name",
+      "email": "Enter your Email",
+      "message": "Enter your message"
+    },
+    "button": {
+      "send": "Send Message"
+    }
+  },
+  "footer": {
+    "bigtech": {
+      "description": "A new way to make the payments easy, reliable and 100% secure. Claritatem itamconse quat. Exerci tationulla"
+    },
+    "usefulLinks": "Useful Links",
+    "community": "Community"
+  },
+  "footerListBlock": {
+    "listUsefulLinks": [
+      "Contact us",
+      "How it Works",
+      "Create",
+      "Explore",
+      "Terms & Services"
+    ],
+    "listCommunity": [
+      "Help Center",
+      "Partners",
+      "Suggestions",
+      "Blog",
+      "Newsletters"
+    ]
+  },
+  "subscribe": {
+    "title": "Subscribe newsletter",
+    "description": "Exerci tation ullamcorper suscipit lobortis nisl aliquip ex ea commodo",
+    "placeholder": "info@gmail.com"
+  },
+  "copyright": {
+    "text": "Copyright © 2022. All Rights Reserved Bigtech",
+    "terms": "Terms and conditions",
+    "privacy": "Privacy policy",
+    "login_signup": "Login /Signup"
   }
 }

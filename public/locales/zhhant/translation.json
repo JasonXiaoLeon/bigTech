@@ -177,6 +177,54 @@
       "Founder": "創始人",
       "Account_Manager": "客戶經理"
     }
+  },
+  "contact": {
+    "title": "聯絡我們",
+    "blueContent": "聯絡",
+    "afterBlueContent": "ICO 加密貨幣",
+    "locationLabel": "州/省/地區：",
+    "placeholder": {
+      "name": "請輸入您的姓名",
+      "email": "請輸入您的電郵",
+      "message": "請輸入您的留言"
+    },
+    "button": {
+      "send": "發送信息"
+    }
+  },
+  "footer": {
+    "bigtech": {
+      "description": "一種全新方式，令支付變得簡單、可靠並100%安全。清晰的願景，從容應對挑戰。"
+    },
+    "usefulLinks": "有用的連結",
+    "community": "社區"
+  },
+  "footerListBlock": {
+    "listUsefulLinks": [
+      "聯繫我們",
+      "如何運作",
+      "創建",
+      "探索",
+      "條款與服務"
+    ],
+    "listCommunity": [
+      "幫助中心",
+      "合作夥伴",
+      "建議",
+      "部落格",
+      "電子報"
+    ]
+  },
+  "subscribe": {
+    "title": "訂閱新聞通訊",
+    "description": "練習訓練的過渡，盡量減少不必要的浪費。",
+    "placeholder": "info@gmail.com"
+  },
+  "copyright": {
+    "text": "版權所有 © 2022。保留所有權利 Bigtech",
+    "terms": "條款與條件",
+    "privacy": "隱私政策",
+    "login_signup": "登入 / 註冊"
   }
 }
   

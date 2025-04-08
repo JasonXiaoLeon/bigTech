@@ -1,7 +1,10 @@
-import RoundedImg from '@/components/RoundedImg'
 import React from 'react'
+import { useTranslation } from 'react-i18next'
+import RoundedImg from '@/components/RoundedImg'
 
 const BigTechContact = () => {
+    const { t } = useTranslation()
+
     const list = [
         { url: '/img/icon/Youtube-fill.png', borderColor: '#719ed6' },
         { url: '/img/icon/twiter.png', borderColor: '#719ed6' },
@@ -14,9 +17,8 @@ const BigTechContact = () => {
             <a href="#">
                 <img src="/img/header.png" alt="" className="w-[140px] h-[83px] mb-[20px]" />
             </a>
-            <p className="text-[15px] text-[#a4b4c3] font-normal mb-[25px] leading-[26px] lg:w-[290px] xl:w-[282.5px]">
-                A new way to make the payments easy, reliable and 100% secure. claritatem itamconse
-                quat. Exerci tationulla
+            <p className="h-[78px] text-[15px] text-[#a4b4c3] font-normal mb-[25px] leading-[26px] lg:w-[290px] xl:w-[282.5px]">
+                {t('footer.bigtech.description')}
             </p>
             <div className="flex ml-[-7px]">
                 {list.map((item, index) => (

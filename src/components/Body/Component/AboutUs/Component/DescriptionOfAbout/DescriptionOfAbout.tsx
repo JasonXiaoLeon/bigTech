@@ -13,9 +13,7 @@ const DescriptionOfAbout = () => {
                     <DescripHeader content={t('aboutus_description.whoWeAre')} />
                 </div>
                 <div className="text-white text-[28px] md:text-[40px] lg:text-[34px] xl:text-[42px] font-bold leading-[1.2] tracking-[-.01em] lg:w-[321.91px] xl:w-[397.66px]">
-                    <span>
-                        {t('aboutus_description.platformInfo')}
-                    </span>
+                    <span>{t('aboutus_description.platformInfo')}</span>
                 </div>
             </div>
 
@@ -23,7 +21,11 @@ const DescriptionOfAbout = () => {
                 {t('aboutus_description.platformDesc')}
             </div>
             <div className="md:ml-[30px] xl:ml-[55px] h-[55px] w-[204.7px]">
-                <NormalBtn value={t('aboutus_description.purchaseTokens')} widthType={2} textHoverColor="#00c4f4" />
+                <NormalBtn
+                    value={t('aboutus_description.purchaseTokens')}
+                    widthType={2}
+                    textHoverColor="#00c4f4"
+                />
             </div>
         </div>
     )

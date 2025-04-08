@@ -1,4 +1,3 @@
-'use client'
 import React from 'react'
 import ChooseItem from './component'
 import ComponentCarousel from '@/components/Utils/Component/ComponentCarousel'

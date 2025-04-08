@@ -8,10 +8,18 @@ const SalesChartData = () => {
         {
             items: [
                 { title: t('salesChartData.contingency'), data: ' 70%', color: 'bg-[#005f73]' },
-                { title: t('salesChartData.businessDevelopment'), data: ' 10%', color: 'bg-[#f72585]' },
+                {
+                    title: t('salesChartData.businessDevelopment'),
+                    data: ' 10%',
+                    color: 'bg-[#f72585]',
+                },
                 { title: t('salesChartData.investor'), data: ' 30%', color: 'bg-[#5dd400]' },
                 { title: t('salesChartData.poland'), data: '', color: 'bg-[#ff9700]' },
-                { title: t('salesChartData.legalAndRegulation'), data: ' 10%', color: 'bg-[#00c4f4]' },
+                {
+                    title: t('salesChartData.legalAndRegulation'),
+                    data: ' 10%',
+                    color: 'bg-[#00c4f4]',
+                },
                 { title: t('salesChartData.czechRepublic'), data: '', color: 'bg-[#007ff4]' },
             ],
         },

@@ -177,6 +177,54 @@
       "Founder": "创始人",
       "Account_Manager": "客户经理"
     }
+  },
+  "contact": {
+    "title": "联系我们",
+    "blueContent": "联系",
+    "afterBlueContent": "ICO 加密货币",
+    "locationLabel": "州/省/地区：",
+    "placeholder": {
+      "name": "请输入您的姓名",
+      "email": "请输入您的邮箱",
+      "message": "请输入您的留言"
+    },
+    "button": {
+      "send": "发送信息"
+    }
+  },
+  "footer": {
+    "bigtech": {
+      "description": "一种新的方式，让支付变得简单、可靠并且 100% 安全。清晰明确，轻松应对挑战。"
+    },
+    "usefulLinks": "有用的链接",
+    "community": "社区"
+  },
+  "footerListBlock": {
+    "listUsefulLinks": [
+      "联系我们",
+      "工作原理",
+      "创建",
+      "探索",
+      "条款与服务"
+    ],
+    "listCommunity": [
+      "帮助中心",
+      "合作伙伴",
+      "建议",
+      "博客",
+      "新闻通讯"
+    ]
+  },
+  "subscribe": {
+    "title": "订阅新闻通讯",
+    "description": "练习训练的过渡，尽量减少不必要的浪费。",
+    "placeholder": "info@gmail.com"
+  },
+  "copyright": {
+    "text": "版权 © 2022。保留所有权利 Bigtech",
+    "terms": "条款与条件",
+    "privacy": "隐私政策",
+    "login_signup": "登录 / 注册"
   }
 }
   

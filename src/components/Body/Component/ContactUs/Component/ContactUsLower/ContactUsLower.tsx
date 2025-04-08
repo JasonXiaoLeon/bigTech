@@ -1,7 +1,10 @@
 import React from 'react'
+import { useTranslation } from 'react-i18next'
 import ContactCard from '../ContactUsUpper/Component/ContactCard'
 
 const ContactUsLower = () => {
+    const { t } = useTranslation()
+
     const contactData = [
         {
             url: '/img/icon/email.png',
@@ -17,7 +20,7 @@ const ContactUsLower = () => {
         },
         {
             url: '/img/icon/location-fill.png',
-            firstLine: 'State/province/area:',
+            firstLine: t('contact.locationLabel'),
             secondLine: 'Georgia 198',
             borderColor: '#00c4f4',
         },

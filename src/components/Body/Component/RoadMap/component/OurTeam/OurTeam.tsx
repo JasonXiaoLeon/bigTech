@@ -31,7 +31,9 @@ const OurTeam = () => {
                         key={index}
                         imgUrl={member.imgUrl}
                         name={member.name}
-                        jobTitle={t(`ourTeam.jobTitles.${member.jobTitleKey.replace(/ & /g, '_').replace(/ /g, '_')}`)}
+                        jobTitle={t(
+                            `ourTeam.jobTitles.${member.jobTitleKey.replace(/ & /g, '_').replace(/ /g, '_')}`
+                        )}
                     />
                 ))}
             </div>

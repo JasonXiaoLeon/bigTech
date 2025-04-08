@@ -79,6 +79,8 @@ const config: Config = {
             animation: {
                 'left-right': 'leftRight 6s ease-in-out infinite',
                 'top-down': 'topDown 4s ease-in-out infinite',
+                growWidth: 'growWidth 1.5s forwards',
+                growWidthReverse: 'growWidthReverse 1.5s forwards',
             },
             keyframes: {
                 leftRight: {
@@ -94,6 +96,22 @@ const config: Config = {
                 stretchdelay: {
                     '0%, 40%, 100%': { transform: 'scaleY(0.4)' },
                     '20%': { transform: 'scaleY(1.0)' },
+                },
+                growWidth: {
+                    '0%': {
+                        width: '0',
+                    },
+                    '100%': {
+                        width: '100%',
+                    },
+                    },
+                    growWidthReverse: {
+                    '0%': {
+                        width: '100%',
+                    },
+                    '100%': {
+                        width: '0',
+                    },
                 },
             },
         },

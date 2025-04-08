@@ -5,7 +5,7 @@ const GoalBar = () => {
     const { t, i18n } = useTranslation()
     const progress: number = 75
     const textSizeClass = i18n.language === 'th' ? 'text-[13px]' : 'text-[15px]'
-    
+
     return (
         <div className="mt-[8px] w-[360px] md:w-[690px] lg:w-[710px] xl:w-[711.66px]">
             <div className="w-full h-[6px] mb-[25px] bg-gray-200 rounded-full overflow-visible relative">
@@ -28,9 +28,7 @@ const GoalBar = () => {
                 <div className="text-left text-white font-bold">
                     {progress}% {t('goalBar.targetRaised')}
                 </div>
-                <div className="text-right text-white font-bold">
-                    {t('goalBar.ethToCic')}
-                </div>
+                <div className="text-right text-white font-bold">{t('goalBar.ethToCic')}</div>
             </div>
         </div>
     )
