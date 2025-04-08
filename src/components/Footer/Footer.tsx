@@ -1,4 +1,4 @@
-"use client"
+'use client'
 import React from 'react'
 import GoTopBtn from './Component/GoTopBtn'
 import FooterContent from './Component/FooterContent'

@@ -1,10 +1,10 @@
 import React from 'react'
-import { useTranslation } from 'react-i18next'
+import { useTranslations } from 'next-intl'
 import DescripHeader from '../DescripHeader/DescripHeader'
 import NormalBtn from '@/components/Button/NormalBtn/NormalBtn'
 
 const DescriptionOfAbout = () => {
-    const { t } = useTranslation()
+    const t = useTranslations()
 
     return (
         <div className="md:px-[15px]">

@@ -1,8 +1,8 @@
 import React from 'react'
-import { useTranslation } from 'react-i18next'
+import { useTranslations } from 'next-intl'
 
 const BodyText = () => {
-    const { t } = useTranslation()
+    const t = useTranslations()
 
     return (
         <div className="w-full max-w-[1011.66px] h-auto mb-[25px] md:mb-[30px] lg:mb-[40px] xl:mb-[45px] mx-auto capitalize">

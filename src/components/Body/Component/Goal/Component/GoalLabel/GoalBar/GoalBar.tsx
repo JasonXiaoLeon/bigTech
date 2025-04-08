@@ -1,10 +1,12 @@
+'use client'
 import React from 'react'
-import { useTranslation } from 'react-i18next'
+import { useLocale, useTranslations } from 'next-intl'
 
 const GoalBar = () => {
-    const { t, i18n } = useTranslation()
+    const locale = useLocale()
+    const t = useTranslations()
     const progress: number = 75
-    const textSizeClass = i18n.language === 'th' ? 'text-[13px]' : 'text-[15px]'
+    const textSizeClass = locale === 'th' ? 'text-[13px]' : 'text-[15px]'
 
     return (
         <div className="mt-[8px] w-[360px] md:w-[690px] lg:w-[710px] xl:w-[711.66px]">

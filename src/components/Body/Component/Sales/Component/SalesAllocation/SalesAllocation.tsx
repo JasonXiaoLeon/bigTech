@@ -1,11 +1,11 @@
 'use client'
 import React, { useState } from 'react'
-import { useTranslation } from 'react-i18next'
+import { useTranslations } from 'next-intl'
 import SalesAllocationPage from '../SalesAllocationPage'
 import NormalBtn from '@/components/Button/NormalBtn/NormalBtn'
 
 const SalesAllocation = () => {
-    const { t } = useTranslation()
+    const t = useTranslations()
 
     const [selectedId, setSelectedId] = useState<string>('1')
     const allocations = [

@@ -1,6 +1,6 @@
 'use client'
 import React from 'react'
-import { useTranslation } from 'react-i18next'
+import { useTranslations } from 'next-intl'
 import RoadMapUpperPart from './component/RoadMapUpperPart'
 import RoadMapLowerPart from './component/RoadMapLowerPart'
 import RoadMapUpperStart from './component/RoadMapUpperStart'
@@ -10,7 +10,7 @@ import OurTeam from './component/OurTeam'
 import LongScrollChart from './component/LongScrollChart'
 
 const RoadMap = () => {
-    const { t } = useTranslation()
+    const t = useTranslations()
 
     return (
         <div className="flex flex-col">

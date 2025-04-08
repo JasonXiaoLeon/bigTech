@@ -1,11 +1,11 @@
 import React from 'react'
-import { useTranslation } from 'react-i18next'
+import { useTranslations } from 'next-intl'
 import ContactUsLower from './Component/ContactUsLower'
 import ContactForm from './Component/ContactForm'
 import RoadMapUpperPart from '../RoadMap/component/RoadMapUpperPart'
 
 const ContactUs = () => {
-    const { t } = useTranslation()
+    const t = useTranslations()
 
     return (
         <div className="flex flex-col pt-[70px] pb-[110px]">

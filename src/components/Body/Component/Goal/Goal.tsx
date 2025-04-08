@@ -1,9 +1,9 @@
 import React from 'react'
-import { useTranslation } from 'react-i18next'
+import { useTranslations } from 'next-intl'
 import GoalLabel from './Component/GoalLabel'
 
 const Goal = () => {
-    const { t } = useTranslation()
+    const t = useTranslations()
 
     const List = [
         { name: t('goal.preSell'), color: '#00c4f4' },

@@ -1,13 +1,13 @@
 'use client'
 import React, { useState, useRef, useEffect } from 'react'
 import CurrDropdown from './component/CurrDropdown'
-import { useTranslation } from 'react-i18next'
+import { useLocale } from 'next-intl'
 
 const CurrencyUnitDropdown = () => {
-    const { i18n } = useTranslation()
+    const locale = useLocale()
     const [isMenuVisible, setIsMenuVisible] = useState(false)
     const [isHovered, setIsHovered] = useState(false)
-    const [currentLanguage, setCurrentLanguage] = useState('ENG')
+    const [currentLanguage, setCurrentLanguage] = useState(locale.toUpperCase())
     const timerRef = useRef<NodeJS.Timeout | null>(null)
 
     useEffect(() => {
@@ -25,11 +25,12 @@ const CurrencyUnitDropdown = () => {
     }, [isHovered, isMenuVisible])
 
     const handleLanguageChange = (lng: string, label: string) => {
-        i18n.changeLanguage(lng)
         setCurrentLanguage(label)
+        window.location.href = `/${lng}`
     }
 
-    const languageWidth = currentLanguage === 'ZH-HK' ? 'w-[74.91px]' : 'w-[55.91px]'
+    const languageWidth = currentLanguage === 'ZH-HK' ? 'w-[84.91px]' : 'w-[55.91px]'
+
     return (
         <div
             className="flex hidden xl:block relative"

@@ -1,6 +1,6 @@
 'use client'
 import { useState, useEffect } from 'react'
-import { useTranslation } from 'react-i18next'
+import { useTranslations } from 'next-intl'
 import Timecomp from '../Timecomp/Timecomp'
 
 interface TimeLeft {
@@ -11,7 +11,7 @@ interface TimeLeft {
 }
 
 const TimerCounter = () => {
-    const { t } = useTranslation()
+    const t = useTranslations()
     const [targetTime, setTargetTime] = useState<number | null>(null)
 
     useEffect(() => {

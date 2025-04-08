@@ -1,8 +1,8 @@
 import React from 'react'
-import { useTranslation } from 'react-i18next'
+import { useTranslations } from 'next-intl'
 
 const Subscribe = () => {
-    const { t } = useTranslation()
+    const t = useTranslations()
 
     return (
         <div className="md:w-[360px] md:px-[15px] lg:px-[0px] lg:w-[320px] xl:w-[311.66px]">

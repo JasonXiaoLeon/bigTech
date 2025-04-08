@@ -1,9 +1,9 @@
 import React from 'react'
-import { useTranslation } from 'react-i18next'
+import { useTranslations } from 'next-intl'
 import RoundedImg from '@/components/RoundedImg'
 
 const BigTechContact = () => {
-    const { t } = useTranslation()
+    const t = useTranslations()
 
     const list = [
         { url: '/img/icon/Youtube-fill.png', borderColor: '#719ed6' },

@@ -1,8 +1,8 @@
 import React from 'react'
-import { useTranslation } from 'react-i18next'
+import { useTranslations } from 'next-intl'
 
 const SalesChartData = () => {
-    const { t } = useTranslation()
+    const t = useTranslations()
 
     const countries = [
         {

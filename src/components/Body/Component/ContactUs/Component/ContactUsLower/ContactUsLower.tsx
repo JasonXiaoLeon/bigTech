@@ -1,9 +1,9 @@
 import React from 'react'
-import { useTranslation } from 'react-i18next'
+import { useTranslations } from 'next-intl'
 import ContactCard from '../ContactUsUpper/Component/ContactCard'
 
 const ContactUsLower = () => {
-    const { t } = useTranslation()
+    const t = useTranslations()
 
     const contactData = [
         {

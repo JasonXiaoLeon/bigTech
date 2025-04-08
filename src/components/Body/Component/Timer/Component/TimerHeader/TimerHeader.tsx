@@ -1,8 +1,8 @@
 import React from 'react'
-import { useTranslation } from 'react-i18next'
+import { useTranslations } from 'next-intl'
 
 const TimerHeader = () => {
-    const { t } = useTranslation()
+    const t = useTranslations()
 
     return (
         <div className="mb-[15px] h-[31.195px]">

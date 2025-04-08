@@ -1,10 +1,10 @@
 import React from 'react'
 import ChooseItem from './component'
 import ComponentCarousel from '@/components/Utils/Component/ComponentCarousel'
-import { useTranslation } from 'react-i18next'
+import { useTranslations } from 'next-intl'
 
 const ChooseItemlist = () => {
-    const { t } = useTranslation()
+    const t = useTranslations()
 
     const list = [
         {

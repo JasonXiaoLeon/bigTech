@@ -1,11 +1,11 @@
 import React from 'react'
-import { useTranslation } from 'react-i18next'
+import { useTranslations } from 'next-intl'
 import BigTechContact from './Component/BigTechContact/BigTechContact'
 import FooterListBlock from './Component/FooterListBlock'
 import Subscribe from './Component/Subscribe'
 
 const FooterContent = () => {
-    const { t } = useTranslation()
+    const t = useTranslations()
 
     const listUsefulLinks = [
         t('footerListBlock.listUsefulLinks.0'),

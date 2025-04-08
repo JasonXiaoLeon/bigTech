@@ -1,8 +1,8 @@
 import React from 'react'
-import { useTranslation } from 'react-i18next'
+import { useTranslations } from 'next-intl'
 
 const RoadMapList = () => {
-    const { t } = useTranslation()
+    const t = useTranslations()
 
     const list = [
         t('roadMapList.whitePaper'),

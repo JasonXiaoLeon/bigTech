@@ -1,9 +1,9 @@
 import React from 'react'
-import { useTranslation } from 'react-i18next'
+import { useTranslations } from 'next-intl'
 import TermBtn from './Component/termBtn'
 
 const Copyright = () => {
-    const { t } = useTranslation()
+    const t = useTranslations()
 
     const list = [
         { value: t('copyright.terms'), url: '/terms' },

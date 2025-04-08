@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react'
 
 interface FooterListItemProps {
@@ -14,7 +13,6 @@ const FooterListItem: React.FC<FooterListItemProps> = ({ item }) => {
         setTimeout(() => {
             setIsHoveredEnter(true)
         }, 100)
-
     }
 
     const handleMouseLeave = () => {

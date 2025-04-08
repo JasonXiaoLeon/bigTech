@@ -1,10 +1,10 @@
 import React from 'react'
 import CurrencyUnitDropdown from '../CurrencyUnitDropdown'
 import Button from '@/components/Button/Button'
-import { useTranslation } from 'react-i18next'
+import { useTranslations } from 'next-intl'
 
 const BuyButton = () => {
-    const { t } = useTranslation()
+    const t = useTranslations()
 
     return (
         <div className="flex items-center h-[86px] lg:h-[90px] ml-[10px] mr-[50px] lg:mr-[0px] hidden md:flex">

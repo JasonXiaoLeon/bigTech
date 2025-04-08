@@ -1,9 +1,9 @@
 import NormalBtn from '@/components/Button/NormalBtn/NormalBtn'
 import React from 'react'
-import { useTranslation } from 'react-i18next'
+import { useTranslations } from 'next-intl'
 
 const ContactForm = () => {
-    const { t } = useTranslation()
+    const t = useTranslations()
 
     return (
         <div className="px-[15px]">

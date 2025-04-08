@@ -1,9 +1,9 @@
 import React from 'react'
-import { useTranslation } from 'react-i18next'
+import { useTranslations } from 'next-intl'
 import LongScrollChartBlock from './Component/LongScrollChartBlock'
 
 const LongScrollChart = () => {
-    const { t } = useTranslation()
+    const t = useTranslations()
 
     const dataList = [
         {

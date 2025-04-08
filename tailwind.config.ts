@@ -80,7 +80,6 @@ const config: Config = {
                 'left-right': 'leftRight 6s ease-in-out infinite',
                 'top-down': 'topDown 4s ease-in-out infinite',
                 growWidth: 'growWidth 1.5s forwards',
-                growWidthReverse: 'growWidthReverse 1.5s forwards',
             },
             keyframes: {
                 leftRight: {
@@ -103,14 +102,6 @@ const config: Config = {
                     },
                     '100%': {
                         width: '100%',
-                    },
-                    },
-                    growWidthReverse: {
-                    '0%': {
-                        width: '100%',
-                    },
-                    '100%': {
-                        width: '0',
                     },
                 },
             },

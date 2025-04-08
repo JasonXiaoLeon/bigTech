@@ -1,10 +1,11 @@
 import React, { useState, useRef, useEffect } from 'react'
-import { useTranslation } from 'react-i18next'
+import { useLocale, useTranslations } from 'next-intl'
 import DropDownForPages from '../DropDownForPages/DropDownForPages'
 import HeaderNaviItem from './components/HeaderNaviItem'
 
 const HeaderNavi = () => {
-    const { t, i18n } = useTranslation()
+    const t = useTranslations()
+    const locale = useLocale()
     const [activeIndex, setActiveIndex] = useState(0)
     const [showDropdown, setShowDropdown] = useState(false)
     const dropdownRef = useRef<HTMLDivElement | null>(null)
@@ -32,7 +33,7 @@ const HeaderNavi = () => {
     }
 
     const contentList = [t('dropdown.page1'), t('dropdown.page2')]
-    const isZHHK = i18n.language === 'zhhant'
+    const isZHHK = locale === 'zhhant'
 
     // 点击外部关闭下拉菜单
     useEffect(() => {
