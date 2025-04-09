@@ -3,6 +3,7 @@ import React, { useState, useEffect, useRef } from 'react'
 import { useTranslations } from 'next-intl'
 import CubeBtn from '@/components/Button/CubeBtn'
 import SocialMeidaIcon from '@/components/Body/Component/RoadMap/component/OurTeam/Component/SocialMediaIcon'
+import Image from 'next/image'
 
 const SmallNavBtn = () => {
     const t = useTranslations()
@@ -18,7 +19,7 @@ const SmallNavBtn = () => {
         { name: t('side_bar.aboutUs'), link: '#about-us' },
         { name: t('side_bar.sales'), link: '#sales' },
         { name: t('side_bar.roadmap'), link: '#roadmap' },
-        { name: t('side_bar.blog'), link: '#' , btn: true},
+        { name: t('side_bar.blog'), link: '#', btn: true },
         { name: t('side_bar.contactUs'), link: '#contact-us' },
     ]
 
@@ -39,7 +40,6 @@ const SmallNavBtn = () => {
 
         document.addEventListener('mousedown', handleClickOutside)
 
-        // 控制 body 的滚动
         if (isOpen) {
             document.body.style.overflow = 'hidden'
         } else {
@@ -65,11 +65,7 @@ const SmallNavBtn = () => {
     return (
         <div className="flex block lg:hidden items-center w-[26.25px] h-[30px]">
             <button onClick={toggleMenu}>
-                <img
-                    src="/img/icon/menu.png"
-                    alt="Menu"
-                    className="w-[26.25px] h-[26.25px]"
-                />
+                <Image src="/img/icon/menu.png" alt="Menu" width={26.25} height={26.25} />
             </button>
 
             <div
@@ -86,7 +82,7 @@ const SmallNavBtn = () => {
                 `}
             >
                 <div className="flex justify-between py-[30px] px-[25px]">
-                    <img src="/img/header.png" className="w-[109.63px] h-[65px]" alt="Logo" />
+                    <Image src="/img/header.png" alt="Logo" width={109.63} height={65} />
                 </div>
                 <ul className="uppercase">
                     {menuItems.map((item, index) => (

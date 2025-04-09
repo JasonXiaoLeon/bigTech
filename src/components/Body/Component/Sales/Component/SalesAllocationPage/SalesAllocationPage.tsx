@@ -1,11 +1,7 @@
 import React, { useEffect, useState } from 'react'
+import { TitleContentProps } from '@/types'
 
-interface Props {
-    title: string
-    content: string
-}
-
-const SalesAllocationPage: React.FC<Props> = ({ title, content }) => {
+const SalesAllocationPage: React.FC<TitleContentProps> = ({ title, content }) => {
     const [isVisible, setIsVisible] = useState(false)
 
     useEffect(() => {

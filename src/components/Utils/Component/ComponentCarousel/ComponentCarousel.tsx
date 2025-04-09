@@ -1,12 +1,6 @@
 'use client'
 import React, { useState, useEffect } from 'react'
-
-interface ComponentCarouselProps {
-    components: React.ReactNode[]
-    autoPlay?: boolean
-    interval?: number
-    containerHeight?: number
-}
+import { ComponentCarouselProps } from '@/types'
 
 const ComponentCarousel: React.FC<ComponentCarouselProps> = ({
     components,
@@ -80,7 +74,6 @@ const ComponentCarousel: React.FC<ComponentCarouselProps> = ({
     // 轮播逻辑处理，确保循环播放时进度条正确
     const normalizedIndex = currentIndex // 当前的索引直接使用，不再需要取余数
 
-    // 计算进度条比例
     const progressRatio =
         originalCount > visibleCount
             ? Math.min(normalizedIndex / (originalCount - visibleCount), 1)

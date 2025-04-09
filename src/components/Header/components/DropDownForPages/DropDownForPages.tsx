@@ -1,10 +1,7 @@
 import React from 'react'
+import { ContentListProp } from '@/types'
 
-interface props {
-    contentList: string[]
-}
-
-const DropDownForPages: React.FC<props> = ({ contentList }) => {
+const DropDownForPages: React.FC<ContentListProp> = ({ contentList }) => {
     return (
         <div className="absolute left-[90px] w-[230px] py-[18px] bg-[#0b1d33]">
             <ul className="flex flex-col">

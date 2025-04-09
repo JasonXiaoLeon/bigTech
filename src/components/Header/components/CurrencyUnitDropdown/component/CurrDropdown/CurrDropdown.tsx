@@ -10,8 +10,8 @@ const CurrDropdown = ({
 }) => {
     const currList = [
         { label: 'ENG', value: 'en' },
-        { label: 'ZH', value: 'zh' },
-        { label: 'ZH-HK', value: 'zhhant' },
+        { label: 'ZH', value: 'zh-Hans' },
+        { label: 'ZH-HK', value: 'zh-Hant' },
         { label: 'TH', value: 'th' },
     ]
 

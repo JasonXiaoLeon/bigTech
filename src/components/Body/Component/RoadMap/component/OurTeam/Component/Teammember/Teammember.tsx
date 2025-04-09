@@ -1,13 +1,8 @@
 import React from 'react'
 import SocialMediaIcon from '../SocialMediaIcon'
+import { TeammemberCardProps } from '@/types'
 
-interface props {
-    imgUrl: string
-    name: string
-    jobTitle: string
-}
-
-const Teammember: React.FC<props> = ({ imgUrl, name, jobTitle }) => {
+const Teammember: React.FC<TeammemberCardProps> = ({ imgUrl, name, jobTitle }) => {
     return (
         <div className="flex justify-center px-[15px] w-screen md:w-[240px] lg:w-[320px] xl:w-[312.5px]">
             <div className="w-[360px] md:w-[210px] lg:w-[227px] mb-[60px] text-white flex flex-col items-center group">
@@ -16,7 +11,7 @@ const Teammember: React.FC<props> = ({ imgUrl, name, jobTitle }) => {
                     <img
                         src={imgUrl}
                         loading="lazy"
-                        className="w-[197px] h-[197px] md:w-[180px] md:h-[180px] lg:w-[197px] lg:h-[197px] rounded-full absolute group-hover:filter-none group-hover:grayscale-0 filter grayscale transition-all duration-300"
+                        className="w-[197px] h-[197px] md:w-[180px] md:h-[180px] lg:w-[197px] lg:h-[197px] rounded-full absolute group-hover:filter-none group-hover:grayscale-0 filter grayscale transition-all duration-300 cursor-not-allowed"
                     />
                 </div>
 

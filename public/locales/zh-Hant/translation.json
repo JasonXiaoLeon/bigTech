@@ -225,6 +225,11 @@
     "terms": "條款與條件",
     "privacy": "隱私政策",
     "login_signup": "登入 / 註冊"
+  },
+  "404": {
+    "title": "404",
+    "message": "頁面未找到。",
+    "returnHome": "返回首頁"
   }
 }
   

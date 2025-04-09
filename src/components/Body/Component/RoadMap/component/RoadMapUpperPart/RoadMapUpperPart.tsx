@@ -1,16 +1,8 @@
 import DescripHeader from '@/components/Body/Component/AboutUs/Component/DescripHeader/DescripHeader'
-import React, { ReactNode } from 'react'
+import React from 'react'
+import { DescripBlockProps } from '@/types'
 
-interface props {
-    title: string
-    content1?: string
-    content2?: string
-    blueContent?: string | ReactNode
-    afterBlueContent?: string
-    marginBottom: string
-}
-
-const RoadMapUpperPart: React.FC<props> = ({
+const RoadMapUpperPart: React.FC<DescripBlockProps> = ({
     title,
     content1,
     content2,

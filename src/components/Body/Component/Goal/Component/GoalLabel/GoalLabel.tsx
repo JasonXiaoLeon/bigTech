@@ -1,13 +1,7 @@
 import React from 'react'
+import { GoalLabelProps } from '@/types'
 
-interface Props {
-    List: Array<{
-        name: string
-        color: string
-    }>
-}
-
-const GoalLabel: React.FC<Props> = ({ List }) => {
+const GoalLabel: React.FC<GoalLabelProps> = ({ List }) => {
     return (
         <div className="w-[360px] md:w-[690px] lg:w-[710px] xl:w-[711.66px] h-[46px]">
             <ul className="flex justify-between md:mx-[50px]">

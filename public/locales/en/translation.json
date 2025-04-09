@@ -225,5 +225,10 @@
     "terms": "Terms and conditions",
     "privacy": "Privacy policy",
     "login_signup": "Login /Signup"
+  },
+  "404": {
+    "title": "404",
+    "message": "Page not found.",
+    "returnHome": "Return Home"
   }
 }

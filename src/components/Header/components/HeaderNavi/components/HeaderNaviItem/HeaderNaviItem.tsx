@@ -1,15 +1,14 @@
 import React, { useState } from 'react'
+import { HeaderNaviProp } from '@/types'
 
-interface Props {
-    name: string
-    index: number
-    path: string
-    isActive: boolean
-    dropdown: boolean
-    onClick: (index: number, path: string, dropdown: boolean) => void
-}
-
-const HeaderNaviItem: React.FC<Props> = ({ name, index, path, isActive, dropdown, onClick }) => {
+const HeaderNaviItem: React.FC<HeaderNaviProp> = ({
+    name,
+    index,
+    path,
+    isActive,
+    dropdown,
+    onClick,
+}) => {
     const [isHoveredEnter, setIsHoveredEnter] = useState(false)
     const [isHoveredLeave, setIsHoveredLeave] = useState(false)
 

@@ -1,15 +1,14 @@
 import { hexToRgb } from '@/components/Utils/Component/hexToRgb/hexToRgb'
 import React from 'react'
+import { TimelineCardProps } from '@/types'
 
-interface Props {
-    date: string
-    textColor: string
-    title: string
-    content: string[]
-    isOdd: boolean
-}
-
-const LongScrollChartBlock: React.FC<Props> = ({ date, textColor, title, content, isOdd }) => {
+const LongScrollChartBlock: React.FC<TimelineCardProps> = ({
+    date,
+    textColor,
+    title,
+    content,
+    isOdd,
+}) => {
     return (
         <div className="w-[370px]">
             {isOdd ? (

@@ -1,13 +1,13 @@
 import React from 'react'
+import Image from 'next/image'
+import { ContactCardLinesProps } from '@/types'
 
-interface props {
-    url?: string
-    firstLine: string
-    secondLine: string
-    borderColor: string
-}
-
-const ContactCard: React.FC<props> = ({ url, firstLine, secondLine, borderColor }) => {
+const ContactCard: React.FC<ContactCardLinesProps> = ({
+    url,
+    firstLine,
+    secondLine,
+    borderColor,
+}) => {
     return (
         <div className="flex justify-center px-[15px]">
             <div className="flex flex-col items-center mb-[30px]">
@@ -16,10 +16,12 @@ const ContactCard: React.FC<props> = ({ url, firstLine, secondLine, borderColor 
                         className="flex justify-center rounded-full bg-[#0b1d33] items-center w-[83px] h-[83px] border-[3px]"
                         style={{ borderColor: `${borderColor}` }}
                     >
-                        <img
-                            src={url}
-                            alt=""
-                            className="w-[32px] h-[32px] rounded-full object-contain"
+                        <Image
+                            src={url || '/img/icon/email.png'}
+                            alt="Contact Avatar"
+                            className="rounded-full object-contain"
+                            width={32}
+                            height={32}
                         />
                     </div>
                 </div>

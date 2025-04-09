@@ -32,7 +32,7 @@ const ContactForm = () => {
                         <textarea
                             placeholder={t('contact.placeholder.message')}
                             className="w-[320px] h-[184px] md:w-[570px] md:h-[184px] lg:w-[770px] 
-                    xl:w-[1060px] mb-[30px] rounded-[5px] px-[18px] py-[20px] bg-[#0b1d33] border border-[hsla(0,0%,100%,0.06)] focus:outline-none"
+                    xl:w-[1060px] mb-[30px] rounded-[5px] px-[18px] py-[20px] bg-[#0b1d33] border border-[hsla(0,0%,100%,0.06)] focus:outline-none resize-none"
                         />
                         <NormalBtn
                             value={t('contact.button.send')}

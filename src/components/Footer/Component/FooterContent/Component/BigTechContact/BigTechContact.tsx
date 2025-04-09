@@ -1,5 +1,6 @@
 import React from 'react'
 import { useTranslations } from 'next-intl'
+import Image from 'next/image'
 import RoundedImg from '@/components/RoundedImg'
 
 const BigTechContact = () => {
@@ -15,7 +16,13 @@ const BigTechContact = () => {
     return (
         <div className="mb-[30px] xl:mb-[0px] w-[360px] lg:w-[320px] xl:w-[312.5px] md:px-[15px] lg:px-[0px] xl:px-[15px]">
             <a href="#">
-                <img src="/img/header.png" alt="" className="w-[140px] h-[83px] mb-[20px]" />
+                <Image
+                    src="/img/header.png"
+                    alt="Big Tech Header"
+                    width={140}
+                    height={83}
+                    className="mb-[20px]"
+                />
             </a>
             <p className="h-[78px] text-[15px] text-[#a4b4c3] font-normal mb-[25px] leading-[26px] lg:w-[290px] xl:w-[282.5px]">
                 {t('footer.bigtech.description')}

@@ -225,6 +225,11 @@
     "terms": "条款与条件",
     "privacy": "隐私政策",
     "login_signup": "登录 / 注册"
+  },
+  "404": {
+    "title": "404",
+    "message": "页面未找到。",
+    "returnHome": "返回首页"
   }
 }
   

@@ -5,9 +5,21 @@ import { useLocale } from 'next-intl'
 
 const CurrencyUnitDropdown = () => {
     const locale = useLocale()
+    const currList = [
+        { label: 'ENG', value: 'en' },
+        { label: 'ZH', value: 'zh-Hans' },
+        { label: 'ZH-HK', value: 'zh-Hant' },
+        { label: 'TH', value: 'th' },
+    ]
+
+    const findLabelByLocale = (locale: string): string => {
+        const match = currList.find((item) => item.value === locale)
+        return match?.label || locale.toUpperCase()
+    }
+
     const [isMenuVisible, setIsMenuVisible] = useState(false)
     const [isHovered, setIsHovered] = useState(false)
-    const [currentLanguage, setCurrentLanguage] = useState(locale.toUpperCase())
+    const [currentLanguage, setCurrentLanguage] = useState(findLabelByLocale(locale))
     const timerRef = useRef<NodeJS.Timeout | null>(null)
 
     useEffect(() => {
@@ -29,8 +41,7 @@ const CurrencyUnitDropdown = () => {
         window.location.href = `/${lng}`
     }
 
-    const languageWidth = currentLanguage === 'ZH-HK' ? 'w-[84.91px]' : 'w-[55.91px]'
-
+    const languageWidth = currentLanguage === 'ZH-HK' ? 'w-[58.91px]' : 'w-[55.91px]'
     return (
         <div
             className="flex hidden xl:block relative"
@@ -42,8 +53,10 @@ const CurrencyUnitDropdown = () => {
                 setIsHovered(false)
             }}
         >
-            <div className={`flex items-center cursor-pointer ${languageWidth} h-[28px]`}>
-                <span className="text-white text-base text-[16px] tracking-1px font-bold">
+            <div className="flex items-center cursor-pointer h-[28px]">
+                <span
+                    className={`text-white text-base text-[16px] tracking-1px font-bold ${languageWidth}`}
+                >
                     {currentLanguage}
                 </span>
                 <button>

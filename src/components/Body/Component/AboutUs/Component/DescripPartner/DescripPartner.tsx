@@ -1,9 +1,5 @@
 import React from 'react'
-
-type PartnerProps = {
-    index: number
-    partnerName: string
-}
+import { PartnerProps } from '@/types'
 
 const DescripPartner: React.FC<PartnerProps> = ({ index, partnerName }) => {
     return (

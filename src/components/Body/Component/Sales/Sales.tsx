@@ -1,4 +1,5 @@
 import React from 'react'
+import Image from 'next/image'
 import SalesChartData from './Component/SalesChartData'
 import SalesAllocation from './Component/SalesAllocation'
 
@@ -15,10 +16,12 @@ const Sales = () => {
             >
                 <div className="px-[15px]">
                     <div className="flex flex-col bg-[#0b1d33] rounded-[20px] px-[30px] md:px-[45px] lg:px-[30px] xl:px-[35px] py-[40px] md:py-[60px] xl:py-[50px] lg:w-[450px] md:w-[570px] xl:w-[485px]">
-                        <img
+                        <Image
                             src="/img/chart1.png"
-                            alt=""
-                            className="w-[238px] h-[238px] mx-auto mb-[75px]"
+                            alt="Sales Chart"
+                            width={238}
+                            height={238}
+                            className="mx-auto mb-[75px]"
                             loading="lazy"
                         />
                         <SalesChartData />

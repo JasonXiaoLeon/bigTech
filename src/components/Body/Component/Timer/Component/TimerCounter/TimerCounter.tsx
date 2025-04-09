@@ -2,13 +2,7 @@
 import { useState, useEffect } from 'react'
 import { useTranslations } from 'next-intl'
 import Timecomp from '../Timecomp/Timecomp'
-
-interface TimeLeft {
-    days: number
-    hours: number
-    minutes: number
-    seconds: number
-}
+import { TimeLeft } from '@/types'
 
 const TimerCounter = () => {
     const t = useTranslations()

@@ -35,7 +35,6 @@ const HeaderNavi = () => {
     const contentList = [t('dropdown.page1'), t('dropdown.page2')]
     const isZHHK = locale === 'zhhant'
 
-    // 点击外部关闭下拉菜单
     useEffect(() => {
         const handleOutsideClick = (e: MouseEvent) => {
             if (dropdownRef.current && !dropdownRef.current.contains(e.target as Node)) {
@@ -50,7 +49,7 @@ const HeaderNavi = () => {
 
     return (
         <div
-            className={`h-[86px] lg:h-[90px] hidden xl:w-[${isZHHK ? '812.18px' : '831.18px'}] lg:w-[711.09px] lg:block`}
+            className={`h-[86px] lg:h-[90px] hidden xl:w-[${isZHHK ? '828.18px' : '831.18px'}] lg:w-[711.09px] lg:block`}
         >
             <div className="flex h-full lg:ml-[60px] xl:ml-[90px]">
                 {navItems.map((item, index) => (

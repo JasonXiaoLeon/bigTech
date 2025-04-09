@@ -1,13 +1,13 @@
 import DescripHeader from '@/components/Body/Component/AboutUs/Component/DescripHeader/DescripHeader'
 import React from 'react'
-interface props {
-    title: string
-    content1?: string
-    blueContent?: string
-    marginBottom: string
-}
+import { DescripBlockProps } from '@/types'
 
-const RoadMapUpperStart: React.FC<props> = ({ title, content1, blueContent, marginBottom }) => {
+const RoadMapUpperStart: React.FC<DescripBlockProps> = ({
+    title,
+    content1,
+    blueContent,
+    marginBottom,
+}) => {
     return (
         <div className="flex md:justify-center">
             <div className="flex justify-center w-[390px] md:w-[750px] lg:w-[400px] xl:w-[490px]">

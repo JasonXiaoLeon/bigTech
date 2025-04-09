@@ -1,8 +1,7 @@
 import React from 'react'
-interface props {
-    content: string
-}
-const DescripHeader: React.FC<props> = ({ content }) => {
+import { DescripHeaderProps } from '@/types'
+
+const DescripHeader: React.FC<DescripHeaderProps> = ({ content }) => {
     return (
         <div>
             <div className="flex items-center text-white px-[15px] mb-[25px] text-[14px] font-bold uppercase tracking-[0.09em] leading-[1.75]">

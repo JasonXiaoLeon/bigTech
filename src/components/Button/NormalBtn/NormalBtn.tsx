@@ -1,16 +1,7 @@
 import React from 'react'
+import { NormalBtnProps } from '@/types'
 
-interface Props {
-    value: string
-    textSize?: string
-    widthType?: number
-    color?: string
-    height?: string
-    fontWeight?: string
-    textHoverColor?: string
-}
-
-const NormalBtn: React.FC<Props> = ({
+const NormalBtn: React.FC<NormalBtnProps> = ({
     value,
     textSize = '13px',
     widthType = 0,

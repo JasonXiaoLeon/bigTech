@@ -1,12 +1,8 @@
 import React from 'react'
 import FooterListItem from './Component/FooterListItem/FooterListItem'
+import { FooterContentProp } from '@/types'
 
-interface Props {
-    title: string
-    value: string[]
-}
-
-const FooterListBlock: React.FC<Props> = ({ title, value }) => {
+const FooterListBlock: React.FC<FooterContentProp> = ({ title, value }) => {
     return (
         <div className="mb-[30px] md:px-[15px]">
             <div className="uppercase mt-[25px] mb-[27px] text-[18px] text-white font-bold leading-[1.2] tracking-[0.05em]">

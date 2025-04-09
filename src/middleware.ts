@@ -1,11 +1,14 @@
-import createMiddleware from 'next-intl/middleware'
-import { routing } from './i18n/routing'
+// middleware.ts
+import { authMiddleware } from './middlewares/authMiddleware'
+import { i18nMiddleware } from './middlewares/i18nMiddleware'
+import { chain } from './middlewares/chain'
 
-export default createMiddleware(routing)
+const middlewares = [authMiddleware, i18nMiddleware]
+
+export default chain(middlewares)
 
 export const config = {
-    // Match all pathnames except for
-    // - … if they start with `/api`, `/trpc`, `/_next` or `/_vercel`
-    // - … the ones containing a dot (e.g. `favicon.ico`)
     matcher: '/((?!api|trpc|_next|_vercel|.*\\..*).*)',
 }
+
+// webp -> image

@@ -21,11 +21,7 @@ const RoadMap = () => {
                         title={t('roadMap.title')}
                         content1={t('roadMap.content1')}
                         content2={t('roadMap.content2')}
-                        blueContent={
-                            <>
-                                <span className="inline">{t('roadMap.plan')}</span>
-                            </>
-                        }
+                        blueContent={t('roadMap.plan')}
                         marginBottom={'60px'}
                     />
                 </div>

@@ -1,10 +1,5 @@
 import React from 'react'
-
-interface Props {
-    type: 'facebook' | 'twitter' | 'youtube' | 'ins' | 'linkedin'
-    size?: string
-}
-
+import { SocialIconProps } from '@/types/SocialIcon'
 const icons = {
     facebook: (
         <svg
@@ -57,7 +52,7 @@ const icons = {
     ),
 }
 
-const SocialMediaIcon: React.FC<Props> = ({ type, size }) => {
+const SocialMediaIcon: React.FC<SocialIconProps> = ({ type, size }) => {
     return (
         <div className="px-[10px] hover:text-[#00c4f4] transition-all duration-300">
             {React.cloneElement(icons[type], { width: size, height: size })}

@@ -1,16 +1,12 @@
 'use client'
 import React, { useState } from 'react'
+import { ImageHoverSizeNColor } from '@/types'
 
-interface Props {
-    size: string
-    bgColor: string
-}
-
-const CubeBtn: React.FC<Props> = ({ size, bgColor }) => {
+const CubeBtn: React.FC<ImageHoverSizeNColor> = ({ size, bgColor }) => {
     const [rotated, setRotated] = useState(false)
 
     const handleClick = () => {
-        setRotated(prev => !prev)
+        setRotated((prev) => !prev)
     }
 
     return (
@@ -42,4 +38,3 @@ const CubeBtn: React.FC<Props> = ({ size, bgColor }) => {
 }
 
 export default CubeBtn
-
