@@ -1,7 +1,7 @@
 import React, { useState, useRef, useEffect } from 'react'
 import { useLocale, useTranslations } from 'next-intl'
-import DropDownForPages from '../DropDownForPages/DropDownForPages'
-import HeaderNaviItem from './components/HeaderNaviItem'
+import HeaderNaviItem from '@/components/Header/Components/HeaderNavi/Components/HeaderNaviItem'
+import DropDownForPages from '@/components/Header/Components/DropDownForPages/DropDownForPages'
 
 const HeaderNavi = () => {
     const t = useTranslations()

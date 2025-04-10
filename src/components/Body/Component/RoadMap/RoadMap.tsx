@@ -1,13 +1,13 @@
 'use client'
 import React from 'react'
 import { useTranslations } from 'next-intl'
-import RoadMapUpperPart from './component/RoadMapUpperPart'
-import RoadMapLowerPart from './component/RoadMapLowerPart'
-import RoadMapUpperStart from './component/RoadMapUpperStart'
-import RoadMapList from './component/RoadMapList/RoadMapList'
+import RoadMapUpperPart from './Component/RoadMapUpperPart'
+import RoadMapLowerPart from './Component/RoadMapLowerPart'
+import RoadMapUpperStart from './Component/RoadMapUpperStart'
+import RoadMapList from './Component/RoadMapList/RoadMapList'
 import NormalBtn from '../../../Button/NormalBtn/NormalBtn'
-import OurTeam from './component/OurTeam'
-import LongScrollChart from './component/LongScrollChart'
+import OurTeam from './Component/OurTeam'
+import LongScrollChart from './Component/LongScrollChart'
 
 const RoadMap = () => {
     const t = useTranslations()

@@ -2,7 +2,7 @@ import React from 'react'
 import { useTranslations } from 'next-intl'
 import ContactUsLower from './Component/ContactUsLower'
 import ContactForm from './Component/ContactForm'
-import RoadMapUpperPart from '../RoadMap/component/RoadMapUpperPart'
+import RoadMapUpperPart from '../RoadMap/Component/RoadMapUpperPart'
 
 const ContactUs = () => {
     const t = useTranslations()

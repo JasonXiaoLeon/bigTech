@@ -4,7 +4,7 @@ import DescriptionOfAbout from './Component/DescriptionOfAbout'
 import DescripHeader from './Component/DescripHeader/DescripHeader'
 import PartnerGrid from './Component/PartnerGrid'
 import ChooseItemlist from './Component/ChooseItemlist'
-import RoadMapUpperPart from '../RoadMap/component/RoadMapUpperPart'
+import RoadMapUpperPart from '../RoadMap/Component/RoadMapUpperPart'
 
 const AboutUs = () => {
     const t = useTranslations()

@@ -1,7 +1,7 @@
 'use client'
 import React, { useState, useRef, useEffect } from 'react'
-import CurrDropdown from './component/CurrDropdown'
 import { useLocale } from 'next-intl'
+import CurrDropdown from '@/components/Header/Components/CurrencyUnitDropdown/Component/CurrDropdown'
 
 const CurrencyUnitDropdown = () => {
     const locale = useLocale()

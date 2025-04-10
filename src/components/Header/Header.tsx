@@ -1,9 +1,9 @@
 'use client'
 import React, { useState, useEffect } from 'react'
-import HeaderIcon from './components/HeaderIcon'
-import HeaderNavi from './components/HeaderNavi'
-import BuyButton from './components/BuyButton'
-import SmallNavBtn from './components/HeaderNavi/components/SmallNaviBtn'
+import HeaderIcon from './Components/HeaderIcon'
+import HeaderNavi from './Components/HeaderNavi'
+import BuyButton from './Components/BuyButton'
+import SmallNavBtn from './Components/HeaderNavi/Components/SmallNaviBtn'
 
 const Header = () => {
     const [isFixed, setIsFixed] = useState(false)

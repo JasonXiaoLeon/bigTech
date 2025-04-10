@@ -2,7 +2,7 @@
 import React, { useState, useEffect, useRef } from 'react'
 import { useTranslations } from 'next-intl'
 import CubeBtn from '@/components/Button/CubeBtn'
-import SocialMeidaIcon from '@/components/Body/Component/RoadMap/component/OurTeam/Component/SocialMediaIcon'
+import SocialMeidaIcon from '@/components/Body/Component/RoadMap/Component/OurTeam/Component/SocialMediaIcon'
 import Image from 'next/image'
 
 const SmallNavBtn = () => {

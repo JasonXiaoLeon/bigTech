@@ -1,5 +1,5 @@
 import React from 'react'
-import ChooseItem from './component'
+import ChooseItem from './Component/ChooseItem'
 import ComponentCarousel from '@/components/Utils/Component/ComponentCarousel'
 import { useTranslations } from 'next-intl'
 
