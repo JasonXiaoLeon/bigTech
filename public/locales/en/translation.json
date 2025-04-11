@@ -230,5 +230,8 @@
     "title": "404",
     "message": "Page not found.",
     "returnHome": "Return Home"
+  },
+  "login": {
+    "info": "Welcome to the login page"
   }
 }

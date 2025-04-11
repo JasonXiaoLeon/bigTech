@@ -1,31 +1,24 @@
-// import NextAuth from 'next-auth'
-// import { authConfig } from '../../auth.config'
+import { NextRequest, NextFetchEvent, NextResponse } from 'next/server'
+import type { CustomNextMiddleware } from '@/types/Middleware'
 
-// export default NextAuth(authConfig).auth
+export function authMiddleware(next: CustomNextMiddleware): CustomNextMiddleware {
+  return async (req: NextRequest, event: NextFetchEvent, res: NextResponse) => {
+    console.log('🔐 Auth Middleware triggered')
 
-// export const config = {
-//     matcher: ['/((?!api|_next/static|_next/image|.*\\.png$).*)'],
-// }
+    const { nextUrl } = req
+    const locale = req.cookies.get('NEXT_LOCALE')?.value
+    console.log('Detected locale:', locale)
 
-// authMiddleware.ts
-import { NextRequest, NextFetchEvent, NextResponse, NextMiddleware } from 'next/server'
-
-export function authMiddleware(next: NextMiddleware): NextMiddleware {
-    return async (req: NextRequest, event: NextFetchEvent) => {
-        console.log('Auth Middleware triggered')
-
-        const { nextUrl } = req
-        const locale = nextUrl.locale || 'en'
-        const isOnDashboard = nextUrl.pathname.startsWith(`/${locale}/dashboard`)
-        const isLoggedIn = false // 模拟未登录
-
-        if (isOnDashboard && !isLoggedIn) {
-            const loginUrl = new URL(
-                `/${locale}/login?callbackUrl=${encodeURIComponent(nextUrl.pathname)}`,
-                nextUrl
-            )
-            return NextResponse.redirect(loginUrl)
-        }
-        return next(req, event)
+    const isOnDashboard = nextUrl.pathname.startsWith(`/${locale}/dashboard`)
+    const isLoggedIn = false
+    if (isOnDashboard && !isLoggedIn) {
+      const loginUrl = new URL(
+        `/${locale}/login?callbackUrl=${encodeURIComponent(nextUrl.pathname)}`,
+        nextUrl
+      )
+      return NextResponse.redirect(loginUrl)
     }
+
+    return next(req, event, res)
+  }
 }

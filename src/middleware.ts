@@ -1,4 +1,3 @@
-// middleware.ts
 import { printUrlMiddleware } from './middlewares/printUrlMiddleware'
 import { chain } from './middlewares/chain'
 import { authMiddleware } from './middlewares/authMiddleware'
