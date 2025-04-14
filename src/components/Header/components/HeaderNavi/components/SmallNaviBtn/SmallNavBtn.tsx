@@ -61,7 +61,6 @@ const SmallNavBtn = () => {
             })
         }
     }
-
     return (
         <div className="flex block lg:hidden items-center w-[26.25px] h-[30px]">
             <button onClick={toggleMenu}>
@@ -78,7 +77,7 @@ const SmallNavBtn = () => {
                 ref={menuRef}
                 className={`fixed top-0 right-0 w-[300px] h-screen bg-[#0b1d33] text-white z-50 
                     transform transition-all duration-700 ease-in-out
-                    ${isOpen ? 'translate-x-0 opacity-100' : 'translate-x-full opacity-0'}
+                    ${isOpen ? 'translate-x-0 opacity-100' : 'translate-x-full opacity-0 hidden'}
                 `}
             >
                 <div className="flex justify-between py-[30px] px-[25px]">

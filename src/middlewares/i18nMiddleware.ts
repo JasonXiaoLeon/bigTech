@@ -6,16 +6,13 @@ import type { CustomNextMiddleware } from '@/types/Middleware'
 const baseMiddleware = createMiddleware(routing)
 
 export function i18nMiddleware(middleware: CustomNextMiddleware): CustomNextMiddleware {
-  return async (req: NextRequest, event: NextFetchEvent, res: NextResponse) => {
-    console.log('🌐 i18nMiddleware triggered')
+    return async (req: NextRequest, event: NextFetchEvent, res: NextResponse) => {
+        const intlResponse = await baseMiddleware(req)
 
-    const intlResponse = await baseMiddleware(req)
+        if (intlResponse && (intlResponse.redirected || intlResponse.status !== 200)) {
+            return intlResponse
+        }
 
-    // 如果是 redirect 或错误状态，直接返回
-    if (intlResponse && (intlResponse.redirected || intlResponse.status !== 200)) {
-      return intlResponse
+        return middleware(req, event, intlResponse || res)
     }
-
-    return middleware(req, event, intlResponse || res)
-  }
 }

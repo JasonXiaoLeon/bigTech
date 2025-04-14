@@ -1,7 +1,7 @@
 import React from 'react'
-import CurrencyUnitDropdown from '../CurrencyUnitDropdown'
 import Button from '@/components/Button/Button'
 import { useTranslations } from 'next-intl'
+import CurrencyUnitDropdown from '../CurrencyUnitDropdown'
 
 const BuyButton = () => {
     const t = useTranslations()

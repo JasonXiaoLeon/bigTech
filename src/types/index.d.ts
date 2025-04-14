@@ -18,4 +18,4 @@ export * from './SocialIconProps'
 export * from './ContactCardLinesProps'
 export * from './FallbackImage'
 export * from './Middleware'
-
+export * from './next-auth'

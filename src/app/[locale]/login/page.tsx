@@ -1,11 +1,19 @@
-import React from 'react'
-import { useTranslations } from 'next-intl'
-const page = () => {
-    const t = useTranslations()
-    
-    return <div>
-        {t('login.info')}
-    </div>
-}
+import LoginForm from './_Component/LoginForm/LoginForm'
+import { redirect } from 'next/navigation'
+import GitHubSignIn from './_Component/GitHubSignIn/GitHubSignIn'
+import { auth } from '@/lib/auth'
+import GoogleSignIn from './_Component/GoogleSignIn/GoogleSignIn'
 
-export default page
+const LoginPage = async () => {
+    const session = await auth()
+    if(session) redirect("/")
+
+    return (
+        <div>
+            <GitHubSignIn />
+            <GoogleSignIn/>
+            <LoginForm />
+        </div>
+    )
+}
+export default LoginPage
