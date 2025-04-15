@@ -1,4 +1,4 @@
-"use client"
+'use client'
 import React from 'react'
 import { signOut } from 'next-auth/react'
 
@@ -7,7 +7,7 @@ const Signout = () => {
         await signOut()
     }
     return (
-        <div className='text-white'>
+        <div className="text-white">
             <button onClick={handleSignOut}>Sign Out</button>
         </div>
     )

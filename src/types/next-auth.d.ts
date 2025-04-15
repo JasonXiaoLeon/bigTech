@@ -6,13 +6,24 @@ declare module 'next-auth' {
         user: {
             id: string
             email: string
-            role: string
-        }
+            gender: string
+            refreshToken?: string
+        } | null
     }
 
     interface User {
         id: string
         email: string
-        role: string
+        gender: string
+        refreshToken?: string
+    }
+}
+
+declare module 'next-auth/jwt' {
+    interface JWT {
+        email: string
+        gender: string
+        exp: number
+        refreshToken: string
     }
 }

@@ -1,11 +1,10 @@
 import { executeAction } from '@/lib/action'
 import { auth, signIn } from '@/lib/auth'
-import { cookies } from 'next/headers'
 import { redirect } from 'next/navigation'
 
 const LoginForm = async () => {
     const session = await auth()
-    if (session) redirect('/')
+    if (session) redirect('/dashboard')
 
     return (
         <div className="max-w-md mx-auto mt-20 p-6 bg-white rounded-lg shadow-md">
@@ -15,7 +14,7 @@ const LoginForm = async () => {
                     'use server'
                     await executeAction({
                         actionFn: async () => {
-                            await signIn('credentials',formData)
+                            await signIn('credentials', formData)
                         },
                     })
                 }}
