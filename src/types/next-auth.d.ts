@@ -7,7 +7,9 @@ declare module 'next-auth' {
             id: string
             email: string
             gender: string
+            avatar: string
             refreshToken?: string
+            accessToken?: string
         } | null
     }
 
@@ -15,6 +17,7 @@ declare module 'next-auth' {
         id: string
         email: string
         gender: string
+        avatar: string
         refreshToken?: string
     }
 }
@@ -23,7 +26,9 @@ declare module 'next-auth/jwt' {
     interface JWT {
         email: string
         gender: string
+        avatar: string
         exp: number
         refreshToken: string
+        accessToken: string
     }
 }

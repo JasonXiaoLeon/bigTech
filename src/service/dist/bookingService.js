@@ -36,35 +36,30 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
     }
 };
 exports.__esModule = true;
-var auth_1 = require("@/utils/auth");
-var userService_1 = require("@/service/userService");
-function handler(req, res) {
-    return __awaiter(this, void 0, void 0, function () {
-        var refreshToken, payload, user, accessToken, _a;
-        return __generator(this, function (_b) {
-            switch (_b.label) {
-                case 0:
-                    refreshToken = req.cookies.refreshToken;
-                    if (!refreshToken)
-                        return [2 /*return*/, res.status(401).json({ message: 'Missing refresh token' })];
-                    _b.label = 1;
-                case 1:
-                    _b.trys.push([1, 3, , 4]);
-                    payload = auth_1.verifyRefreshToken(refreshToken);
-                    return [4 /*yield*/, userService_1.getUserByEmail(payload.email)];
-                case 2:
-                    user = _b.sent();
-                    if (!user)
-                        return [2 /*return*/, res.status(403).json({ message: 'Invalid refresh token' })];
-                    accessToken = auth_1.generateAccessToken({ email: user.email });
-                    res.status(200).json({ accessToken: accessToken });
-                    return [3 /*break*/, 4];
-                case 3:
-                    _a = _b.sent();
-                    return [2 /*return*/, res.status(403).json({ message: 'Invalid refresh token' })];
-                case 4: return [2 /*return*/];
-            }
+var userOperation_1 = require("@/models/userOperation");
+var BookingService = /** @class */ (function () {
+    function BookingService() {
+    }
+    BookingService.prototype.getUserOperationsCountByEmail = function (email) {
+        return __awaiter(this, void 0, Promise, function () {
+            var operationsCount, error_1;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0:
+                        _a.trys.push([0, 2, , 3]);
+                        return [4 /*yield*/, userOperation_1["default"].countDocuments({ email: email })];
+                    case 1:
+                        operationsCount = _a.sent();
+                        return [2 /*return*/, operationsCount];
+                    case 2:
+                        error_1 = _a.sent();
+                        console.error('Error fetching user operations count:', error_1);
+                        throw new Error('Failed to fetch user operations count.');
+                    case 3: return [2 /*return*/];
+                }
+            });
         });
-    });
-}
-exports["default"] = handler;
+    };
+    return BookingService;
+}());
+exports["default"] = new BookingService();

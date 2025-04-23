@@ -1,7 +1,7 @@
 import { NextRequest, NextFetchEvent, NextResponse } from 'next/server'
 import { getToken } from 'next-auth/jwt'
 import type { CustomNextMiddleware } from '@/types/Middleware'
-import { getRefreshExpireTimeByUser, getTokenByUser } from '@/service/userService'
+import { isDbTokenExpired } from '@/token/token'
 
 export function authMiddleware(next: CustomNextMiddleware): CustomNextMiddleware {
   return async (req: NextRequest, event: NextFetchEvent, res: NextResponse) => {
@@ -10,16 +10,10 @@ export function authMiddleware(next: CustomNextMiddleware): CustomNextMiddleware
     const isOnDashboard = nextUrl.pathname.startsWith(`/${locale}/dashboard`)
 
     const token = await getToken({ req, secret: process.env.AUTH_SECRET })
-
     const now = Math.floor(Date.now() / 1000)
-    const isTokenExpired = token?.exp && token.exp < now
-    const isLoggedIn = !!token?.email && !isTokenExpired
-
-    if (token?.email) {
-        const refreshToken = await getTokenByUser(token.email)
-        const refreshExp = await getRefreshExpireTimeByUser(token.email)
-    }
-
+    // const isTokenExpired = token?.exp && token.exp < now
+    const isLoggedIn = !!token?.email && !isDbTokenExpired(token.exp)
+    
     if (isOnDashboard && !isLoggedIn) {
       const loginUrl = new URL(
         `/${locale}/login?callbackUrl=${encodeURIComponent(nextUrl.pathname)}`,

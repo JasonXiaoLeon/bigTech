@@ -1,13 +1,18 @@
 import NextAuth from 'next-auth'
 import CredentialsProvider from 'next-auth/providers/credentials'
-import { getUserByEmail, updateUserRefreshToken } from '@/service/userService'
+import { getUserByEmail } from '@/service/userService'
 import bcrypt from 'bcrypt'
-import { v4 as uuidv4 } from 'uuid'
+import Google from "next-auth/providers/google"
+import GitHub from "next-auth/providers/github"
 
-const REFRESH_TOKEN_EXPIRE_IN = parseInt(process.env.REFRESH_TOKEN_EXPIRE_IN || '2592000', 10)
+// const REFRESH_TOKEN_EXPIRE_IN = parseInt(process.env.REFRESH_TOKEN_EXPIRE_IN || '2592000', 10)
+// const ACCESS_TOKEN_EXPIRE_IN = parseInt(process.env.ACCESS_TOKEN_EXPIRE_IN || '300', 10)
+// const AUTH_SECRET = process.env.AUTH_SECRET || 'edgeBigTech123456'
 
 export const { auth, handlers, signIn, signOut: signOutNextAuth } = NextAuth({
   providers: [
+    Google,
+    GitHub,
     CredentialsProvider({
       credentials: {
         email: { label: 'Email', type: 'text' },
@@ -37,6 +42,7 @@ export const { auth, handlers, signIn, signOut: signOutNextAuth } = NextAuth({
           id: user.id,
           email: user.email,
           gender: user.gender,
+          avatar: user.avatar,
         }
       },
     }),
@@ -44,8 +50,8 @@ export const { auth, handlers, signIn, signOut: signOutNextAuth } = NextAuth({
 
   session: {
     strategy: 'jwt',
-    maxAge: 60,
-    updateAge: 0,
+    maxAge: 60*60*24*7,
+    updateAge: 0 ,
   },
 
   callbacks: {
@@ -54,28 +60,36 @@ export const { auth, handlers, signIn, signOut: signOutNextAuth } = NextAuth({
 
       if (user) {
         token.email = user.email as string
-        token.gender = user.gender
+        token.gender = user.gender as string
+        token.avatar = user.avatar as string;
+        // const accessToken = sign(
+        //   { email: user.email, gender: user.gender },
+        //   AUTH_SECRET,
+        //   { expiresIn: ACCESS_TOKEN_EXPIRE_IN }
+        // )
+        // token.accessToken = accessToken
 
-        const refreshToken = uuidv4()
-        token.refreshToken = refreshToken
-        const refreshTokenExpires = now + REFRESH_TOKEN_EXPIRE_IN
-        token.exp = now + 5
+        // const refreshToken = uuidv4()
+        // token.refreshToken = refreshToken
+        // const refreshTokenExpires = now + REFRESH_TOKEN_EXPIRE_IN
 
-        await updateUserRefreshToken(user.email as string, refreshToken, refreshTokenExpires)
+        // await updateUserRefreshToken(user.email as string, refreshToken, refreshTokenExpires)
         return token
       }
       return token
     },
-
-    async session({ session, token }) {
-      if (token && token.email) {
+    async session({ session, token, }) {
+      if (token) {
         session.user = {
           ...session.user,
           email: token.email,
           gender: token.gender,
+          avatar: token.avatar,
+          accessToken: token.accessToken,
+          // refreshToken: token.refreshToken
         }
       }
-
+      // console.log(session)
       return session
     },
   },

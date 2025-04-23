@@ -53,10 +53,15 @@ var next_auth_1 = require("next-auth");
 var credentials_1 = require("next-auth/providers/credentials");
 var userService_1 = require("@/service/userService");
 var bcrypt_1 = require("bcrypt");
-var uuid_1 = require("uuid");
-var REFRESH_TOKEN_EXPIRE_IN = parseInt(process.env.REFRESH_TOKEN_EXPIRE_IN || '2592000', 10);
+var google_1 = require("next-auth/providers/google");
+var github_1 = require("next-auth/providers/github");
+// const REFRESH_TOKEN_EXPIRE_IN = parseInt(process.env.REFRESH_TOKEN_EXPIRE_IN || '2592000', 10)
+// const ACCESS_TOKEN_EXPIRE_IN = parseInt(process.env.ACCESS_TOKEN_EXPIRE_IN || '300', 10)
+// const AUTH_SECRET = process.env.AUTH_SECRET || 'edgeBigTech123456'
 exports.auth = (_a = next_auth_1["default"]({
     providers: [
+        google_1["default"],
+        github_1["default"],
         credentials_1["default"]({
             credentials: {
                 email: { label: 'Email', type: 'text' },
@@ -87,7 +92,8 @@ exports.auth = (_a = next_auth_1["default"]({
                             return [2 /*return*/, {
                                     id: user.id,
                                     email: user.email,
-                                    gender: user.gender
+                                    gender: user.gender,
+                                    avatar: user.avatar
                                 }];
                     }
                 });
@@ -96,31 +102,33 @@ exports.auth = (_a = next_auth_1["default"]({
     ],
     session: {
         strategy: 'jwt',
-        maxAge: 60,
+        maxAge: 60 * 60 * 24 * 7,
         updateAge: 0
     },
     callbacks: {
         jwt: function (_a) {
             var token = _a.token, user = _a.user;
             return __awaiter(this, void 0, void 0, function () {
-                var now, refreshToken, refreshTokenExpires;
+                var now;
                 return __generator(this, function (_b) {
-                    switch (_b.label) {
-                        case 0:
-                            now = Math.floor(Date.now() / 1000);
-                            if (!user) return [3 /*break*/, 2];
-                            token.email = user.email;
-                            token.gender = user.gender;
-                            refreshToken = uuid_1.v4();
-                            token.refreshToken = refreshToken;
-                            refreshTokenExpires = now + REFRESH_TOKEN_EXPIRE_IN;
-                            token.exp = now + 5;
-                            return [4 /*yield*/, userService_1.updateUserRefreshToken(user.email, refreshToken, refreshTokenExpires)];
-                        case 1:
-                            _b.sent();
-                            return [2 /*return*/, token];
-                        case 2: return [2 /*return*/, token];
+                    now = Math.floor(Date.now() / 1000);
+                    if (user) {
+                        token.email = user.email;
+                        token.gender = user.gender;
+                        token.avatar = user.avatar;
+                        // const accessToken = sign(
+                        //   { email: user.email, gender: user.gender },
+                        //   AUTH_SECRET,
+                        //   { expiresIn: ACCESS_TOKEN_EXPIRE_IN }
+                        // )
+                        // token.accessToken = accessToken
+                        // const refreshToken = uuidv4()
+                        // token.refreshToken = refreshToken
+                        // const refreshTokenExpires = now + REFRESH_TOKEN_EXPIRE_IN
+                        // await updateUserRefreshToken(user.email as string, refreshToken, refreshTokenExpires)
+                        return [2 /*return*/, token];
                     }
+                    return [2 /*return*/, token];
                 });
             });
         },
@@ -128,9 +136,10 @@ exports.auth = (_a = next_auth_1["default"]({
             var session = _a.session, token = _a.token;
             return __awaiter(this, void 0, void 0, function () {
                 return __generator(this, function (_b) {
-                    if (token && token.email) {
-                        session.user = __assign(__assign({}, session.user), { email: token.email, gender: token.gender });
+                    if (token) {
+                        session.user = __assign(__assign({}, session.user), { email: token.email, gender: token.gender, avatar: token.avatar, accessToken: token.accessToken });
                     }
+                    // console.log(session)
                     return [2 /*return*/, session];
                 });
             });

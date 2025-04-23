@@ -35,8 +35,19 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
         if (op[0] & 5) throw op[1]; return { value: op[0] ? op[1] : void 0, done: true };
     }
 };
+var __rest = (this && this.__rest) || function (s, e) {
+    var t = {};
+    for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p) && e.indexOf(p) < 0)
+        t[p] = s[p];
+    if (s != null && typeof Object.getOwnPropertySymbols === "function")
+        for (var i = 0, p = Object.getOwnPropertySymbols(s); i < p.length; i++) {
+            if (e.indexOf(p[i]) < 0 && Object.prototype.propertyIsEnumerable.call(s, p[i]))
+                t[p[i]] = s[p[i]];
+        }
+    return t;
+};
 exports.__esModule = true;
-exports.updateUserRefreshToken = exports.getRefreshExpireTimeByUser = exports.getTokenByUser = exports.getUserByEmail = void 0;
+exports.getRefreshExpireTimeByUser = exports.getUserByRefreshToken = exports.updateUserByEmail = exports.getUserByEmail = void 0;
 var databse_1 = require("@/lib/databse");
 var dbName = 'Edge';
 exports.getUserByEmail = function (email) { return __awaiter(void 0, void 0, void 0, function () {
@@ -62,28 +73,51 @@ exports.getUserByEmail = function (email) { return __awaiter(void 0, void 0, voi
         }
     });
 }); };
-function getTokenByUser(email) {
-    return __awaiter(this, void 0, void 0, function () {
-        var user;
-        return __generator(this, function (_a) {
-            switch (_a.label) {
-                case 0:
-                    if (!email) {
-                        throw new Error('Email is required');
-                    }
-                    return [4 /*yield*/, exports.getUserByEmail(email)];
-                case 1:
-                    user = _a.sent();
-                    if (!user) {
-                        console.log('No user found with the provided email');
-                        return [2 /*return*/, null];
-                    }
-                    return [2 /*return*/, user.refreshToken];
-            }
-        });
+exports.updateUserByEmail = function (email, updates) { return __awaiter(void 0, void 0, void 0, function () {
+    var _id, filteredUpdates, client, db, result;
+    return __generator(this, function (_a) {
+        switch (_a.label) {
+            case 0:
+                _id = updates._id, filteredUpdates = __rest(updates, ["_id"]);
+                return [4 /*yield*/, databse_1["default"]];
+            case 1:
+                client = _a.sent();
+                db = client.db(dbName);
+                return [4 /*yield*/, db.collection('users').updateOne({ email: email }, { $set: filteredUpdates })];
+            case 2:
+                result = _a.sent();
+                return [2 /*return*/, result];
+        }
     });
-}
-exports.getTokenByUser = getTokenByUser;
+}); };
+exports.getUserByRefreshToken = function (refreshToken) { return __awaiter(void 0, void 0, void 0, function () {
+    var client, db, usersCollection, user, error_2;
+    return __generator(this, function (_a) {
+        switch (_a.label) {
+            case 0:
+                if (!refreshToken) {
+                    throw new Error('Refresh token is required');
+                }
+                _a.label = 1;
+            case 1:
+                _a.trys.push([1, 4, , 5]);
+                return [4 /*yield*/, databse_1["default"]];
+            case 2:
+                client = _a.sent();
+                db = client.db('Edge');
+                usersCollection = db.collection('users');
+                return [4 /*yield*/, usersCollection.findOne({ refreshToken: refreshToken })];
+            case 3:
+                user = _a.sent();
+                return [2 /*return*/, user];
+            case 4:
+                error_2 = _a.sent();
+                console.error('Error fetching user by refresh token:', error_2);
+                throw new Error('Could not fetch user by refresh token');
+            case 5: return [2 /*return*/];
+        }
+    });
+}); };
 function getRefreshExpireTimeByUser(email) {
     return __awaiter(this, void 0, void 0, function () {
         var user;
@@ -106,26 +140,3 @@ function getRefreshExpireTimeByUser(email) {
     });
 }
 exports.getRefreshExpireTimeByUser = getRefreshExpireTimeByUser;
-exports.updateUserRefreshToken = function (email, newRefreshToken, expiresAt) { return __awaiter(void 0, void 0, void 0, function () {
-    var client, db, usersCollection, result, error_2;
-    return __generator(this, function (_a) {
-        switch (_a.label) {
-            case 0:
-                _a.trys.push([0, 3, , 4]);
-                return [4 /*yield*/, databse_1["default"]];
-            case 1:
-                client = _a.sent();
-                db = client.db(dbName);
-                usersCollection = db.collection('users');
-                return [4 /*yield*/, usersCollection.updateOne({ email: email }, { $set: { refreshToken: newRefreshToken, refreshTokenExpires: expiresAt } })];
-            case 2:
-                result = _a.sent();
-                return [2 /*return*/, result];
-            case 3:
-                error_2 = _a.sent();
-                console.error('Error updating refresh token:', error_2);
-                throw new Error('Could not update refresh token');
-            case 4: return [2 /*return*/];
-        }
-    });
-}); };

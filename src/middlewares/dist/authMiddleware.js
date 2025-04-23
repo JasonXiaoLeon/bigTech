@@ -39,11 +39,11 @@ exports.__esModule = true;
 exports.authMiddleware = void 0;
 var server_1 = require("next/server");
 var jwt_1 = require("next-auth/jwt");
-var userService_1 = require("@/service/userService");
+var token_1 = require("@/token/token");
 function authMiddleware(next) {
     var _this = this;
     return function (req, event, res) { return __awaiter(_this, void 0, void 0, function () {
-        var nextUrl, locale, isOnDashboard, token, now, isTokenExpired, isLoggedIn, refreshToken, refreshExp, loginUrl;
+        var nextUrl, locale, isOnDashboard, token, now, isLoggedIn, loginUrl;
         var _a;
         return __generator(this, function (_b) {
             switch (_b.label) {
@@ -55,17 +55,7 @@ function authMiddleware(next) {
                 case 1:
                     token = _b.sent();
                     now = Math.floor(Date.now() / 1000);
-                    isTokenExpired = (token === null || token === void 0 ? void 0 : token.exp) && token.exp < now;
-                    isLoggedIn = !!(token === null || token === void 0 ? void 0 : token.email) && !isTokenExpired;
-                    if (!(token === null || token === void 0 ? void 0 : token.email)) return [3 /*break*/, 4];
-                    return [4 /*yield*/, userService_1.getTokenByUser(token.email)];
-                case 2:
-                    refreshToken = _b.sent();
-                    return [4 /*yield*/, userService_1.getRefreshExpireTimeByUser(token.email)];
-                case 3:
-                    refreshExp = _b.sent();
-                    _b.label = 4;
-                case 4:
+                    isLoggedIn = !!(token === null || token === void 0 ? void 0 : token.email) && !token_1.isDbTokenExpired(token.exp);
                     if (isOnDashboard && !isLoggedIn) {
                         loginUrl = new URL("/" + locale + "/login?callbackUrl=" + encodeURIComponent(nextUrl.pathname), req.url);
                         return [2 /*return*/, server_1.NextResponse.redirect(loginUrl)];

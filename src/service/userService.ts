@@ -16,20 +16,39 @@ export const getUserByEmail = async (email: string) => {
     }
 }
 
-export async function getTokenByUser(email: string | undefined) {
-    if (!email) {
-        throw new Error('Email is required')
+export const updateUserByEmail = async (email: string, updates: any) => {
+  const { _id, ...filteredUpdates } = updates;
+
+  const client = await clientPromise;
+  const db = client.db(dbName);
+  
+  const result = await db.collection('users').updateOne(
+    { email },
+    { $set: filteredUpdates }
+  );
+  
+  return result;
+};
+
+export const getUserByRefreshToken = async (refreshToken: string) => {
+    if (!refreshToken) {
+      throw new Error('Refresh token is required')
     }
-
-    const user = await getUserByEmail(email)
-
-    if (!user) {
-        console.log('No user found with the provided email')
-        return null
+  
+    try {
+      const client = await clientPromise
+      const db = client.db('Edge')
+      const usersCollection = db.collection('users')
+  
+      const user = await usersCollection.findOne({ refreshToken })
+  
+      return user
+    } catch (error) {
+      console.error('Error fetching user by refresh token:', error)
+      throw new Error('Could not fetch user by refresh token')
     }
-
-    return user.refreshToken
-}
+  }
+  
 
 export async function getRefreshExpireTimeByUser(email: string | undefined) {
     if (!email) {
@@ -46,23 +65,3 @@ export async function getRefreshExpireTimeByUser(email: string | undefined) {
     return user.refreshTokenExpires
 }
 
-export const updateUserRefreshToken = async (
-    email: string,
-    newRefreshToken: string,
-    expiresAt: number
-) => {
-    try {
-        const client = await clientPromise
-        const db = client.db(dbName)
-        const usersCollection = db.collection('users')
-
-        const result = await usersCollection.updateOne(
-            { email },
-            { $set: { refreshToken: newRefreshToken, refreshTokenExpires: expiresAt } }
-        )
-        return result
-    } catch (error) {
-        console.error('Error updating refresh token:', error)
-        throw new Error('Could not update refresh token')
-    }
-}
