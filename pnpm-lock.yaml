@@ -53,6 +53,9 @@ dependencies:
   next-intl:
     specifier: ^4.0.2
     version: 4.0.2(next@14.2.25)(react@18.3.1)(typescript@5.8.2)
+  papaparse:
+    specifier: ^5.5.2
+    version: 5.5.2
   react:
     specifier: ^18
     version: 18.3.1
@@ -85,6 +88,9 @@ devDependencies:
   '@types/node':
     specifier: ^20
     version: 20.17.27
+  '@types/papaparse':
+    specifier: ^5.3.15
+    version: 5.3.15
   '@types/react':
     specifier: ^18
     version: 18.3.20
@@ -740,6 +746,12 @@ packages:
     resolution: {integrity: sha512-U58sbKhDrthHlxHRJw7ZLiLDZGmAUOZUbpw0S6nL27sYUdhvgBLCRu/keSd6qcTsfArd1sRFCCBxzWATGr/0UA==}
     dependencies:
       undici-types: 6.19.8
+    dev: true
+
+  /@types/papaparse@5.3.15:
+    resolution: {integrity: sha512-JHe6vF6x/8Z85nCX4yFdDslN11d+1pr12E526X8WAfhadOeaOTx5AuIkvDKIBopfvlzpzkdMx4YyvSKCM9oqtw==}
+    dependencies:
+      '@types/node': 20.17.27
     dev: true
 
   /@types/prop-types@15.7.14:
@@ -2217,6 +2229,10 @@ packages:
 
   /package-json-from-dist@1.0.1:
     resolution: {integrity: sha512-UEZIS3/by4OC8vL3P2dTXRETpebLI2NiI5vIrjaD/5UtrkFX/tNbwjTSRAGC/+7CAo2pIcBaRgWmcBBHcsaCIw==}
+
+  /papaparse@5.5.2:
+    resolution: {integrity: sha512-PZXg8UuAc4PcVwLosEEDYjPyfWnTEhOrUfdv+3Bx+NuAb+5NhDmXzg5fHWmdCh1mP5p7JAZfFr3IMQfcntNAdA==}
+    dev: false
 
   /parent-module@1.0.1:
     resolution: {integrity: sha512-GQ2EWRpQV8/o+Aw8YqtfZZPfNRWZYkbidE9k5rpl/hC3vtHHBfGm2Ifi6qWV+coDGkrUKZAxE3Lot5kcsRlh+g==}
