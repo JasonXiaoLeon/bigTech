@@ -9,10 +9,9 @@ export default async function DashboardLayout({
   }) {
     const session = await auth()
     const email = session?.user?.email || '' 
-    const avatar = session?.user?.avatar || ''
     return (
         <div className='flex'>
-            <NaviBar email={email} avatar={avatar} />
+            <NaviBar email={email} />
             <main className="text-black">{children}</main>
         </div>
   )

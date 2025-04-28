@@ -1,6 +1,7 @@
 'use client'
 
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useState, useRef } from 'react'
+import Image from 'next/image'
 
 interface Props {
   email: string
@@ -21,6 +22,9 @@ const MyInfo: React.FC<Props> = ({ email }) => {
   const [updatedUser, setUpdatedUser] = useState<User | null>(null)
   const [newPassword, setNewPassword] = useState('')
   const [confirmPassword, setConfirmPassword] = useState('')
+  const [newAvatar, setNewAvatar] = useState<string | null>('')
+
+  const fileInputRef = useRef<HTMLInputElement | null>(null)
 
   const fetchUser = async () => {
     setLoading(true)
@@ -52,7 +56,7 @@ const MyInfo: React.FC<Props> = ({ email }) => {
     }
 
     try {
-      const updates = { ...updatedUser, newPassword }
+      const updates = { ...updatedUser, newPassword, avatar: newAvatar || updatedUser?.avatar }
       const res = await fetch(`/api/auth/user`, {
         method: 'PUT',
         headers: { 'Content-Type': 'application/json' },
@@ -74,6 +78,23 @@ const MyInfo: React.FC<Props> = ({ email }) => {
     }
   }
 
+  const handleAvatarChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    const file = event.target.files?.[0]
+    if (file) {
+      const reader = new FileReader()
+      reader.onloadend = () => {
+        setNewAvatar(reader.result as string)
+      }
+      reader.readAsDataURL(file)
+    }
+  }
+
+  const handleAvatarClick = () => {
+    if (fileInputRef.current) {
+      fileInputRef.current.click()
+    }
+  }
+
   if (loading) return <p>Loading user info...</p>
   if (error) return <p className="text-red-500">Error: {error}</p>
   if (!user) return <p>User not found</p>
@@ -83,6 +104,34 @@ const MyInfo: React.FC<Props> = ({ email }) => {
       <h2 className="text-2xl font-semibold text-center mb-6">User Info</h2>
 
       <div className="space-y-4">
+        <div className="flex items-center justify-center relative">
+          <div
+            className="cursor-pointer rounded-full"
+            onClick={handleAvatarClick}
+          >
+            {newAvatar || user.avatar ? (
+              <Image
+                src={newAvatar || user.avatar}
+                alt="Avatar"
+                width={128}
+                height={128}
+                className="rounded-full"
+              />
+            ) : (
+              <div className="flex items-center justify-center w-32 h-32 bg-gray-300 rounded-full">
+                <span className="text-gray-600">No Avatar</span>
+              </div>
+            )}
+          </div>
+          <input
+            ref={fileInputRef}
+            type="file"
+            accept="image/*"
+            onChange={handleAvatarChange}
+            className="absolute inset-0 opacity-0 cursor-pointer"
+          />
+        </div>
+
         <div>
           <label className="block text-sm font-medium text-gray-700">Email</label>
           <p className="text-gray-600">{user.email}</p>
@@ -118,22 +167,6 @@ const MyInfo: React.FC<Props> = ({ email }) => {
             />
           ) : (
             <p>{user.age !== null ? user.age : 'Not specified'}</p>
-          )}
-        </div>
-
-        <div>
-          <label className="block text-sm font-medium text-gray-700">Avatar</label>
-          {editMode ? (
-            <input
-              type="text"
-              value={updatedUser?.avatar || ''}
-              onChange={(e) => setUpdatedUser({ ...updatedUser!, avatar: e.target.value })}
-              className="mt-1 w-full p-2 border rounded"
-            />
-          ) : user.avatar ? (
-            <img src={user.avatar} alt="avatar" className="w-32 h-32 rounded-full mx-auto mt-2" />
-          ) : (
-            <p>No avatar uploaded</p>
           )}
         </div>
 
