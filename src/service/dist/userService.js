@@ -47,8 +47,10 @@ var __rest = (this && this.__rest) || function (s, e) {
     return t;
 };
 exports.__esModule = true;
-exports.getRefreshExpireTimeByUser = exports.getUserByRefreshToken = exports.updateUserByEmail = exports.getUserByEmail = void 0;
+exports.updateMultipleUsers = exports.getUsersWithPermissionLevel = exports.getRefreshExpireTimeByUser = exports.getUserByRefreshToken = exports.updateUserByEmail = exports.getUserByEmail = void 0;
+var connectdb_1 = require("@/lib/connectdb");
 var databse_1 = require("@/lib/databse");
+var User_1 = require("@/models/User");
 var dbName = 'Edge';
 exports.getUserByEmail = function (email) { return __awaiter(void 0, void 0, void 0, function () {
     var client, db, usersCollection, user, error_1;
@@ -140,3 +142,77 @@ function getRefreshExpireTimeByUser(email) {
     });
 }
 exports.getRefreshExpireTimeByUser = getRefreshExpireTimeByUser;
+function getUsersWithPermissionLevel() {
+    return __awaiter(this, void 0, void 0, function () {
+        var users;
+        return __generator(this, function (_a) {
+            switch (_a.label) {
+                case 0: return [4 /*yield*/, connectdb_1.connectDB()];
+                case 1:
+                    _a.sent();
+                    return [4 /*yield*/, User_1.User.find({
+                            permissionLevel: { $gte: 3, $lte: 6 },
+                            isDelete: 0
+                        }).lean()];
+                case 2:
+                    users = _a.sent();
+                    return [2 /*return*/, users];
+            }
+        });
+    });
+}
+exports.getUsersWithPermissionLevel = getUsersWithPermissionLevel;
+function updateMultipleUsers(users) {
+    return __awaiter(this, void 0, void 0, function () {
+        var updatePromises, updatedUsers, filteredUsers, error_3;
+        var _this = this;
+        return __generator(this, function (_a) {
+            switch (_a.label) {
+                case 0:
+                    _a.trys.push([0, 3, , 4]);
+                    return [4 /*yield*/, connectdb_1.connectDB()];
+                case 1:
+                    _a.sent();
+                    updatePromises = users.map(function (user) { return __awaiter(_this, void 0, void 0, function () {
+                        var _id, gender, age, permissionLevel, existingUser, hasChanged;
+                        return __generator(this, function (_a) {
+                            switch (_a.label) {
+                                case 0:
+                                    _id = user._id, gender = user.gender, age = user.age, permissionLevel = user.permissionLevel;
+                                    return [4 /*yield*/, User_1.User.findById(_id)];
+                                case 1:
+                                    existingUser = _a.sent();
+                                    if (!existingUser)
+                                        return [2 /*return*/, null];
+                                    hasChanged = existingUser.gender !== gender ||
+                                        existingUser.age !== age ||
+                                        existingUser.permissionLevel !== permissionLevel;
+                                    if (!hasChanged)
+                                        return [2 /*return*/, null];
+                                    return [2 /*return*/, User_1.User.findByIdAndUpdate(_id, {
+                                            gender: gender,
+                                            age: age,
+                                            permissionLevel: permissionLevel,
+                                            updatedAt: Date.now()
+                                        }, { "new": true })];
+                            }
+                        });
+                    }); });
+                    return [4 /*yield*/, Promise.all(updatePromises)];
+                case 2:
+                    updatedUsers = _a.sent();
+                    filteredUsers = updatedUsers.filter(function (user) { return user !== null; });
+                    return [2 /*return*/, {
+                            acknowledged: filteredUsers.length > 0,
+                            updatedUsers: filteredUsers
+                        }];
+                case 3:
+                    error_3 = _a.sent();
+                    console.error("Error updating users:", error_3);
+                    throw new Error("Failed to update users");
+                case 4: return [2 /*return*/];
+            }
+        });
+    });
+}
+exports.updateMultipleUsers = updateMultipleUsers;

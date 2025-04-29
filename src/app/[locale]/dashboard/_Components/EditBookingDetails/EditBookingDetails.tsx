@@ -71,7 +71,8 @@ const EditBookingDetails = ({ booking, onClose }: Props) => {
     }
   }, [isCodeSent, countdown])
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
+  // 修改 handleChange 函数类型以适应 textarea
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target
     if (name === 'CAPTCHA') {
       setUserCode(value)
@@ -273,14 +274,14 @@ const EditBookingDetails = ({ booking, onClose }: Props) => {
 
         <div>
           <label htmlFor="comment" className="block font-medium text-gray-700">Comment</label>
-          <input
-            type="text"
+          <textarea
             id="comment"
             name="comment"
             placeholder="Please enter the comment"
             value={formData.comment}
             onChange={handleChange}
             className="w-full border px-3 py-2 rounded"
+            style={{ resize: 'none' }} 
           />
         </div>
 

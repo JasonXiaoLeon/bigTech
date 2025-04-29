@@ -116,7 +116,7 @@ const BookingForm: React.FC<BookingFormProps> = ({ onClose, email }) => {
       </div>
 
       <div>
-        <label htmlFor="datetime" className="block font-medium text-gray-700">Booking Date & Time</label>
+        <label htmlFor="datetime" className="block font-medium text-gray-700">*Booking Date & Time</label>
         <input
           type="datetime-local"
           id="datetime"
@@ -131,7 +131,7 @@ const BookingForm: React.FC<BookingFormProps> = ({ onClose, email }) => {
       </div>
 
       <div>
-        <label htmlFor="email" className="block font-medium text-gray-700">Contact Email</label>
+        <label htmlFor="email" className="block font-medium text-gray-700">*Contact Email</label>
         <input
           type="email"
           id="email"
@@ -145,7 +145,7 @@ const BookingForm: React.FC<BookingFormProps> = ({ onClose, email }) => {
       </div>
 
       <div>
-        <label htmlFor="phone" className="block font-medium text-gray-700">Phone Number</label>
+        <label htmlFor="phone" className="block font-medium text-gray-700">*Phone Number</label>
         <input
           type="tel"
           id="phone"
@@ -159,7 +159,7 @@ const BookingForm: React.FC<BookingFormProps> = ({ onClose, email }) => {
       </div>
 
       <div>
-        <label htmlFor="purpose" className="block font-medium text-gray-700">Booking Purpose</label>
+        <label htmlFor="purpose" className="block font-medium text-gray-700">*Booking Purpose</label>
         <select
           id="purpose"
           name="purpose"
@@ -177,16 +177,16 @@ const BookingForm: React.FC<BookingFormProps> = ({ onClose, email }) => {
       </div>
 
       <div>
-        <label htmlFor="comment" className="block font-medium text-gray-700">comment</label>
-        <input
-          type="text"
+        <label htmlFor="comment" className="block font-medium text-gray-700">Comment</label>
+        <textarea
           id="comment"
           name="comment"
-          maxLength={50}
-          placeholder='Please enter the comment'
+          maxLength={200}
+          placeholder="Please enter your comment"
           value={formData.comment}
-          onChange={handleChange}
-          className="w-full border px-3 py-2 rounded"
+          onChange={(e) => handleChange(e as any)}
+          rows={3}
+          className="w-full border px-3 py-2 rounded resize-none"
         />
       </div>
 

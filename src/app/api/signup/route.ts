@@ -29,6 +29,7 @@ export async function POST(req: Request) {
             avatar: '',
             createdAt: new Date(),
             isDelete: 0,
+            permissionLevel:3,
         }
 
         await usersCollection.insertOne(newUser)

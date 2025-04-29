@@ -12,6 +12,7 @@ const navItems = [
   { tab: 'historyList', label: 'Booking History' },
   { tab: 'uploadFile', label: 'Upload Files' },
   { tab: 'myInfo', label: 'My Details' },
+  { tab: 'management', label: 'Management' },
 ];
 
 const NaviBar = ({ email }: { email: string }) => {

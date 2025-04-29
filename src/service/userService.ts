@@ -1,4 +1,6 @@
+import { connectDB } from '@/lib/connectdb'
 import clientPromise from '@/lib/databse'
+import { User } from '@/models/User';
 
 const dbName = 'Edge'
 
@@ -65,3 +67,56 @@ export async function getRefreshExpireTimeByUser(email: string | undefined) {
     return user.refreshTokenExpires
 }
 
+
+export async function getUsersWithPermissionLevel() {
+  await connectDB();
+  const users = await User.find({
+    permissionLevel: { $gte: 3, $lte: 6 },
+    isDelete: 0
+  }).lean();
+  return users;
+}
+
+export async function updateMultipleUsers(users: any[]) {
+  try {
+    await connectDB();
+
+    const updatePromises = users.map(async (user) => {
+      const { _id, gender, age, permissionLevel } = user;
+
+      const existingUser = await User.findById(_id);
+
+      if (!existingUser) return null;
+
+      const hasChanged =
+        existingUser.gender !== gender ||
+        existingUser.age !== age ||
+        existingUser.permissionLevel !== permissionLevel;
+
+      if (!hasChanged) return null;
+
+      return User.findByIdAndUpdate(
+        _id,
+        {
+          gender,
+          age,
+          permissionLevel,
+          updatedAt: Date.now(),
+        },
+        { new: true }
+      );
+    });
+
+    const updatedUsers = await Promise.all(updatePromises);
+
+    const filteredUsers = updatedUsers.filter((user) => user !== null);
+
+    return {
+      acknowledged: filteredUsers.length > 0,
+      updatedUsers: filteredUsers,
+    };
+  } catch (error) {
+    console.error("Error updating users:", error);
+    throw new Error("Failed to update users");
+  }
+}

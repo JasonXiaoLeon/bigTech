@@ -1,32 +1,58 @@
 'use client'
 
-import React, { useState } from 'react'
+import React, { useState, useRef } from 'react'
 import Papa from 'papaparse'
 import SparkMD5 from 'spark-md5'
 
 const FileUploadToDatabase = () => {
   const [isLoading, setIsLoading] = useState(false)
   const [progress, setProgress] = useState(0)
+  const [selectedFile, setSelectedFile] = useState<File | null>(null);
+  const [isDragging, setIsDragging] = useState(false);
+  const fileInputRef = useRef<HTMLInputElement>(null);
 
-  const handleFileUpload = async (event: React.ChangeEvent<HTMLInputElement>) => {
-    const file = event.target.files ? event.target.files[0] : null;
-    if (file) {
-      const fileSizeMB = file.size / (1024 * 1024);
-      setIsLoading(true);
-      setProgress(0);
-
-      if (fileSizeMB < 5) {
-        await uploadWholeFile(file);
-      } else {
-        await splitAndUpload(file);
-      }
-
-      setIsLoading(false);
-      setProgress(100);
-      alert('上传完成！');
-      event.target.value = ''; // 上传完清空input
-      setTimeout(() => setProgress(0), 1000); // 过1秒把进度清零
+  const handleFileSelect = (file: File) => {
+    if (file.type !== 'text/csv') {
+      alert('请上传 CSV 文件');
+      return;
     }
+    setSelectedFile(file);
+  };
+
+  const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    const file = event.target.files?.[0];
+    if (file) {
+      handleFileSelect(file);
+    }
+  };
+
+  const handleDrop = (event: React.DragEvent<HTMLDivElement>) => {
+    event.preventDefault();
+    setIsDragging(false);
+    const file = event.dataTransfer.files?.[0];
+    if (file) {
+      handleFileSelect(file);
+    }
+  };
+
+  const handleUpload = async () => {
+    if (!selectedFile) return;
+    const file = selectedFile;
+    const fileSizeMB = file.size / (1024 * 1024);
+    setIsLoading(true);
+    setProgress(0);
+
+    if (fileSizeMB < 5) {
+      await uploadWholeFile(file);
+    } else {
+      await splitAndUpload(file);
+    }
+
+    setIsLoading(false);
+    setProgress(100);
+    alert('上传完成！');
+    setSelectedFile(null);
+    setTimeout(() => setProgress(0), 1000);
   };
 
   const uploadWholeFile = async (file: File) => {
@@ -94,20 +120,54 @@ const FileUploadToDatabase = () => {
         }
       }
 
-      // 更新进度
       setProgress(Math.round(((i + 1) / totalChunks) * 100));
     }
   };
 
   return (
-    <div className="flex flex-col items-center gap-4">
-      <input type="file" accept=".csv" onChange={handleFileUpload} disabled={isLoading} />
-      <button disabled={isLoading} className="p-2 bg-blue-500 text-white rounded">
-        {isLoading ? '上传中...' : '上传 CSV 文件'}
+    <div className="flex flex-col items-center gap-6 p-6">
+      <div
+        className={`w-[400px] h-[220px] border-2 ${
+          isDragging ? 'border-blue-400 bg-blue-50' : 'border-gray-300'
+        } border-dashed rounded-lg flex flex-col items-center justify-center text-gray-500 cursor-pointer transition-all`}
+        onClick={() => fileInputRef.current?.click()}
+        onDragOver={(e) => {
+          e.preventDefault();
+          setIsDragging(true);
+        }}
+        onDragLeave={() => setIsDragging(false)}
+        onDrop={handleDrop}
+      >
+        <svg
+          className="w-12 h-12 mb-2 text-gray-400"
+          fill="none"
+          stroke="currentColor"
+          viewBox="0 0 24 24"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M7 16v-4m0 0l4 4m-4-4l-4 4m14-8v4m0 0l-4-4m4 4l4-4m-2 10H6a2 2 0 01-2-2V7a2 2 0 012-2h3l2 2h4l2-2h3a2 2 0 012 2v10a2 2 0 01-2 2z" />
+        </svg>
+        <p className="text-md">{selectedFile ? selectedFile.name : '拖拽 CSV 文件到这里 或 点击选择文件'}</p>
+        <input
+          type="file"
+          accept=".csv"
+          ref={fileInputRef}
+          className="hidden"
+          onChange={handleInputChange}
+          disabled={isLoading}
+        />
+      </div>
+
+      <button
+        onClick={handleUpload}
+        disabled={!selectedFile || isLoading}
+        className="w-[400px] py-2 px-4 bg-blue-500 hover:bg-blue-600 disabled:bg-gray-400 text-white font-semibold rounded-lg transition"
+      >
+        {isLoading ? '上传中...' : '提交上传'}
       </button>
 
       {isLoading && (
-        <div className="w-full max-w-md bg-gray-200 rounded h-4 overflow-hidden">
+        <div className="w-[400px] bg-gray-200 rounded h-4 overflow-hidden">
           <div
             className="h-4 bg-green-500 transition-all duration-300"
             style={{ width: `${progress}%` }}
