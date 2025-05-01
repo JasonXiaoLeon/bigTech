@@ -18,10 +18,8 @@ export async function connectDB() {
     socketTimeoutMS: 30000,   // 设置socket超时为30秒
   };
 
-  // 使用 Mongoose 连接数据库
   try {
     await mongoose.connect(uri, options);
-    console.log('Connected to MongoDB');
   } catch (error) {
     console.error('Error connecting to MongoDB:', error);
     throw error;

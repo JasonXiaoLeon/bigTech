@@ -92,8 +92,7 @@ exports.auth = (_a = next_auth_1["default"]({
                             return [2 /*return*/, {
                                     id: user.id,
                                     email: user.email,
-                                    gender: user.gender,
-                                    avatar: user.avatar
+                                    gender: user.gender
                                 }];
                     }
                 });
@@ -109,13 +108,12 @@ exports.auth = (_a = next_auth_1["default"]({
         jwt: function (_a) {
             var token = _a.token, user = _a.user;
             return __awaiter(this, void 0, void 0, function () {
-                var now;
                 return __generator(this, function (_b) {
-                    now = Math.floor(Date.now() / 1000);
+                    // const now = Math.floor(Date.now() / 1000)
                     if (user) {
                         token.email = user.email;
                         token.gender = user.gender;
-                        token.avatar = user.avatar;
+                        // token.avatar = user.avatar as string;
                         // const accessToken = sign(
                         //   { email: user.email, gender: user.gender },
                         //   AUTH_SECRET,
@@ -137,7 +135,7 @@ exports.auth = (_a = next_auth_1["default"]({
             return __awaiter(this, void 0, void 0, function () {
                 return __generator(this, function (_b) {
                     if (token) {
-                        session.user = __assign(__assign({}, session.user), { email: token.email, gender: token.gender, avatar: token.avatar, accessToken: token.accessToken });
+                        session.user = __assign(__assign({}, session.user), { email: token.email, gender: token.gender, avatar: token.avatar });
                     }
                     // console.log(session)
                     return [2 /*return*/, session];

@@ -13,6 +13,7 @@ const navItems = [
   { tab: 'uploadFile', label: 'Upload Files' },
   { tab: 'myInfo', label: 'My Details' },
   { tab: 'management', label: 'Management' },
+  { tab: 'myFinance', label: 'My Finance' },
 ];
 
 const NaviBar = ({ email }: { email: string }) => {

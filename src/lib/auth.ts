@@ -42,7 +42,7 @@ export const { auth, handlers, signIn, signOut: signOutNextAuth } = NextAuth({
           id: user.id,
           email: user.email,
           gender: user.gender,
-          avatar: user.avatar,
+          // avatar: user.avatar,
         }
       },
     }),
@@ -56,12 +56,12 @@ export const { auth, handlers, signIn, signOut: signOutNextAuth } = NextAuth({
 
   callbacks: {
     async jwt({ token, user }) {
-      const now = Math.floor(Date.now() / 1000)
+      // const now = Math.floor(Date.now() / 1000)
 
       if (user) {
         token.email = user.email as string
         token.gender = user.gender as string
-        token.avatar = user.avatar as string;
+        // token.avatar = user.avatar as string;
         // const accessToken = sign(
         //   { email: user.email, gender: user.gender },
         //   AUTH_SECRET,
@@ -85,7 +85,7 @@ export const { auth, handlers, signIn, signOut: signOutNextAuth } = NextAuth({
           email: token.email,
           gender: token.gender,
           avatar: token.avatar,
-          accessToken: token.accessToken,
+          // accessToken: token.accessToken,
           // refreshToken: token.refreshToken
         }
       }

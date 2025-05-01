@@ -1,5 +1,4 @@
 "use strict";
-// lib/connectDB.ts
 var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
     function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
     return new (P || (P = Promise))(function (resolve, reject) {
@@ -37,40 +36,38 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
     }
 };
 exports.__esModule = true;
-exports.connectDB = void 0;
-var mongoose_1 = require("mongoose");
-function connectDB() {
-    return __awaiter(this, void 0, void 0, function () {
-        var uri, dbName, options, error_1;
-        return __generator(this, function (_a) {
-            switch (_a.label) {
-                case 0:
-                    uri = process.env.MONGODB_URI;
-                    dbName = process.env.MONGODB_DB || 'Edge';
-                    if (!uri) {
-                        throw new Error('Please add your Mongo URI to .env.local');
-                    }
-                    options = {
-                        dbName: dbName,
-                        useNewUrlParser: true,
-                        useUnifiedTopology: true,
-                        connectTimeoutMS: 30000,
-                        socketTimeoutMS: 30000
-                    };
-                    _a.label = 1;
-                case 1:
-                    _a.trys.push([1, 3, , 4]);
-                    return [4 /*yield*/, mongoose_1["default"].connect(uri, options)];
-                case 2:
-                    _a.sent();
-                    return [3 /*break*/, 4];
-                case 3:
-                    error_1 = _a.sent();
-                    console.error('Error connecting to MongoDB:', error_1);
-                    throw error_1;
-                case 4: return [2 /*return*/];
-            }
-        });
+exports.GET = void 0;
+var auth_1 = require("@/lib/auth");
+var connectdb_1 = require("@/lib/connectdb");
+var userService_1 = require("@/service/userService");
+var server_1 = require("next/server");
+exports.GET = function () { return __awaiter(void 0, void 0, void 0, function () {
+    var session, userEmail, transactions, err_1;
+    var _a;
+    return __generator(this, function (_b) {
+        switch (_b.label) {
+            case 0: return [4 /*yield*/, connectdb_1.connectDB()];
+            case 1:
+                _b.sent();
+                return [4 /*yield*/, auth_1.auth()];
+            case 2:
+                session = _b.sent();
+                if (!session || !((_a = session.user) === null || _a === void 0 ? void 0 : _a.email)) {
+                    return [2 /*return*/, server_1.NextResponse.json({ error: 'Unauthorized' }, { status: 401 })];
+                }
+                _b.label = 3;
+            case 3:
+                _b.trys.push([3, 5, , 6]);
+                userEmail = session.user.email;
+                return [4 /*yield*/, userService_1.getUserTransactions(userEmail)];
+            case 4:
+                transactions = _b.sent();
+                return [2 /*return*/, server_1.NextResponse.json({ transactions: transactions })];
+            case 5:
+                err_1 = _b.sent();
+                console.error('Error fetching transactions:', err_1);
+                return [2 /*return*/, server_1.NextResponse.json({ error: 'Failed to fetch transactions' }, { status: 500 })];
+            case 6: return [2 /*return*/];
+        }
     });
-}
-exports.connectDB = connectDB;
+}); };

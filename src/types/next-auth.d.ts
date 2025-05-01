@@ -17,7 +17,7 @@ declare module 'next-auth' {
         id: string
         email: string
         gender: string
-        avatar: string
+        // avatar: string
         refreshToken?: string
     }
 }
