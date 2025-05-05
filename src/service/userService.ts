@@ -1,5 +1,6 @@
 import { connectDB } from '@/lib/connectdb'
 import clientPromise from '@/lib/databse'
+import { decrypt } from '@/lib/encryption';
 import UserFinance from '@/models/Finance';
 import TransactionHistory from '@/models/TransactionHistory';
 import { User } from '@/models/User';
@@ -123,19 +124,24 @@ export async function updateMultipleUsers(users: any[]) {
   }
 }
 
-export const getUserFinanceByEmail = async (email: string) => {
-  const record = await UserFinance.findOne({ email })
-  if (!record) return null
 
-  return {
-    stocks: Number(record.stocks),
-    funds: Number(record.funds),
-    cryptocurrency: Number(record.cryptcurrency),
-    balance: Number(record.balance),
+export const getUserFinanceByEmail = async (email: string) => {
+  const finance = await UserFinance.findOne({ email })
+  if (!finance) return null
+  
+  const decryptedFinance = {
+    email: finance.email,
+    balance: parseFloat(decrypt(finance.balance)),
+    stocks: parseFloat(decrypt(finance.stocks)),
+    funds: parseFloat(decrypt(finance.funds)),
+    cryptocurrency: parseFloat(decrypt(finance.cryptcurrency)),
   }
+
+  return decryptedFinance
 }
 
+
+
 export const getUserTransactions = async (email: string) => {
-  console.log(await TransactionHistory.findOne({ email: 'user@example.com' }));
   return await TransactionHistory.find({ email }).sort({ date: -1 }).limit(10)
 }

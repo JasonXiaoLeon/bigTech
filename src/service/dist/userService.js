@@ -50,6 +50,7 @@ exports.__esModule = true;
 exports.getUserTransactions = exports.getUserFinanceByEmail = exports.updateMultipleUsers = exports.getUsersWithPermissionLevel = exports.getRefreshExpireTimeByUser = exports.getUserByRefreshToken = exports.updateUserByEmail = exports.getUserByEmail = void 0;
 var connectdb_1 = require("@/lib/connectdb");
 var databse_1 = require("@/lib/databse");
+var encryption_1 = require("@/lib/encryption");
 var Finance_1 = require("@/models/Finance");
 var TransactionHistory_1 = require("@/models/TransactionHistory");
 var User_1 = require("@/models/User");
@@ -219,34 +220,30 @@ function updateMultipleUsers(users) {
 }
 exports.updateMultipleUsers = updateMultipleUsers;
 exports.getUserFinanceByEmail = function (email) { return __awaiter(void 0, void 0, void 0, function () {
-    var record;
+    var finance, decryptedFinance;
     return __generator(this, function (_a) {
         switch (_a.label) {
             case 0: return [4 /*yield*/, Finance_1["default"].findOne({ email: email })];
             case 1:
-                record = _a.sent();
-                if (!record)
+                finance = _a.sent();
+                if (!finance)
                     return [2 /*return*/, null];
-                return [2 /*return*/, {
-                        stocks: Number(record.stocks),
-                        funds: Number(record.funds),
-                        cryptocurrency: Number(record.cryptcurrency),
-                        balance: Number(record.balance)
-                    }];
+                decryptedFinance = {
+                    email: finance.email,
+                    balance: parseFloat(encryption_1.decrypt(finance.balance)),
+                    stocks: parseFloat(encryption_1.decrypt(finance.stocks)),
+                    funds: parseFloat(encryption_1.decrypt(finance.funds)),
+                    cryptocurrency: parseFloat(encryption_1.decrypt(finance.cryptcurrency))
+                };
+                return [2 /*return*/, decryptedFinance];
         }
     });
 }); };
 exports.getUserTransactions = function (email) { return __awaiter(void 0, void 0, void 0, function () {
-    var _a, _b;
-    return __generator(this, function (_c) {
-        switch (_c.label) {
-            case 0:
-                _b = (_a = console).log;
-                return [4 /*yield*/, TransactionHistory_1["default"].findOne({ email: 'user@example.com' })];
-            case 1:
-                _b.apply(_a, [_c.sent()]);
-                return [4 /*yield*/, TransactionHistory_1["default"].find({ email: email }).sort({ date: -1 }).limit(10)];
-            case 2: return [2 /*return*/, _c.sent()];
+    return __generator(this, function (_a) {
+        switch (_a.label) {
+            case 0: return [4 /*yield*/, TransactionHistory_1["default"].find({ email: email }).sort({ date: -1 }).limit(10)];
+            case 1: return [2 /*return*/, _a.sent()];
         }
     });
 }); };

@@ -2,10 +2,10 @@ import mongoose, { Schema, Document, model } from 'mongoose'
 
 export interface IUserFinance extends Document {
   email: string
-  balance: number
-  stocks: number
-  funds: number
-  cryptcurrency: number
+  balance: string
+  stocks: string
+  funds: string
+  cryptcurrency: string
 }
 
 const UserFinanceSchema: Schema = new Schema(
@@ -16,24 +16,24 @@ const UserFinanceSchema: Schema = new Schema(
       unique: true,
     },
     balance: {
-      type: Number,
+      type: String,
       required: true,
-      default: 0,
+      default: '0',
     },
     stocks: {
-      type: Number,
+      type: String,
       required: true,
-      default: 0,
+      default: '0',
     },
     funds: {
-      type: Number,
+      type: String,
       required: true,
-      default: 0,
+      default: '0',
     },
     cryptcurrency: {
-      type: Number,
+      type: String,
       required: true,
-      default: 0,
+      default: '0',
     },
   },
   {
@@ -42,6 +42,6 @@ const UserFinanceSchema: Schema = new Schema(
 )
 
 const UserFinance =
-  mongoose.models.UserFinance || model<IUserFinance>('UserFinance', UserFinanceSchema,"finance")
+  mongoose.models.UserFinance || model<IUserFinance>('UserFinance', UserFinanceSchema, "finance")
 
 export default UserFinance
