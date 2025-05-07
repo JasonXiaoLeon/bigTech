@@ -14,6 +14,8 @@ const navItems = [
   { tab: 'myInfo', label: 'My Details' },
   { tab: 'management', label: 'Management' },
   { tab: 'myFinance', label: 'My Finance' },
+  { tab: 'internshipSchedule', label: 'Time Schedule' },
+
 ];
 
 const NaviBar = ({ email }: { email: string }) => {

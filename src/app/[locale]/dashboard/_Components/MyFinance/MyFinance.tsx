@@ -81,7 +81,7 @@ const MyFinance = () => {
       <div className="mb-6">
         <div className="text-sm text-gray-600">Total Investment Balance</div>
         <div className="text-3xl font-semibold text-green-600">
-          {loading ? 'Loading...' : `¥${totalBalance.toLocaleString()}`}
+          {loading ? 'Loading...' : `$${totalBalance.toLocaleString()}`}
         </div>
       </div>
 
@@ -120,7 +120,7 @@ const MyFinance = () => {
           {assets.map((asset, index) => (
             <li key={index} className="flex justify-between border-b pb-2">
               <span>{asset.name}</span>
-              <span className="text-right">¥{asset.amount.toLocaleString()}</span>
+              <span className="text-right">${asset.amount.toLocaleString()}</span>
             </li>
           ))}
         </ul>
@@ -137,7 +137,7 @@ const MyFinance = () => {
               <li key={tx._id} className="py-2 flex justify-between text-sm">
                 <span>{new Date(tx.date).toLocaleDateString()}</span>
                 <span>{tx.type} {tx.asset}</span>
-                <span className="text-gray-700">¥{tx.amount.toLocaleString()}</span>
+                <span className="text-gray-700">${tx.amount.toLocaleString()}</span>
               </li>
             ))}
           </ul>
