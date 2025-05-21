@@ -15,6 +15,7 @@ const navItems = [
   { tab: 'management', label: 'Management' },
   { tab: 'myFinance', label: 'My Finance' },
   { tab: 'internshipSchedule', label: 'Time Schedule' },
+  { tab: 'askForLeave', label: 'leave management'}
 
 ];
 
